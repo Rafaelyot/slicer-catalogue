@@ -1,8 +1,10 @@
 import os
 
 from mongoengine import connect
-from mixer.backend.mongoengine import TypeMixer, Mixer, t
+from mixer.backend.mongoengine import TypeMixer, Mixer
 from models.descriptors import Nsd
+from models.vs_blueprint import VsdNsdTranslationRule
+from models.catalogues import OnBoardVnfPackageRequest
 
 connection_data = {
     'username': os.environ.get('MONGO_USERNAME', 'root'),
@@ -22,17 +24,8 @@ class MyTypeMixer(TypeMixer):
 
     @staticmethod
     def is_required(field):
-        return True
-
-    # noinspection PyPep8Naming,PyProtectedMember
-    def _TypeMixer__load_fields(self):
-        scheme = self._TypeMixer__scheme
-
-        if not hasattr(scheme, '_fields'):
-            yield ()
-
-        for f_name, field in scheme._fields.items():
-            yield f_name, t.Field(field, f_name)
+        # Avoid MapFields due to mixer's errors
+        return field.scheme.__class__.__name__ != 'MapField'
 
 
 class MyMixer(Mixer):
@@ -43,3 +36,5 @@ class MyMixer(Mixer):
 
 mixer = MyMixer()
 nsd = mixer.blend(Nsd)
+vsd_nsd_translation_rule = mixer.blend(VsdNsdTranslationRule)
+on_board_vnf_package_request = mixer.blend(OnBoardVnfPackageRequest)
