@@ -14,7 +14,7 @@ app.config.from_object(ProdConfig)
 # Register flask's blueprints
 app.register_blueprint(vs_blueprint_api)
 
-# Connect database
+#  Connect database
 db = MongoEngine()
 db.init_app(app)
 
