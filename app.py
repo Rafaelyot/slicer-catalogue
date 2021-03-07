@@ -1,6 +1,6 @@
 import os
 from flask import Flask
-from rest.vs_blueprint_catalogue import app as vs_blueprint_api
+from views.vs_blueprint_catalogue import app as vs_blueprint_api
 from settings import ProdConfig
 from flask_mongoengine import MongoEngine
 

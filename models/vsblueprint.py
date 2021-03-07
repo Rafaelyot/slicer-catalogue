@@ -1,6 +1,5 @@
 from mongoengine import Document, EmbeddedDocument
-from mongoengine.fields import StringField, IntField, EmbeddedDocumentListField, ListField, MapField, EnumField, \
-    BooleanField
+from mongoengine.fields import StringField, IntField, EmbeddedDocumentListField, ListField, MapField, BooleanField
 from enums.vs_blueprint import VsComponentPlacement, VsComponentType, MetricCollectionType, SliceServiceType, \
     EMBBServiceCategory, URLLCServiceCategory
 
@@ -38,8 +37,8 @@ class VsComponent(EmbeddedDocument):
     image_urls = ListField(StringField())
     end_points_ids = ListField(StringField())
     lifecycleOperations = MapField(StringField())
-    placement = EnumField(VsComponentPlacement)
-    type = EnumField(VsComponentType)
+    placement = StringField(choices=VsComponentPlacement.get_values())  # EnumField(VsComponentPlacement)
+    type = StringField(choices=VsComponentType.get_values())  # EnumField(VsComponentType)
     associated_vsb_id = StringField()
     compatible_site = StringField()
 
@@ -67,7 +66,7 @@ class ApplicationMetric(EmbeddedDocument):
     topic = StringField()
     metric_id = StringField()
     name = StringField()
-    metric_collection_type = EnumField(MetricCollectionType)
+    metric_collection_type = StringField(choices=MetricCollectionType.get_values())  # EnumField(MetricCollectionType)
     unit = StringField()
     interval = StringField()
 
@@ -85,6 +84,19 @@ class VsBlueprint(Document):
     configurable_parameters = ListField(StringField())
     application_metrics = EmbeddedDocumentListField(ApplicationMetric)
     inter_site = BooleanField()
-    slice_service_type = EnumField(SliceServiceType)
-    embb_service_category = EnumField(EMBBServiceCategory)
-    urllc_service_category = EnumField(URLLCServiceCategory)
+    slice_service_type = StringField(choices=SliceServiceType.get_values())  # EnumField(SliceServiceType)
+    embb_service_category = StringField(choices=EMBBServiceCategory.get_values())  # EnumField(EMBBServiceCategory)
+    urllc_service_category = StringField(choices=URLLCServiceCategory.get_values())  # EnumField(URLLCServiceCategory)
+
+
+# VsBlueprintInfo
+class VsBlueprintInfo(Document):
+    vs_blueprint_id = StringField()
+    vs_blueprint_version = StringField()
+    name = StringField()
+    owner = StringField()
+    on_boarded_nsd_info_id = ListField(StringField())
+    on_boarded_nst_info_id = ListField(StringField())
+    on_boarded_vnf_package_info_id = ListField(StringField())
+    on_boarded_mec_app_package_info_id = ListField(StringField())
+    active_vsd_id = ListField(StringField())

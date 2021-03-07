@@ -3,7 +3,7 @@ import os
 from mongoengine import connect
 from mixer.backend.mongoengine import TypeMixer, Mixer
 from models.descriptors import Nsd
-from models.vsblueprint import VsdNsdTranslationRule, VsBlueprint
+from models.vsblueprint import VsdNsdTranslationRule, VsBlueprint, VsBlueprintInfo
 from models.catalogues import OnBoardVnfPackageRequest
 
 connection_data = {
@@ -36,8 +36,10 @@ class MyMixer(Mixer):
 
 mixer = MyMixer()
 
-for _ in range(5):
+for i in range(5):
     nsd = mixer.blend(Nsd)
     vsd_nsd_translation_rule = mixer.blend(VsdNsdTranslationRule)
     on_board_vnf_package_request = mixer.blend(OnBoardVnfPackageRequest)
-    vs_blueprint = mixer.blend(VsBlueprint)
+    vs_blueprint = mixer.blend(VsBlueprint, blueprint_id=f'id_{i}', version=f'version_{i}', name=f'name_{i}')
+    vs_blueprint_info = mixer.blend(VsBlueprintInfo, vs_blueprint_id=f'id_{i}', vs_blueprint_version=f'version_{i}',
+                                    name=f'name_{i}')
