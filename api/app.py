@@ -18,4 +18,4 @@ app.register_blueprint(vs_blueprint_api)
 db = MongoEngine()
 db.init_app(app)
 
-app.run(debug=True)
+app.run()

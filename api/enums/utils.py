@@ -1,9 +1,4 @@
-from enum import Enum, EnumMeta as BaseEnumMeta
-
-
-class EnumMeta(BaseEnumMeta):
-    def __iter__(self):
-        return (name for name in self._member_names_)
+from enum import Enum
 
 
 class AutoName(Enum):
