@@ -1,5 +1,5 @@
 from rest_framework_mongoengine.serializers import DocumentSerializer
-from models.vsblueprint import VsBlueprintInfo, VsBlueprint
+from models.vs_blueprint import VsBlueprintInfo, VsBlueprint
 
 
 class VsBlueprintSerializer(DocumentSerializer):

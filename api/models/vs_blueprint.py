@@ -2,6 +2,7 @@ from mongoengine import Document, EmbeddedDocument
 from mongoengine.fields import StringField, IntField, EmbeddedDocumentListField, ListField, MapField, BooleanField
 from enums.vs_blueprint import VsComponentPlacement, VsComponentType, MetricCollectionType, SliceServiceType, \
     EMBBServiceCategory, URLLCServiceCategory
+from queries.utils import get_or_error
 
 
 # vnfPackages
@@ -87,6 +88,10 @@ class VsBlueprint(Document):
     slice_service_type = StringField(choices=SliceServiceType.get_values())  # EnumField(SliceServiceType)
     embb_service_category = StringField(choices=EMBBServiceCategory.get_values())  # EnumField(EMBBServiceCategory)
     urllc_service_category = StringField(choices=URLLCServiceCategory.get_values())  # EnumField(URLLCServiceCategory)
+    
+    @classmethod
+    def get_or_404(cls, **kwargs):
+        return get_or_error(cls, **kwargs)
 
 
 # VsBlueprintInfo
@@ -100,3 +105,7 @@ class VsBlueprintInfo(Document):
     on_boarded_vnf_package_info_id = ListField(StringField())
     on_boarded_mec_app_package_info_id = ListField(StringField())
     active_vsd_id = ListField(StringField())
+
+    @classmethod
+    def get_or_404(cls, **kwargs):
+        return get_or_error(cls, **kwargs)
