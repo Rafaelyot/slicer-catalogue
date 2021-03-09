@@ -1,6 +1,7 @@
 from mongoengine import DoesNotExist, MultipleObjectsReturned
 from exceptions.utils import HTTPException
 from http import HTTPStatus
+from flask_mongoengine import current_mongoengine_instance
 import re
 
 
@@ -43,3 +44,9 @@ def get_or_error(cls, status_code=HTTPStatus.NOT_FOUND, **kwargs):
         e = HTTPException(f"Found multiple {class_name} objects with {args} in DB")
         e.code = status_code
         raise e
+
+
+def transaction(callback):
+    db = current_mongoengine_instance().connection
+    with db.start_session() as session:
+        session.with_transaction(callback)

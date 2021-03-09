@@ -1,6 +1,7 @@
+import queries.vs_blueprint
 from flask import Blueprint, request
+from http import HTTPStatus
 from serializers.vsblueprint import VsBlueprintInfoSerializer
-from queries.vs_blueprint import query_vs_blueprint
 from views.utils import response_template
 from exceptions.utils import handle_exception
 
@@ -10,7 +11,7 @@ app = Blueprint('vsblueprint', __name__)
 
 @handle_exception(app)
 @app.route('/vsblueprint', methods=('GET',))
-def get_blueprints():
+def get_vs_blueprints():
     tenant_id = None  # TODO: tenant_id it is obtained from the authenticated user (authentication not yet implemented)
     args = {
         'tenant_id': tenant_id,
@@ -19,6 +20,16 @@ def get_blueprints():
         'vsb_version': request.args.get('vsb_version'),
     }
 
-    serializer = VsBlueprintInfoSerializer(query_vs_blueprint(**args), many=True)
+    serializer = VsBlueprintInfoSerializer(queries.vs_blueprint.get_vs_blueprints(**args), many=True)
 
     return response_template('Success', serializer.data)
+
+
+@handle_exception(app)
+@app.route('/vsblueprint', methods=('DELETE',))
+def delete_vs_blueprint():
+    vsb_id = request.args.get('vsb_id')
+
+    queries.vs_blueprint.delete_vs_blueprint(vsb_id)
+
+    return response_template('Success', status_code=HTTPStatus.NO_CONTENT)

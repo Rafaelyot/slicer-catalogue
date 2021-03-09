@@ -1,7 +1,7 @@
 import os
 from flask import Flask
 from views.vs_blueprint import app as vs_blueprint_api
-from settings import ProdConfig
+from settings import DevConfig
 from flask_mongoengine import MongoEngine
 
 APPLICATION_NAME = os.environ.get('APPLICATION_NAME', 'catalogues')
@@ -9,7 +9,7 @@ APPLICATION_NAME = os.environ.get('APPLICATION_NAME', 'catalogues')
 app = Flask(APPLICATION_NAME)
 
 # Configurations settings
-app.config.from_object(ProdConfig)
+app.config.from_object(DevConfig)
 
 # Register flask's blueprints
 app.register_blueprint(vs_blueprint_api)

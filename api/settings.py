@@ -7,12 +7,13 @@ class Config(object):
     PROJECT_ROOT = os.path.abspath(os.path.join(APP_DIR, os.pardir))
     CACHE_TYPE = 'simple'
     MONGODB_SETTINGS = {
-        'username': os.environ.get('MONGO_USERNAME', 'root'),
-        'password': os.environ.get('MONGO_PASSWORD', 'root'),
+        # 'username': os.environ.get('MONGO_USERNAME', 'root'),
+        # 'password': os.environ.get('MONGO_PASSWORD', 'root'),
         'host': os.environ.get('MONGO_URL', 'localhost'),
-        'port': 27017,
+        'port': 27011,
         'db': os.environ.get('MONGO_DB', 'catalogues'),
-        'authentication_source': 'admin'
+        # 'authentication_source': 'admin'
+        # 'replicaset': 'rs0'
     }
 
 

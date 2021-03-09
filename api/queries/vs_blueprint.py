@@ -1,9 +1,10 @@
 from models.vs_blueprint import VsBlueprintInfo, VsBlueprint
-from exceptions.vs_blueprint import MalFormedException
+from exceptions.vs_blueprint import MalFormedException, FailedOperationException
+from queries.utils import transaction
 
 
 # noinspection PyTypeChecker
-def query_vs_blueprint(vsb_id=None, vsb_name=None, vsb_version=None, tenant_id=None):
+def get_vs_blueprints(vsb_id=None, vsb_name=None, vsb_version=None, tenant_id=None):
     arguments = locals()
     parameters_size = len(dict(filter(lambda a: a[-1] is not None, arguments.items())))
 
@@ -33,3 +34,22 @@ def query_vs_blueprint(vsb_id=None, vsb_name=None, vsb_version=None, tenant_id=N
         return all_vsbi
 
     raise MalFormedException()
+
+
+def delete_vs_blueprint(vsb_id):
+    vsbi = VsBlueprintInfo.get_or_404(vs_blueprint_id=vsb_id)
+    if len(vsbi.active_vsd_id) > 0:
+        raise FailedOperationException()
+
+    vsb = VsBlueprint.get_or_404(blueprint_id=vsb_id)
+
+    def delete_callback(session):
+        vsbi._collection.delete_one({
+            "vs_blueprint_id": vsb_id
+        }, session=session)
+
+        vsb._collection.delete_one({
+            "blueprint_id": vsb_id
+        }, session=session)
+
+    transaction(delete_callback)
