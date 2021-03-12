@@ -1,3 +1,4 @@
+import re
 from werkzeug.exceptions import HTTPException
 from views.utils import response_template
 from http import HTTPStatus
@@ -14,3 +15,18 @@ def handle_exception(app):
             return response_template(message=f'Internal exception - {e}', status_code=HTTPStatus.INTERNAL_SERVER_ERROR)
 
     return decorator
+
+
+def exception_message_elements(cls, **kwargs):
+    """
+    @param cls: Class object
+    @param kwargs: Query's arguments
+    @return: a tuple with the class name and concatenation of args in string
+    """
+    class_name = ' '.join(re.findall('[A-Z][^A-Z]*', cls.__name__))
+
+    args = []
+    for arg_name, arg_value in kwargs.items():
+        args += [arg_name, arg_value]
+
+    return class_name, " ".join(args)

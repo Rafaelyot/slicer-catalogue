@@ -11,6 +11,7 @@ app = Flask(APPLICATION_NAME)
 # Configurations settings
 app.config.from_object(DevConfig)
 
+
 # Register flask's blueprints
 app.register_blueprint(vs_blueprint_api)
 

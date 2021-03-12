@@ -2,22 +2,7 @@ from mongoengine import DoesNotExist, MultipleObjectsReturned
 from exceptions.utils import HTTPException
 from http import HTTPStatus
 from flask_mongoengine import current_mongoengine_instance
-import re
-
-
-def exception_message_elements(cls, **kwargs):
-    """
-    @param cls: Class object
-    @param kwargs: Query's arguments
-    @return: a tuple with the class name and concatenation of args in string
-    """
-    class_name = ' '.join(re.findall('[A-Z][^A-Z]*', cls.__name__))
-
-    args = []
-    for arg_name, arg_value in kwargs.items():
-        args += [arg_name, arg_value]
-
-    return class_name, " ".join(args)
+from exceptions.utils import exception_message_elements
 
 
 def get_or_error(cls, status_code=HTTPStatus.NOT_FOUND, **kwargs):

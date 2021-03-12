@@ -2,5 +2,4 @@ mongoengine==0.23.0
 mixer==7.1.2
 Flask==1.1.2
 flask-mongoengine==1.0.0
-django-rest-framework-mongoengine==3.4.1
-djangorestframework==3.12.2
+marshmallow==3.10.0
