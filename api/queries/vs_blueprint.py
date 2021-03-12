@@ -43,9 +43,7 @@ def delete_vs_blueprint(vsb_id):
     vsbi = VsBlueprintInfo.get_or_404(vs_blueprint_id=vsb_id)
     if len(vsbi.active_vsd_id) > 0:
         raise FailedOperationException()
-
-    VsBlueprint.get_or_404(blueprint_id=vsb_id)
-
+    
     def delete_callback(session):
         VsBlueprintInfo._collection.delete_one({
             "vs_blueprint_id": vsb_id
