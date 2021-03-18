@@ -39,12 +39,14 @@ class TestTypeMixer(TypeMixer):
         super(TestTypeMixer, self).__init__(cls, **params)
 
     def is_required(self, field):
-        return True
+        # Avoid dict generations errors
+        return field.scheme.__class__.__name__ != 'Dict'
 
 
 class TestMixer(Mixer):
     def __init__(self, **params):
         self.type_mixer_cls = TestTypeMixer
+        params.setdefault('required', False)
         super(TestMixer, self).__init__(**params)
 
 

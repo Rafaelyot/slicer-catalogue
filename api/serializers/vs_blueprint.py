@@ -56,9 +56,9 @@ class VsComponentSerializer(Schema):
     compatible_site = String()
 
     @pre_load
-    def is_valid(self, data, _):
+    def is_valid(self, data, **kwargs):
         if data.get('type') == VsComponentType.SERVICE.value and data.get('associated_vsb_id') is None:
-            raise ValidationError("Component of type service without associated VSB id")
+            raise ValidationError("Component of type service without associated VSB id", "type & associated_vsb_id")
         return data
 
 
@@ -109,13 +109,13 @@ class VsBlueprintSerializer(Schema):
     urllc_service_category = String(choices=URLLCServiceCategory.get_values())
 
     @pre_load
-    def is_valid(self, data, _):
+    def is_valid(self, data, **kwargs):
         if data.get('slice_service_type') == SliceServiceType.EMBB.value and data.get('embb_service_category') is None:
-            raise ValidationError("VSB without slice service category")
+            raise ValidationError("VSB without slice service category", "slice_service_type & embb_service_category")
 
         elif data.get('slice_service_type') == SliceServiceType.URLLC.value and \
                 data.get('urllc_service_category') is None:
-            raise ValidationError("VSB without slice service category")
+            raise ValidationError("VSB without slice service category", "slice_service_type & urllc_service_category")
 
         return data
 
@@ -131,3 +131,4 @@ class VsBlueprintInfoSerializer(Schema):
     on_boarded_vnf_package_info_id = List(String())
     on_boarded_mec_app_package_info_id = List(String())
     active_vsd_id = List(String())
+
