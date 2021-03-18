@@ -2,7 +2,8 @@ import queries.vs_blueprint
 from flask import Blueprint, request
 from http import HTTPStatus
 from marshmallow import ValidationError
-from serializers.vs_blueprint import VsBlueprintSerializer
+from serializers.vs_blueprint import VsBlueprintInfoSerializer
+from serializers.requests import VsBlueprintRequestSerializer
 from views.utils import response_template
 from exceptions.utils import handle_exception
 from exceptions.vs_blueprint import BadVsBlueprintBody
@@ -42,13 +43,13 @@ def create_vs_blueprint():
     # TODO: NST's not implemented yet
     request_data = request.get_json()
 
-    serializer = VsBlueprintSerializer()
+    serializer = VsBlueprintRequestSerializer()
     try:
         validated_data = serializer.load(request_data)
     except ValidationError as error:
         raise BadVsBlueprintBody(error.messages)
 
-    validated_data['owner'] = request_data.get('owner')  # Needed for VsBlueprintInfo
+    # validated_data['owner'] = request_data.get('owner')  # Needed for VsBlueprintInfo
     vs_blueprint_id = queries.vs_blueprint.create_vs_blueprint(validated_data)
 
     return response_template('Success', data={'vs_blueprint_id': vs_blueprint_id}, status_code=HTTPStatus.CREATED)

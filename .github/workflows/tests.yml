@@ -1,0 +1,25 @@
+name: Rest Tests
+
+on: [push]
+
+jobs:
+
+  tests:
+    name: "Rest Api Tests"
+    runs-on: ubuntu-18.04
+
+    container:
+      image: python:latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Installing all dependencies
+        run: |
+            pip install --user -r api/requirements_rest.txt
+      - name: Run tests
+        run: |
+            cd api
+            echo "Running tests..."
+            python -m pytest tests/*
+
+

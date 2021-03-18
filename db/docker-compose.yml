@@ -5,7 +5,7 @@ services:
     container_name: localmongo1
     image: mongo:4.0-xenial
     ports:
-      - 27011:27017
+      - 27017:27017
     restart: always
     entrypoint: [ "/usr/bin/mongod", "--bind_ip_all", "--replSet", "rs0" ]
   mongo2:

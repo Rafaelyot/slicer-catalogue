@@ -10,9 +10,10 @@ connection_data = {
     # 'username': os.environ.get('MONGO_USERNAME', 'root'),
     # 'password': os.environ.get('MONGO_PASSWORD', 'root'),
     'host': os.environ.get('MONGO_URL', 'localhost'),
-    'port': 27011,
+    'port': 27017,
     'db': os.environ.get('MONGO_DB', 'catalogues'),
     # 'authentication_source': 'admin',
+    # 'replicaSet': 'rs0'
 }
 
 connect(**connection_data)

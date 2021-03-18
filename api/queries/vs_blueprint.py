@@ -43,7 +43,7 @@ def delete_vs_blueprint(vsb_id):
     vsbi = VsBlueprintInfo.get_or_404(vs_blueprint_id=vsb_id)
     if len(vsbi.active_vsd_id) > 0:
         raise FailedOperationException()
-    
+
     def delete_callback(session):
         VsBlueprintInfo._collection.delete_one({
             "vs_blueprint_id": vsb_id
@@ -57,8 +57,10 @@ def delete_vs_blueprint(vsb_id):
 
 
 def create_vs_blueprint(data):
-    data.pop('blueprint_id', None)  # blueprint_id it is automatically created
-    name, version, owner = data.get('name'), data.get('version'), data.get('owner')
+    vs_blueprint = data.get('vs_blueprint', {})
+
+    vs_blueprint.pop('blueprint_id', None)  # blueprint_id it is automatically created
+    name, version, owner = vs_blueprint.get('name'), vs_blueprint.get('version'), data.get('owner')
 
     if VsBlueprintInfo.objects.filter(name=name, vs_blueprint_version=version).count() > 0 or \
             VsBlueprint.objects.filter(name=name, version=version).count() > 0:
@@ -68,7 +70,7 @@ def create_vs_blueprint(data):
 
     _id = ObjectId()
     data['_id'] = _id
-    vs_blueprint_id = data['blueprint_id'] = str(_id)
+    vs_blueprint_id = vs_blueprint['blueprint_id'] = str(_id)
 
     def create_callback(session):
         VsBlueprint._collection.insert_one(data, session=session)  # Create and persist VsBlueprint
