@@ -5,6 +5,7 @@ from mixer.backend.mongoengine import TypeMixer, Mixer
 from models.descriptors import Nsd
 from models.vs_blueprint import VsdNsdTranslationRule, VsBlueprint, VsBlueprintInfo
 from models.catalogues import OnBoardVnfPackageRequest
+from models.vs_descriptor import VsDescriptor
 
 connection_data = {
     # 'username': os.environ.get('MONGO_USERNAME', 'root'),
@@ -37,10 +38,12 @@ class MyMixer(Mixer):
 
 mixer = MyMixer()
 
-for i in range(5):
-    nsd = mixer.blend(Nsd)
-    vsd_nsd_translation_rule = mixer.blend(VsdNsdTranslationRule)
-    on_board_vnf_package_request = mixer.blend(OnBoardVnfPackageRequest)
-    vs_blueprint = mixer.blend(VsBlueprint, blueprint_id=f'id_{i}', version=f'version_{i}', name=f'name_{i}')
-    vs_blueprint_info = mixer.blend(VsBlueprintInfo, vs_blueprint_id=f'id_{i}', vs_blueprint_version=f'version_{i}',
-                                    name=f'name_{i}', active_vsd_id=[])
+if __name__ == '__main__':
+    for i in range(5):
+        nsd = mixer.blend(Nsd)
+        vsd_nsd_translation_rule = mixer.blend(VsdNsdTranslationRule)
+        on_board_vnf_package_request = mixer.blend(OnBoardVnfPackageRequest)
+        vs_blueprint = mixer.blend(VsBlueprint, blueprint_id=f'id_{i}', version=f'version_{i}', name=f'name_{i}')
+        vs_blueprint_info = mixer.blend(VsBlueprintInfo, vs_blueprint_id=f'id_{i}', vs_blueprint_version=f'version_{i}',
+                                        name=f'name_{i}', active_vsd_id=[f"descriptor_id_{j}" for j in range(5)])
+        vs_descriptor = mixer.blend(VsDescriptor, descriptor_id=f"descriptor_id_{i}", vs_blueprint_id=f'id_{i}')

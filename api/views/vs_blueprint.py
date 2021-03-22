@@ -6,7 +6,7 @@ from serializers.vs_blueprint import VsBlueprintInfoSerializer
 from serializers.requests import VsBlueprintRequestSerializer
 from views.utils import response_template
 from exceptions.utils import handle_exception
-from exceptions.vs_blueprint import BadVsBlueprintBody
+from exceptions.exceptions import BadVsBlueprintBody
 
 # noinspection PyRedeclaration
 app = Blueprint('vsblueprint', __name__)
@@ -49,7 +49,6 @@ def create_vs_blueprint():
     except ValidationError as error:
         raise BadVsBlueprintBody(error.messages)
 
-    # validated_data['owner'] = request_data.get('owner')  # Needed for VsBlueprintInfo
     vs_blueprint_id = queries.vs_blueprint.create_vs_blueprint(validated_data)
 
     return response_template('Success', data={'vs_blueprint_id': vs_blueprint_id}, status_code=HTTPStatus.CREATED)

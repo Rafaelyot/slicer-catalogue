@@ -8,8 +8,10 @@ class MalFormedException(HTTPException):
 
 
 class FailedOperationException(HTTPException):
-    code = HTTPStatus.CONFLICT
-    description = 'There are some VSDs associated to the VS Blueprint. Impossible to remove it.'
+
+    def __init__(self, description, code=HTTPStatus.CONFLICT):
+        self.description = description
+        self.code = code
 
 
 class BadVsBlueprintBody(HTTPException):

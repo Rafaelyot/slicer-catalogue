@@ -8,6 +8,7 @@ from serializers.vs_blueprint import VsdNsdTranslationRuleSerializer, VsdParamet
     VsBlueprintParameterSerializer, VsBlueprintSerializer, VsComponentSerializer, VsbForwardingPathEndPointSerializer, \
     VsbEndpointSerializer
 from serializers.catalogues import OnBoardVnfPackageRequestSerializer
+from serializers.vs_descriptor import VsDescriptor
 
 
 def generate_data(cls, remove_fields=None):
@@ -206,3 +207,28 @@ def test_vs_blueprint_serializer_invalid_slice_service_type_and_embb_urllc_servi
     data['slice_service_type'] = SliceServiceType.URLLC.value
     errors = VsBlueprintSerializer().validate(data)
     assert len(errors) > 0 and errors.get(f"slice_service_type & {field}")[0] == "VSB without slice service category"
+
+
+# VsDescriptor
+@catch_exception
+def test_vs_descriptor_invalid_name(error_catcher):
+    field = "name"
+    data = generate_data(VsDescriptor, remove_fields=[field])
+    errors = VsDescriptor().validate(data)
+    assert len(errors) > 0 and errors.get(field)[0] == "VSD without name"
+
+
+@catch_exception
+def test_vs_descriptor_invalid_version(error_catcher):
+    field = "version"
+    data = generate_data(VsDescriptor, remove_fields=[field])
+    errors = VsDescriptor().validate(data)
+    assert len(errors) > 0 and errors.get(field)[0] == "VSD without version"
+
+
+@catch_exception
+def test_vs_descriptor_invalid_vs_blueprint_id(error_catcher):
+    field = "vs_blueprint_id"
+    data = generate_data(VsDescriptor, remove_fields=[field])
+    errors = VsDescriptor().validate(data)
+    assert len(errors) > 0 and errors.get(field)[0] == "VSD without VS blueprint ID"
