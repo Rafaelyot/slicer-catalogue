@@ -2,7 +2,7 @@ from werkzeug.exceptions import HTTPException
 from rabbitmq.adaptor import Messaging
 from threading import Thread
 from api.serializers.vs_descriptor import VsDescriptorSerializer
-from api.serializers.vs_blueprint import VsBlueprintSerializer
+from api.serializers.vs_blueprint import VsBlueprintInfoSerializer
 from api.queries.vs_descriptor import get_vs_descriptors
 from api.queries.vs_blueprint import get_vs_blueprints
 import json
@@ -19,7 +19,7 @@ class MessageReceiver(Thread):
         descriptor_data = VsDescriptorSerializer().dump(get_vs_descriptors(vsd_id=vsd_id, tenant_id=tenant_id)[0])
 
         vs_blueprint_id = descriptor_data.pop('vs_blueprint_id', None)
-        descriptor_data['vs_blueprint'] = VsBlueprintSerializer().dump(get_vs_blueprints(vsb_id=vs_blueprint_id)[0])
+        descriptor_data['vs_blueprint'] = VsBlueprintInfoSerializer().dump(get_vs_blueprints(vsb_id=vs_blueprint_id)[0])
 
         return descriptor_data
 
@@ -35,7 +35,7 @@ class MessageReceiver(Thread):
                 requested_data = json.load(f)
             self.messaging.publish2Queue(f"vsLCM_{vsi_id}", json.dumps(requested_data))
             return
-        
+
         if content.get("msgType") == "createVSI":
             data = content.get('data')
             vsd_id, vssis = data.get('vsdId'), data.get('vssis', [])
@@ -45,6 +45,7 @@ class MessageReceiver(Thread):
             # Need the tenant_id
             try:
                 requested_data['data'] = {
+                    'domain_id': data.get('domainId'),
                     'vsd': self._nested_blueprint_in_descriptor(vsd_id),
                     'vssis': [
                         {'descriptor': self._nested_blueprint_in_descriptor(vssi.get('descriptor_id'))}
