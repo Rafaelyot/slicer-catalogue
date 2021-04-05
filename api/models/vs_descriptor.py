@@ -1,8 +1,8 @@
 from mongoengine import Document, EmbeddedDocument
 from mongoengine.fields import StringField, EmbeddedDocumentListField, ListField, MapField, BooleanField, \
     EmbeddedDocumentField
-from enums.vs_descriptor import SliceManagementControlType, ServiceCreationTimeRange, AvailabilityCoverageRange
-from queries.utils import get_or_error
+from api.enums.vs_descriptor import SliceManagementControlType, ServiceCreationTimeRange, AvailabilityCoverageRange
+from api.queries.utils import get_or_error
 
 
 class ServiceConstraints(EmbeddedDocument):

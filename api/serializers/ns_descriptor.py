@@ -1,6 +1,6 @@
 from marshmallow import Schema
 from marshmallow.fields import String, List, Boolean, Integer, Dict, Nested
-from enums.descriptors import LayerProtocol, CpRole, AddressType, IpVersion, ServiceAvailabilityLevel, NsScaleType, \
+from api.enums.ns_descriptor import LayerProtocol, CpRole, AddressType, IpVersion, ServiceAvailabilityLevel, NsScaleType, \
     LcmEventType, AffinityType, AffinityScope, ScalingProcedureType, LogicOperation, RelationalOperation
 
 

@@ -1,8 +1,8 @@
 from mongoengine import Document, EmbeddedDocument
 from mongoengine.fields import StringField, IntField, EmbeddedDocumentListField, ListField, MapField, BooleanField
-from enums.vs_blueprint import VsComponentPlacement, VsComponentType, MetricCollectionType, SliceServiceType, \
+from api.enums.vs_blueprint import VsComponentPlacement, VsComponentType, MetricCollectionType, SliceServiceType, \
     EMBBServiceCategory, URLLCServiceCategory
-from queries.utils import get_or_error
+from api.queries.utils import get_or_error
 
 
 # vnfPackages

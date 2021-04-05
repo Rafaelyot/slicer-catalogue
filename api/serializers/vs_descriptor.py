@@ -1,7 +1,6 @@
 from marshmallow import Schema
 from marshmallow.fields import String, List, Boolean, Dict, Nested
-
-from enums.vs_descriptor import ServiceCreationTimeRange, AvailabilityCoverageRange, SliceManagementControlType
+from api.enums.vs_descriptor import ServiceCreationTimeRange, AvailabilityCoverageRange, SliceManagementControlType
 
 
 class ServiceConstraintsSerializer(Schema):

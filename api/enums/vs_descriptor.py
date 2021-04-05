@@ -1,4 +1,4 @@
-from enums.utils import AutoName
+from api.enums.utils import AutoName
 from enum import auto
 
 

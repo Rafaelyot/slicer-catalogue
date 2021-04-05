@@ -1,14 +1,14 @@
 """
 Test serializers' validators
 """
-from enums.vs_blueprint import VsComponentType, SliceServiceType
-from tests.utils import catch_exception, error_catcher, mixer
-from serializers.requests import VsBlueprintRequestSerializer
-from serializers.vs_blueprint import VsdNsdTranslationRuleSerializer, VsdParameterValueRangeSerializer, \
+from api.enums.vs_blueprint import VsComponentType, SliceServiceType
+from api.tests.utils import catch_exception, error_catcher, mixer
+from api.serializers.requests import VsBlueprintRequestSerializer
+from api.serializers.vs_blueprint import VsdNsdTranslationRuleSerializer, VsdParameterValueRangeSerializer, \
     VsBlueprintParameterSerializer, VsBlueprintSerializer, VsComponentSerializer, VsbForwardingPathEndPointSerializer, \
     VsbEndpointSerializer
-from serializers.catalogues import OnBoardVnfPackageRequestSerializer
-from serializers.vs_descriptor import VsDescriptorSerializer
+from api.serializers.catalogues import OnBoardVnfPackageRequestSerializer
+from api.serializers.vs_descriptor import VsDescriptorSerializer
 
 
 def generate_data(cls, remove_fields=None):

@@ -1,11 +1,11 @@
 from flask import Blueprint, request
 from marshmallow import ValidationError
 from http import HTTPStatus
-from exceptions.utils import handle_exception
-from serializers.vs_descriptor import VsDescriptorSerializer
-from views.utils import response_template
-from exceptions.exceptions import BadVsBlueprintBody
-import queries.vs_descriptor
+from api.exceptions.utils import handle_exception
+from api.serializers.vs_descriptor import VsDescriptorSerializer
+from api.views.utils import response_template
+from api.exceptions.exceptions import BadVsBlueprintBody
+import api.queries.vs_descriptor as queries
 
 app = Blueprint('vsdescriptor', __name__)
 
@@ -21,7 +21,7 @@ def get_vs_descriptors():
     }
 
     serializer = VsDescriptorSerializer(many=True)
-    data = serializer.dump(queries.vs_descriptor.get_vs_descriptors(**args))
+    data = serializer.dump(queries.get_vs_descriptors(**args))
 
     return response_template('Success', data)
 
@@ -34,7 +34,7 @@ def delete_vs_descriptor():
         'vsd_id': request.args.get('vsd_id')
     }
 
-    queries.vs_descriptor.delete_vs_descriptor(**args)
+    queries.delete_vs_descriptor(**args)
     return response_template('Success', status_code=HTTPStatus.NO_CONTENT)
 
 
@@ -48,5 +48,5 @@ def create_vs_descriptor():
     except ValidationError as error:
         raise BadVsBlueprintBody(error.messages)
 
-    vs_descriptor_id = queries.vs_descriptor.create_vs_descriptor(validated_data)
+    vs_descriptor_id = queries.create_vs_descriptor(validated_data)
     return response_template('Success', data={'vs_descriptor_id': vs_descriptor_id}, status_code=HTTPStatus.CREATED)

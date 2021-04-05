@@ -1,8 +1,7 @@
 from mongoengine import DoesNotExist, MultipleObjectsReturned
-from exceptions.utils import HTTPException
+from api.exceptions.utils import HTTPException, exception_message_elements
 from http import HTTPStatus
 from flask_mongoengine import current_mongoengine_instance
-from exceptions.utils import exception_message_elements
 
 
 def get_or_error(cls, status_code=HTTPStatus.NOT_FOUND, **kwargs):

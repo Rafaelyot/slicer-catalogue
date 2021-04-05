@@ -1,12 +1,12 @@
-import queries.vs_blueprint
+import api.queries.vs_blueprint as queries
 from flask import Blueprint, request
 from http import HTTPStatus
 from marshmallow import ValidationError
-from serializers.vs_blueprint import VsBlueprintInfoSerializer
-from serializers.requests import VsBlueprintRequestSerializer
-from views.utils import response_template
-from exceptions.utils import handle_exception
-from exceptions.exceptions import BadVsBlueprintBody
+from api.serializers.vs_blueprint import VsBlueprintInfoSerializer
+from api.serializers.requests import VsBlueprintRequestSerializer
+from api.views.utils import response_template
+from api.exceptions.utils import handle_exception
+from api.exceptions.exceptions import BadVsBlueprintBody
 
 # noinspection PyRedeclaration
 app = Blueprint('vsblueprint', __name__)
@@ -24,7 +24,7 @@ def get_vs_blueprints():
         'vsb_version': request.args.get('vsb_version'),
     }
     serializer = VsBlueprintInfoSerializer(many=True)
-    data = serializer.dump(queries.vs_blueprint.get_vs_blueprints(**args))
+    data = serializer.dump(queries.get_vs_blueprints(**args))
 
     return response_template('Success', data)
 
@@ -33,7 +33,7 @@ def get_vs_blueprints():
 def delete_vs_blueprint():
     vsb_id = request.args.get('vsb_id')
 
-    queries.vs_blueprint.delete_vs_blueprint(vsb_id)
+    queries.delete_vs_blueprint(vsb_id)
 
     return response_template('Success', status_code=HTTPStatus.NO_CONTENT)
 
@@ -49,6 +49,6 @@ def create_vs_blueprint():
     except ValidationError as error:
         raise BadVsBlueprintBody(error.messages)
 
-    vs_blueprint_id = queries.vs_blueprint.create_vs_blueprint(validated_data)
+    vs_blueprint_id = queries.create_vs_blueprint(validated_data)
 
     return response_template('Success', data={'vs_blueprint_id': vs_blueprint_id}, status_code=HTTPStatus.CREATED)

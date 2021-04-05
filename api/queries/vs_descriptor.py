@@ -1,11 +1,9 @@
 from bson import ObjectId
-
-from enums.vs_blueprint import VsComponentType
-from exceptions.exceptions import MalFormedException, AlreadyExistingEntityException
-from models.vs_descriptor import VsDescriptor
-from models.vs_blueprint import VsBlueprintInfo, VsBlueprint
-from queries.utils import transaction
-from exceptions.exceptions import FailedOperationException
+from api.enums.vs_blueprint import VsComponentType
+from api.exceptions.exceptions import MalFormedException, AlreadyExistingEntityException, FailedOperationException
+from api.models.vs_descriptor import VsDescriptor
+from api.models.vs_blueprint import VsBlueprintInfo, VsBlueprint
+from api.queries.utils import transaction
 
 
 def get_vs_descriptors(tenant_id=None, vsd_id=None):
@@ -44,7 +42,7 @@ def delete_vs_descriptor(tenant_id, vsd_id):
 
     if vsd.tenant_id == tenant_id or is_admin:
         def delete_callback(session):
-            VsDescriptor._collection.delete_one({
+            VsDescriptor._get_collection().delete_one({
                 "descriptor_id": vsd_id
             }, session=session)
 
@@ -53,7 +51,7 @@ def delete_vs_descriptor(tenant_id, vsd_id):
 
             query = {"vs_blueprint_id": vsd.vs_blueprint_id}
             updated_values = {"$set": {"active_vsd_id": active_vsd_id}}
-            VsBlueprintInfo._collection.update_one(query, updated_values, session=session)
+            VsBlueprintInfo._get_collection().update_one(query, updated_values, session=session)
 
         transaction(delete_callback)
 
@@ -73,7 +71,7 @@ def _store_vsd(data):
     data['descriptor_id'] = vs_descriptor_id = str(_id)
 
     def create_callback(session):
-        VsDescriptor._collection.insert_one(data, session=session)
+        VsDescriptor._get_collection().insert_one(data, session=session)
 
     transaction(create_callback)
 
@@ -124,7 +122,7 @@ def create_vs_descriptor(data):
         query = {"vs_blueprint_id": vs_blueprint_info.vs_blueprint_id}
         active_vsd_id.append(vs_descriptor_id)
         updated_values = {"$set": {"active_vsd_id": active_vsd_id}}
-        VsBlueprintInfo._collection.update_one(query, updated_values, session=session)
+        VsBlueprintInfo._get_collection().update_one(query, updated_values, session=session)
 
     transaction(create_callback)
 

@@ -1,7 +1,7 @@
 from mongoengine import Document, EmbeddedDocument
 from mongoengine.fields import StringField, ListField, EnumField, BooleanField, IntField, EmbeddedDocumentField, \
     MapField, EmbeddedDocumentListField
-from enums.descriptors import LayerProtocol, CpRole, AddressType, IpVersion, ServiceAvailabilityLevel, NsScaleType, \
+from api.enums.ns_descriptor import LayerProtocol, CpRole, AddressType, IpVersion, ServiceAvailabilityLevel, NsScaleType, \
     LcmEventType, AffinityType, AffinityScope, ScalingProcedureType, LogicOperation, RelationalOperation
 
 

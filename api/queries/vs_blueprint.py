@@ -1,9 +1,10 @@
 from bson import ObjectId
-from models.vs_blueprint import VsBlueprintInfo, VsBlueprint
-from exceptions.exceptions import MalFormedException, FailedOperationException, AlreadyExistingEntityException
-from exceptions.utils import exception_message_elements
-from queries.utils import transaction
-from queries.vs_descriptor import get_vs_descriptors
+from api.models.vs_blueprint import VsBlueprintInfo, VsBlueprint, VsdNsdTranslationRule
+from api.models.ns_template import Nst
+from api.exceptions.exceptions import MalFormedException, FailedOperationException, AlreadyExistingEntityException
+from api.exceptions.utils import exception_message_elements
+from api.queries.utils import transaction
+from api.queries.vs_descriptor import get_vs_descriptors
 from copy import deepcopy
 
 
@@ -66,22 +67,48 @@ def delete_vs_blueprint(vsb_id):
         raise FailedOperationException("There are some VSDs associated to the VS Blueprint. Impossible to remove it.")
 
     def delete_callback(session):
-        VsBlueprintInfo._collection.delete_one({
+        VsBlueprintInfo._get_collection().delete_one({
             "vs_blueprint_id": vsb_id
         }, session=session)
 
-        VsBlueprint._collection.delete_one({
+        VsBlueprint._get_collection().delete_one({
             "blueprint_id": vsb_id
         }, session=session)
 
     transaction(delete_callback)
 
 
+def _process_ns_descriptor_onboarding(data):
+    nsts, nsds, vnf_packages = data.get('nsts', []), data.get('nsds', []), data.get('vnf_packages', [])
+
+    if len(nsts) == 0 and len(nsds) == 0 and len(vnf_packages) == 0:
+        return
+
+    if len(vnf_packages) > 0:
+        # TODO: Implement vnf_packages logic
+        pass
+
+    if len(nsds) > 0:
+        # TODO: Implement nsds logic
+        pass
+
+    for nst in nsts:
+        nst_name, version, nst_id = nst.nst_name, nst.nst_version, nst.nst_id
+        if Nst.objects.filter(nst_name=nst_name, version=version).count() > 0 or \
+                Nst.objects.filter(nst_id=nst_id).count() > 0:
+            raise AlreadyExistingEntityException(f"NsTemplate with name {nst_name} and version {version} or ID exists")
+
+    def create_callback(session):
+        Nst._get_collection().insert_many(nsts, session=session)
+
+    transaction(create_callback)
+
+
 def create_vs_blueprint(data):
-    # Todo: Complete this function with NST and NSD
+    _process_ns_descriptor_onboarding(data)
+
     vs_blueprint = data.get('vs_blueprint', {})
 
-    vs_blueprint.pop('blueprint_id', None)  # blueprint_id it is automatically created
     name, version, owner = vs_blueprint.get('name'), vs_blueprint.get('version'), data.get('owner')
 
     if VsBlueprintInfo.objects.filter(name=name, vs_blueprint_version=version).count() > 0 or \
@@ -94,14 +121,20 @@ def create_vs_blueprint(data):
     data['_id'] = _id
     vs_blueprint_id = vs_blueprint['blueprint_id'] = str(_id)
 
+    translation_rules = data.get('translation_rules', [])
+    for translation_rule in translation_rules:
+        translation_rule.blueprint_id = vs_blueprint_id
+
     def create_callback(session):
-        VsBlueprint._collection.insert_one(data, session=session)  # Create and persist VsBlueprint
-        VsBlueprintInfo._collection.insert_one({
+        VsBlueprint._get_collection().insert_one(data, session=session)
+        VsBlueprintInfo._get_collection().insert_one({
             'vs_blueprint_id': vs_blueprint_id,
             'vs_blueprint_version': version,
             'name': name,
             'owner': owner
-        }, session=session)  # Create and persist VsBlueprintInfo
+        }, session=session)
+        VsdNsdTranslationRule._get_collection().insert_many(translation_rules,
+                                                            session=session)
 
     transaction(create_callback)
 

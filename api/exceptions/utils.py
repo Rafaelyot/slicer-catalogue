@@ -1,6 +1,6 @@
 import re
 from werkzeug.exceptions import HTTPException
-from views.utils import response_template
+from api.views.utils import response_template
 from http import HTTPStatus
 
 
@@ -27,6 +27,6 @@ def exception_message_elements(cls, **kwargs):
 
     args = []
     for arg_name, arg_value in kwargs.items():
-        args += [arg_name, arg_value]
+        args += [arg_name, str(arg_value)]
 
     return class_name, " ".join(args)

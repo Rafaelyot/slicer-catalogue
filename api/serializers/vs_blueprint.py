@@ -1,7 +1,6 @@
 from marshmallow import Schema, ValidationError, pre_load
 from marshmallow.fields import String, List, Boolean, Integer, Dict, Nested
-
-from enums.vs_blueprint import SliceServiceType, EMBBServiceCategory, URLLCServiceCategory, MetricCollectionType, \
+from api.enums.vs_blueprint import SliceServiceType, EMBBServiceCategory, URLLCServiceCategory, MetricCollectionType, \
     VsComponentPlacement, VsComponentType
 
 
