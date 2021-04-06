@@ -106,6 +106,7 @@ class VsBlueprintSerializer(Schema):
     slice_service_type = String(choices=SliceServiceType.get_values())
     embb_service_category = String(choices=EMBBServiceCategory.get_values())
     urllc_service_category = String(choices=URLLCServiceCategory.get_values())
+    translation_rules = List(Nested(VsdNsdTranslationRuleSerializer))
 
     @pre_load
     def is_valid(self, data, **kwargs):

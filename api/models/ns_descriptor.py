@@ -1,8 +1,8 @@
 from mongoengine import Document, EmbeddedDocument
 from mongoengine.fields import StringField, ListField, EnumField, BooleanField, IntField, EmbeddedDocumentField, \
     MapField, EmbeddedDocumentListField
-from api.enums.ns_descriptor import LayerProtocol, CpRole, AddressType, IpVersion, ServiceAvailabilityLevel, NsScaleType, \
-    LcmEventType, AffinityType, AffinityScope, ScalingProcedureType, LogicOperation, RelationalOperation
+from api.enums.ns_descriptor import LayerProtocol, CpRole, AddressType, IpVersion, ServiceAvailabilityLevel, \
+    NsScaleType, LcmEventType, AffinityType, AffinityScope, ScalingProcedureType, LogicOperation, RelationalOperation
 
 
 class AddressData(EmbeddedDocument):
@@ -279,3 +279,7 @@ class Nsd(Document):
     life_cycle_management_script = EmbeddedDocumentListField(LifeCycleManagementScript)
     ns_df = EmbeddedDocumentListField(NsDf)
     security = EmbeddedDocumentField(SecurityParameters)
+
+    @classmethod
+    def get_collection(cls):
+        return cls._get_collection()

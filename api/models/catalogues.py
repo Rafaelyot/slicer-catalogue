@@ -9,4 +9,3 @@ class OnBoardVnfPackageRequest(Document):
     checksum = StringField()
     user_defined_data = MapField(StringField())
     vnf_package_path = StringField()
-

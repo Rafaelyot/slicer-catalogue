@@ -1,13 +1,27 @@
+import shutil
+import urllib
+import uuid
+import urllib.request
+import json
+from os import listdir
+from pathlib import Path
+from urllib.error import HTTPError
+
 from mongoengine import DoesNotExist, MultipleObjectsReturned
+
+from api.exceptions.exceptions import NotFoundException, MalformedTarFileException, IllegalStateException
 from api.exceptions.utils import HTTPException, exception_message_elements
 from http import HTTPStatus
 from flask_mongoengine import current_mongoengine_instance
+
+LOCAL_TEMP_DIR = "api/tmp"
 
 
 def get_or_error(cls, status_code=HTTPStatus.NOT_FOUND, **kwargs):
     """
     @param cls: Model to be queried
-    @param status_code: Http status code returned whenever a 'DoesNotExist' or 'MultipleObjectsReturned' exception is thrown
+    @param status_code: Http status code returned whenever a 'DoesNotExist' or 'MultipleObjectsReturned' exception is
+    thrown
     @param kwargs: Query's arguments
     @return: Retrieve the the matching object raising an HttpException if multiple results or no results are found
     """
@@ -34,3 +48,41 @@ def transaction(callback):
     db = current_mongoengine_instance().connection
     with db.start_session() as session:
         session.with_transaction(callback)
+
+
+def download_file(remote_path):
+    Path(LOCAL_TEMP_DIR).mkdir(parents=True, exist_ok=True)  # Create directory if not exists
+    file_path = f'{LOCAL_TEMP_DIR}/{str(uuid.uuid4())}.tar'
+    try:
+        urllib.request.urlretrieve(remote_path, file_path)
+    except HTTPError as e:
+        raise NotFoundException(f'{e.msg}->{remote_path}')
+
+    return file_path
+
+
+def extract_file(path):
+    extracted_folder_path = path.replace('.tar', '')
+    try:
+        shutil.unpack_archive(path, extracted_folder_path)
+    except shutil.ReadError as e:
+        raise MalformedTarFileException(e)
+
+    return extracted_folder_path
+
+
+def get_json_in_folder(folder_path):
+    json_files = [f for f in listdir(folder_path) if f.endswith('.json')]
+
+    if len(json_files) == 0:
+        raise NotFoundException(f'Json file not found in {folder_path}')
+    elif len(json_files) > 1:
+        raise IllegalStateException(f'More than one json file found {folder_path}')
+
+    try:
+        with open(f'{folder_path}/{json_files[0]}') as json_file:
+            content = json.load(json_file)
+    except ValueError:
+        raise IllegalStateException(f"Invalid json file extracted from vnf package path->{json_files[0]}")
+
+    return content

@@ -22,6 +22,7 @@ def get_vs_blueprints():
         'vsb_id': request.args.get('vsb_id'),
         'vsb_name': request.args.get('vsb_name'),
         'vsb_version': request.args.get('vsb_version'),
+
     }
     serializer = VsBlueprintInfoSerializer(many=True)
     data = serializer.dump(queries.get_vs_blueprints(**args))
@@ -40,7 +41,6 @@ def delete_vs_blueprint():
 
 @app.route('/vsblueprint', methods=('POST',))
 def create_vs_blueprint():
-    # TODO: NST's not implemented yet
     request_data = request.get_json()
 
     serializer = VsBlueprintRequestSerializer()

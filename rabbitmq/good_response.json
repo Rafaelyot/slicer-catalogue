@@ -2,1488 +2,1632 @@
   "message": "Success",
   "error": false,
   "data": {
-    "domain_id": "1",
     "vsd": {
       "is_public": true,
-      "management_type": "TENANT_MANAGED",
-      "domain_id": "otMVJijABXpOPoToTqlZ",
+      "nested_vsd_ids": {},
+      "vs_blueprint_id": "1",
+      "associated_vsd_id": "uCCbPwotfRuctfildyNi",
       "service_constraints": [
         {
-          "atomic_component_id": "FRKNrXjKxhkDofaBhPqB",
-          "preferred_providers": [
-            "ejztFqnyodiYbJSiJErU",
-            "nMSzxjdKPKvajVQrBZmT",
-            "FAKLpALCJJBADmEzTtPi"
-          ],
           "sharable": true,
-          "prohibited_providers": [
-            "iteLowZFwtCsToXSFfgH",
-            "qilvNWRUmmNKVQxjCLGr",
-            "cOtLBAjuhkyPvbkwdouf"
-          ],
+          "atomic_component_id": "NFNLuQnYCiJzprZLZRtF",
           "non_preferred_providers": [
-            "tiatUiytUiROVDcDUmzx",
-            "AItwyZOYPqDeSqMjRpyV",
-            "KIbSgiBdAcGOpqqPAemL"
+            "QFbLEqHPGQLEsheazBQb",
+            "UdfupebqWOWnDwuoGQEN",
+            "ofGzSRyMNhpXMLwELIjq"
           ],
-          "include_shared_elements": true
-        },
-        {
-          "atomic_component_id": "LzfxrnkPLYOOkuQqJvYc",
+          "include_shared_elements": true,
+          "prohibited_providers": [
+            "ZimnUYeeYMoZIpeSxhoZ",
+            "XeRDBRJDXecOXfRPSMid",
+            "VAaCvNlPBXhrOoIVLiqD"
+          ],
           "preferred_providers": [
-            "XPCdvwyInqBsYIphFNLy",
-            "lakzbAMWtYtvvMjzWqIl",
-            "tfXxWfIweUHFYjnJMJoz"
-          ],
-          "sharable": true,
-          "prohibited_providers": [
-            "FMAOqFjADFZLzTPMVJLA",
-            "GpWdRvqHtwRYxNOmiXrn",
-            "cqtncHHpcSSeoexGhPsN"
-          ],
-          "non_preferred_providers": [
-            "KESInVUyzTerIROOjYzF",
-            "vVHiQIHrhBEliRXDiUAb",
-            "JALwQTyadjdbOVhYnswR"
-          ],
-          "include_shared_elements": false
-        },
-        {
-          "atomic_component_id": "fnfcZkMpNZBTgVzzhNVb",
-          "preferred_providers": [
-            "RoIYoGYyssiCVSdnTemN",
-            "LjkkBHPanTNyDZSRjUWZ",
-            "uNUjualrropalpXMnDkT"
-          ],
-          "sharable": true,
-          "prohibited_providers": [
-            "UejgLSbusdTaWLMdTRyg",
-            "xOXLwfodIenzxEiOtAHJ",
-            "lHmIUqVHGWwioVKYnSLq"
-          ],
-          "non_preferred_providers": [
-            "GzOjHeLvqXbnbeJjigOY",
-            "bleccwbApxdldwtyGKLL",
-            "xxwDoVYdaioOmyalthAs"
-          ],
-          "include_shared_elements": false
-        }
-      ],
-      "name": "Dr. Marisa Lester",
-      "nested_vsd_ids": {},
-      "qos_parameters": {},
-      "descriptor_id": "1",
-      "version": "fhBqZKpfvwdVxVCOLjDE",
-      "associated_vsd_id": "JGDUQcaHMiCYfzQktbTe",
-      "sla": {
-        "low_cost_required": true,
-        "service_creation_time": "UNDEFINED",
-        "availability_coverage": "AVAILABILITY_COVERAGE_HIGH"
-      },
-      "tenant_id": "tenant",
-      "vs_blueprint": {
-        "on_boarded_nst_info_id": [
-          "ugZEUQDDPmDdAWMxMpqN",
-          "sacEcVrpfqeWLAVtdmgL",
-          "AmWzXZOhqjNBAfFdDKnK"
-        ],
-        "on_boarded_vnf_package_info_id": [
-          "FAwFYrxAXOQidIEmRkuR",
-          "GYDRmaUWbItISQyjFzNy",
-          "BhYKuHcaNKPbGAtHheLL"
-        ],
-        "on_boarded_nsd_info_id": [
-          "PsPXXVoPvJAUchALkJdP",
-          "pXMPHDNMQWAfXajtzJtP",
-          "bXzrxjNoOaNgWVRPpjdN"
-        ],
-        "name": "name_1",
-        "on_boarded_mec_app_package_info_id": [
-          "nrvPPAlhdRndBLtXrEuH",
-          "TmIOfdoRLPAZevjdkftl",
-          "rJVgXgkRdqtacrPBxNdg"
-        ],
-        "owner": "sfWxlWqFfGZsscjxIMIe",
-        "vs_blueprint_version": "version_1",
-        "vs_blueprint_id": "1",
-        "vs_blueprint": {
-          "configurable_parameters": [
-            "tPfzqlXOjYEOaKBFEFxP",
-            "DHwGUAuTKtFEHUudfsBE",
-            "kLrmkbFUxQjRVAkcIXbt"
-          ],
-          "application_metrics": [
-            {
-              "name": "Dr. Alexis Long II",
-              "topic": "HmVwOqXLJbwgvLSuojil",
-              "interval": "pBTFCFLkXEyRBooTGwqI",
-              "metric_collection_type": "DELTA",
-              "unit": "GhojrOjpcORkaHldMGyv",
-              "metric_id": "BSvHRIJpssyfaFhCyTro"
-            },
-            {
-              "name": "Dr. Gavin Richardson Jr.",
-              "topic": "mNMdNvlcTVyoJUaNxvIH",
-              "interval": "LgViRCOfFFNqeJPNXtzx",
-              "metric_collection_type": "DELTA",
-              "unit": "DnJOuQiWwnKjDLzBXnpO",
-              "metric_id": "PQViScrMoYvTASogFOeO"
-            },
-            {
-              "name": "Miss Nina Cortez DDS",
-              "topic": "WynbPDAYhAplRUzhRBcG",
-              "interval": "eMfvnVpTPrSWDroRbcte",
-              "metric_collection_type": "GAUGE",
-              "unit": "CAfksOjpbOLWCHCXWwuX",
-              "metric_id": "mPkOnNSYGDlqPzjhAqqa"
-            }
-          ],
-          "name": "name_1",
-          "connectivity_services": [
-            {
-              "name": "Ariana Rice",
-              "end_point_ids": [
-                "iElrDyUmctoWcWIUzVbS",
-                "MgmUxIvudAqCkqbCcusO",
-                "uZrvvwKVidKZeEcxzjpw"
-              ],
-              "connectivity_properties": [
-                "ezyhbSMHfyCliMPpVfLu",
-                "noVtkTwLmiVOWBqTRXdG",
-                "uUxVZHVXjQcDBBywMQIh"
-              ],
-              "external": false
-            },
-            {
-              "name": "Ronnie Brooks",
-              "end_point_ids": [
-                "DAuyqbQFJkzVvzJHnirW",
-                "IYkzsRwzbDKZRMUBcaZj",
-                "zlYIbvyvhaalQqvBFYnJ"
-              ],
-              "connectivity_properties": [
-                "QNrzFlylVDqFVKMzapRh",
-                "wSRFggXRdwohtnbTWFtg",
-                "uvgeYZJAKLvOJjDTXKpX"
-              ],
-              "external": false
-            },
-            {
-              "name": "Omar Mcdaniel",
-              "end_point_ids": [
-                "ImaxjhdAwbsHmqCKiHDg",
-                "ZunOcTaPAURLUzlvEPIg",
-                "LFPsDNBsbuHQONTXDAqd"
-              ],
-              "connectivity_properties": [
-                "QWWZxZDFFxgJMiaTErNQ",
-                "JjXlgBsJhCDJegKZhnTg",
-                "OPYykzlXiYXEnqNJPRRR"
-              ],
-              "external": false
-            }
-          ],
-          "inter_site": true,
-          "end_points": [
-            {
-              "ran_connection": true,
-              "management": false,
-              "end_point_id": "SodxiGoloLeSfCfijrDe",
-              "external": true
-            },
-            {
-              "ran_connection": false,
-              "management": false,
-              "end_point_id": "EPVPEIqwYzZtWLGNBqGy",
-              "external": false
-            },
-            {
-              "ran_connection": false,
-              "management": true,
-              "end_point_id": "OEesuSDpyYvjqYQuATJv",
-              "external": true
-            }
-          ],
-          "blueprint_id": "1",
-          "embb_service_category": "AIRPLANES_CONNECTIVITY",
-          "urllc_service_category": "PROCESS_AUTOMATION_REMOTE_CONTROL",
-          "description": "Meeting prepare stage various feel low a. Her night ever oil must performance picture.\nCentral system grow week church want always. Father happen far. Join will less decade few meet get tend.",
-          "slice_service_type": "M_IOT",
-          "parameters": [
-            {
-              "applicability_field": "fPQzGJCgauxyzdNFCtnV",
-              "parameter_type": "UUoBFwVXMcyKnqltBsMl",
-              "parameter_description": "CdgHefANHqnetugkDdBX",
-              "parameter_name": "jxJmDQFLzRzCJHDWrMvr",
-              "parameter_id": "BGJUrWTSzYFaBnLskZAV"
-            },
-            {
-              "applicability_field": "LyhPyuqWAnaSiSXIPXsX",
-              "parameter_type": "UXBvobSuWlqctcyHFjgB",
-              "parameter_description": "ITfKZRSysFLlaGMkXHeq",
-              "parameter_name": "hnlrGeIlASZPPqghMipL",
-              "parameter_id": "ckPzAcqWFHXONcupRRJM"
-            },
-            {
-              "applicability_field": "RELsIxLvrSPbEFtcKKrp",
-              "parameter_type": "WDsFsrPQKcJZHLSAZaFd",
-              "parameter_description": "QjyDbDLvoFItQiXDRjPL",
-              "parameter_name": "qHyxUBTHzPMbbAULqSZE",
-              "parameter_id": "AKjlEesBEGWJhUuOYTor"
-            }
-          ],
-          "version": "version_1",
-          "atomic_components": [
-            {
-              "servers_number": 3534,
-              "image_urls": [
-                "uZJDHtKlrwgsHEswjtYf",
-                "YaQzfFAFNHJjSGOxdnpT",
-                "FlvZtBekedLYmlLgEhKF"
-              ],
-              "compatible_site": null,
-              "associated_vsb_id": "kaBvbnwmopKcNJylAJxa",
-              "placement": "CLOUD",
-              "type": "FUNCTION",
-              "lifecycleOperations": {},
-              "component_id": "DVdPDhCzbXGtWmWxXzbX",
-              "end_points_ids": [
-                "PQpaDgNsPgtpXJKIPCbl",
-                "VuoCJMsJrvLFzQMqVhnA",
-                "agfsjaLtWfUQlLsbhOJh"
-              ]
-            }
-          ],
-          "service_sequence": [
-            {
-              "vs_component_id": "HwtbhHSYSkWGrzpZvvAz"
-            },
-            {
-              "vs_component_id": "DhqYzXOYfwokdTgHHpej"
-            },
-            {
-              "vs_component_id": "MSZwgdOueYvuXPTVPuGW"
-            }
+            "swfSfnzjrIFJYtEfxTSd",
+            "RdIZZMavhAiowTaCEyne",
+            "WVnOIqDvIRmFtyUIfqli"
           ]
         },
-        "active_vsd_id": [
-          "0",
-          "1",
-          "2",
-          "3",
-          "4"
+        {
+          "sharable": true,
+          "atomic_component_id": "hVPCYZtffjiCVysohcux",
+          "non_preferred_providers": [
+            "qkeDFIYMlICDEHeHxIKA",
+            "sFttzrBjQTkqEcHHFhls",
+            "ZnDXmVMjQWLFQWybwlZf"
+          ],
+          "include_shared_elements": false,
+          "prohibited_providers": [
+            "RwrefyjVIuGfIDGccPRs",
+            "jBGGTQAViEVtqqWKJeXt",
+            "DHTlJucwpCnjABphtOjv"
+          ],
+          "preferred_providers": [
+            "KcoIAUGgqEfpnfZOEofA",
+            "yVnepylJxCfkmRCMymwZ",
+            "fQyNcfqfgcjRrElGDwoN"
+          ]
+        },
+        {
+          "sharable": false,
+          "atomic_component_id": "ArEvElChLRbiZgOCWklF",
+          "non_preferred_providers": [
+            "FIYNepmwlwcMASYFyWEW",
+            "TkeYoFIkSDylFKSxnINQ",
+            "kfJUUhmUknxsgavNrhoV"
+          ],
+          "include_shared_elements": false,
+          "prohibited_providers": [
+            "IUZrnDlPkiUhBlcrBMyJ",
+            "tUZNabOnlNSvMgpSKQqk",
+            "iPCoEgJgnGZqsRYXGjMI"
+          ],
+          "preferred_providers": [
+            "cnGYwyAqYuznYVnrsfIB",
+            "fybdfegGZFypAodGduUV",
+            "hyUKbGsyqcBRwORHdiZC"
+          ]
+        }
+      ],
+      "domain_id": "HxtVtICYPsbfDSMygLku",
+      "version": "gUbPfGZgEBqczhxNPYBT",
+      "management_type": "TENANT_MANAGED",
+      "name": "Mrs. Rhonda Allen",
+      "qos_parameters": {},
+      "descriptor_id": "1",
+      "sla": {
+        "service_creation_time": "UNDEFINED",
+        "availability_coverage": "AVAILABILITY_COVERAGE_HIGH",
+        "low_cost_required": true
+      },
+      "tenant_id": "tenant"
+    },
+    "vs_blueprint_info": {
+      "on_boarded_nst_info_id": [
+        "vNQsWDENcYBAheGztFsD",
+        "rEnyKrUdLshDqhcpbKEY",
+        "aSpcxCKhoapwBiLiIBZy"
+      ],
+      "on_boarded_vnf_package_info_id": [
+        "AHCfWNPKswMZLEcfkXNk",
+        "ETwJBDsYCNFbzeZNlWAw",
+        "NmgWsYByMxcvCOopdbQy"
+      ],
+      "owner": "DlgofbQnFnPSEAzphgAX",
+      "vs_blueprint_id": "1",
+      "vs_blueprint_version": "version_1",
+      "on_boarded_nsd_info_id": [
+        "bVYVzeZogjayZHHrdzli",
+        "DiqdnGlyrkPDCWDxKweA",
+        "aaGTqFBrYbGRLOKzvpok"
+      ],
+      "name": "name_1",
+      "on_boarded_mec_app_package_info_id": [
+        "kLPkiTMTOhXTRSVDqbXi",
+        "tSjdWCtXYwnTlIRiyNOJ",
+        "ZbjKqSGIQLfGgGSFAcZv"
+      ],
+      "vs_blueprint": {
+        "slice_service_type": "ENTERPRISE",
+        "atomic_components": [
+          {
+            "compatible_site": null,
+            "type": "OTHER",
+            "component_id": "NhCtXepfNMCmjgMjcxjq",
+            "placement": "EDGE",
+            "associated_vsb_id": "slCngKykiFpSbwRPJWlp",
+            "servers_number": 7076,
+            "lifecycleOperations": {},
+            "end_points_ids": [
+              "DzhbnbKbvztIvxaEubCy",
+              "LcmFYCxODigjCpkRwknx",
+              "oolSLBdGfzgnyqPySDfP"
+            ],
+            "image_urls": [
+              "RWUIwrjSHGDNFpdXGSrg",
+              "OIIjKoIBlRTruqJOcNRa",
+              "nNOpVNoWbpnycKZhNbpV"
+            ]
+          }
+        ],
+        "end_points": [
+          {
+            "management": false,
+            "ran_connection": true,
+            "end_point_id": "hINCPUHGLsnrwIElZEFa",
+            "external": true
+          },
+          {
+            "management": true,
+            "ran_connection": false,
+            "end_point_id": "OVvFhijLyHwFjKiKTHrZ",
+            "external": true
+          },
+          {
+            "management": false,
+            "ran_connection": false,
+            "end_point_id": "fuZPJqqvkuiddmXkvskh",
+            "external": false
+          }
+        ],
+        "translation_rules": [
+          {
+            "nst_id": "iaSstWxHjYaKFPDzGVsH",
+            "ns_flavour_id": "uhyRMdHgDsbxmRmGHHHJ",
+            "input": [
+              {
+                "max_value": 8482,
+                "parameter_id": "faWKieaTaPOAThHOvSxz",
+                "min_value": 2240
+              },
+              {
+                "max_value": 5965,
+                "parameter_id": "yoIwTmBPgGLEejKmXWDf",
+                "min_value": 4950
+              },
+              {
+                "max_value": 7128,
+                "parameter_id": "huWDxcICXCtsmrxVnrXU",
+                "min_value": 5418
+              }
+            ],
+            "nsd_version": "KddobdTPshmCcuNdGNHl",
+            "nsd_id": "XOaHEMqvzHiSYNmEZQLT",
+            "ns_instantiation_level_id": "RgFuwvpXYMBYWfakWaLY",
+            "blueprint_id": "1",
+            "nsd_info_id": "oDGOrRkiDRQXsTjsQHER"
+          }
+        ],
+        "parameters": [
+          {
+            "parameter_id": "jPekNrueezpHmhRWXzmb",
+            "parameter_type": "XsJsVUpwuxMntlONdOdG",
+            "applicability_field": "iqadfrmTbgIhxBBGaGit",
+            "parameter_name": "UKIqpJmMmLKCiVKmOCYP",
+            "parameter_description": "ARCORMiVDLienbdCODTe"
+          },
+          {
+            "parameter_id": "znrkgCRmvgVYKOnpNNzw",
+            "parameter_type": "ateWgrUPrDfSzjmMnPdJ",
+            "applicability_field": "EkqWyxQBbnpWyCqiFuCu",
+            "parameter_name": "PLkCvhXgBIjkxXvYgYcx",
+            "parameter_description": "VGktnjuGNFikwTjYagVc"
+          },
+          {
+            "parameter_id": "iFYbJFrDQtJAskKZYhmF",
+            "parameter_type": "cXjIaUPXfEvjILeSZoXx",
+            "applicability_field": "xpcaSypSWBjwuiccEtaQ",
+            "parameter_name": "OZIzQebGkVqVNngrDcmY",
+            "parameter_description": "ykMkwInSfOrEikKnltsX"
+          }
+        ],
+        "embb_service_category": "BROADBAND_ACCESS_IN_A_CROWD",
+        "version": "version_1",
+        "name": "name_1",
+        "application_metrics": [
+          {
+            "metric_collection_type": "GAUGE",
+            "topic": "tmPVrqjWaChhSWciAMAc",
+            "unit": "JddZRtbLjFynmFmXQIeR",
+            "name": "Bianca Salas DDS",
+            "metric_id": "dNToCRSCcuhYkLUTEDOE",
+            "interval": "bIAKGruOBNJkBTqaufse"
+          },
+          {
+            "metric_collection_type": "GAUGE",
+            "topic": "UJkrMLjikQFknCwyEYaL",
+            "unit": "RkmrCdnuflPeMXtONqVX",
+            "name": "Adrian Cobb DDS",
+            "metric_id": "rquaxoMigtNXgzCtyTSQ",
+            "interval": "OSfVPxBaaXwjGGnDrbFT"
+          },
+          {
+            "metric_collection_type": "CUMULATIVE",
+            "topic": "fryLQiaaWISXbSAwtWvB",
+            "unit": "DdyinkYfSUjUJlINYKfG",
+            "name": "Drew Hogan",
+            "metric_id": "MfqrlSoKakBhqHzZJbxI",
+            "interval": "ZIBaYLvhtXVzEdJmtPAZ"
+          }
+        ],
+        "connectivity_services": [
+          {
+            "name": "Dr. Eric Mcintyre",
+            "connectivity_properties": [
+              "urgayXjeEFseQmuvqZtF",
+              "qAuXevxsfLyUlmvVbsiD",
+              "byqdfaixfYhUyDpoHgDQ"
+            ],
+            "end_point_ids": [
+              "OXYfMFGeHpXcoSUwrvri",
+              "LnlcsDsShOqYMAwCihqZ",
+              "TnfQIuLYKXcXdmLVjRym"
+            ],
+            "external": false
+          },
+          {
+            "name": "Mr. Fernando Conner",
+            "connectivity_properties": [
+              "WzcvzUJqoxayCHZVgaIh",
+              "tqRGSJyFMOrmcQLasxJE",
+              "FWCpxucdHqjXttCRsIMx"
+            ],
+            "end_point_ids": [
+              "ZVPQGUvpmoHUGytkglJJ",
+              "wxJTfVzZjXqMjevWsfFo",
+              "OSiNkORQWTWKPvKzpDFh"
+            ],
+            "external": true
+          },
+          {
+            "name": "Kari Kelley",
+            "connectivity_properties": [
+              "MFustDKdfftfKRLIVFSR",
+              "TdBArBPWRfvkRhKEjMhs",
+              "ckiXoIMUFUCPxzHhgwgV"
+            ],
+            "end_point_ids": [
+              "AJJjmCJYLJhXhFazZhSM",
+              "dRLeaudmtSorLaVUpwsr",
+              "xQBsBINZXPXqYzEbceYU"
+            ],
+            "external": false
+          }
+        ],
+        "urllc_service_category": "PROCESS_AUTOMATION_REMOTE_CONTROL",
+        "inter_site": true,
+        "service_sequence": [
+          {
+            "vs_component_id": "AQhHtnMYxrsnTdOKMtVX"
+          },
+          {
+            "vs_component_id": "SAPsauzqmpJbdAgBGOBb"
+          },
+          {
+            "vs_component_id": "MWgEBiqKFXEmiTtIuTvN"
+          }
+        ],
+        "blueprint_id": "1",
+        "description": "Past whole cell. Seek effort soon its new.\nSuffer series recently rich society. Choose medical poor doctor yes discussion her theory.",
+        "configurable_parameters": [
+          "AnLbnyOEqZGpTqlGPJkH",
+          "FfvdaqlHtKJtcmKSTTsM",
+          "fBRaFeiJZTTwlHgZNjAp"
         ]
-      }
+      },
+      "active_vsd_id": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
     },
     "vssis": [
       {
-        "descriptor": {
+        "vsd": {
           "is_public": true,
-          "management_type": "TENANT_MANAGED",
-          "domain_id": "otMVJijABXpOPoToTqlZ",
+          "nested_vsd_ids": {},
+          "vs_blueprint_id": "1",
+          "associated_vsd_id": "uCCbPwotfRuctfildyNi",
           "service_constraints": [
             {
-              "atomic_component_id": "FRKNrXjKxhkDofaBhPqB",
-              "preferred_providers": [
-                "ejztFqnyodiYbJSiJErU",
-                "nMSzxjdKPKvajVQrBZmT",
-                "FAKLpALCJJBADmEzTtPi"
-              ],
               "sharable": true,
-              "prohibited_providers": [
-                "iteLowZFwtCsToXSFfgH",
-                "qilvNWRUmmNKVQxjCLGr",
-                "cOtLBAjuhkyPvbkwdouf"
-              ],
+              "atomic_component_id": "NFNLuQnYCiJzprZLZRtF",
               "non_preferred_providers": [
-                "tiatUiytUiROVDcDUmzx",
-                "AItwyZOYPqDeSqMjRpyV",
-                "KIbSgiBdAcGOpqqPAemL"
+                "QFbLEqHPGQLEsheazBQb",
+                "UdfupebqWOWnDwuoGQEN",
+                "ofGzSRyMNhpXMLwELIjq"
               ],
-              "include_shared_elements": true
+              "include_shared_elements": true,
+              "prohibited_providers": [
+                "ZimnUYeeYMoZIpeSxhoZ",
+                "XeRDBRJDXecOXfRPSMid",
+                "VAaCvNlPBXhrOoIVLiqD"
+              ],
+              "preferred_providers": [
+                "swfSfnzjrIFJYtEfxTSd",
+                "RdIZZMavhAiowTaCEyne",
+                "WVnOIqDvIRmFtyUIfqli"
+              ]
             },
             {
-              "atomic_component_id": "LzfxrnkPLYOOkuQqJvYc",
-              "preferred_providers": [
-                "XPCdvwyInqBsYIphFNLy",
-                "lakzbAMWtYtvvMjzWqIl",
-                "tfXxWfIweUHFYjnJMJoz"
-              ],
               "sharable": true,
-              "prohibited_providers": [
-                "FMAOqFjADFZLzTPMVJLA",
-                "GpWdRvqHtwRYxNOmiXrn",
-                "cqtncHHpcSSeoexGhPsN"
-              ],
+              "atomic_component_id": "hVPCYZtffjiCVysohcux",
               "non_preferred_providers": [
-                "KESInVUyzTerIROOjYzF",
-                "vVHiQIHrhBEliRXDiUAb",
-                "JALwQTyadjdbOVhYnswR"
+                "qkeDFIYMlICDEHeHxIKA",
+                "sFttzrBjQTkqEcHHFhls",
+                "ZnDXmVMjQWLFQWybwlZf"
               ],
-              "include_shared_elements": false
+              "include_shared_elements": false,
+              "prohibited_providers": [
+                "RwrefyjVIuGfIDGccPRs",
+                "jBGGTQAViEVtqqWKJeXt",
+                "DHTlJucwpCnjABphtOjv"
+              ],
+              "preferred_providers": [
+                "KcoIAUGgqEfpnfZOEofA",
+                "yVnepylJxCfkmRCMymwZ",
+                "fQyNcfqfgcjRrElGDwoN"
+              ]
             },
             {
-              "atomic_component_id": "fnfcZkMpNZBTgVzzhNVb",
-              "preferred_providers": [
-                "RoIYoGYyssiCVSdnTemN",
-                "LjkkBHPanTNyDZSRjUWZ",
-                "uNUjualrropalpXMnDkT"
-              ],
-              "sharable": true,
-              "prohibited_providers": [
-                "UejgLSbusdTaWLMdTRyg",
-                "xOXLwfodIenzxEiOtAHJ",
-                "lHmIUqVHGWwioVKYnSLq"
-              ],
+              "sharable": false,
+              "atomic_component_id": "ArEvElChLRbiZgOCWklF",
               "non_preferred_providers": [
-                "GzOjHeLvqXbnbeJjigOY",
-                "bleccwbApxdldwtyGKLL",
-                "xxwDoVYdaioOmyalthAs"
+                "FIYNepmwlwcMASYFyWEW",
+                "TkeYoFIkSDylFKSxnINQ",
+                "kfJUUhmUknxsgavNrhoV"
               ],
-              "include_shared_elements": false
+              "include_shared_elements": false,
+              "prohibited_providers": [
+                "IUZrnDlPkiUhBlcrBMyJ",
+                "tUZNabOnlNSvMgpSKQqk",
+                "iPCoEgJgnGZqsRYXGjMI"
+              ],
+              "preferred_providers": [
+                "cnGYwyAqYuznYVnrsfIB",
+                "fybdfegGZFypAodGduUV",
+                "hyUKbGsyqcBRwORHdiZC"
+              ]
             }
           ],
-          "name": "Dr. Marisa Lester",
-          "nested_vsd_ids": {},
+          "domain_id": "HxtVtICYPsbfDSMygLku",
+          "version": "gUbPfGZgEBqczhxNPYBT",
+          "management_type": "TENANT_MANAGED",
+          "name": "Mrs. Rhonda Allen",
           "qos_parameters": {},
           "descriptor_id": "1",
-          "version": "fhBqZKpfvwdVxVCOLjDE",
-          "associated_vsd_id": "JGDUQcaHMiCYfzQktbTe",
           "sla": {
-            "low_cost_required": true,
             "service_creation_time": "UNDEFINED",
-            "availability_coverage": "AVAILABILITY_COVERAGE_HIGH"
+            "availability_coverage": "AVAILABILITY_COVERAGE_HIGH",
+            "low_cost_required": true
           },
-          "tenant_id": "tenant",
+          "tenant_id": "tenant"
+        },
+        "vs_blueprint_info": {
+          "on_boarded_nst_info_id": [
+            "vNQsWDENcYBAheGztFsD",
+            "rEnyKrUdLshDqhcpbKEY",
+            "aSpcxCKhoapwBiLiIBZy"
+          ],
+          "on_boarded_vnf_package_info_id": [
+            "AHCfWNPKswMZLEcfkXNk",
+            "ETwJBDsYCNFbzeZNlWAw",
+            "NmgWsYByMxcvCOopdbQy"
+          ],
+          "owner": "DlgofbQnFnPSEAzphgAX",
+          "vs_blueprint_id": "1",
+          "vs_blueprint_version": "version_1",
+          "on_boarded_nsd_info_id": [
+            "bVYVzeZogjayZHHrdzli",
+            "DiqdnGlyrkPDCWDxKweA",
+            "aaGTqFBrYbGRLOKzvpok"
+          ],
+          "name": "name_1",
+          "on_boarded_mec_app_package_info_id": [
+            "kLPkiTMTOhXTRSVDqbXi",
+            "tSjdWCtXYwnTlIRiyNOJ",
+            "ZbjKqSGIQLfGgGSFAcZv"
+          ],
           "vs_blueprint": {
-            "on_boarded_nst_info_id": [
-              "ugZEUQDDPmDdAWMxMpqN",
-              "sacEcVrpfqeWLAVtdmgL",
-              "AmWzXZOhqjNBAfFdDKnK"
+            "slice_service_type": "ENTERPRISE",
+            "atomic_components": [
+              {
+                "compatible_site": null,
+                "type": "OTHER",
+                "component_id": "NhCtXepfNMCmjgMjcxjq",
+                "placement": "EDGE",
+                "associated_vsb_id": "slCngKykiFpSbwRPJWlp",
+                "servers_number": 7076,
+                "lifecycleOperations": {},
+                "end_points_ids": [
+                  "DzhbnbKbvztIvxaEubCy",
+                  "LcmFYCxODigjCpkRwknx",
+                  "oolSLBdGfzgnyqPySDfP"
+                ],
+                "image_urls": [
+                  "RWUIwrjSHGDNFpdXGSrg",
+                  "OIIjKoIBlRTruqJOcNRa",
+                  "nNOpVNoWbpnycKZhNbpV"
+                ]
+              }
             ],
-            "on_boarded_vnf_package_info_id": [
-              "FAwFYrxAXOQidIEmRkuR",
-              "GYDRmaUWbItISQyjFzNy",
-              "BhYKuHcaNKPbGAtHheLL"
+            "end_points": [
+              {
+                "management": false,
+                "ran_connection": true,
+                "end_point_id": "hINCPUHGLsnrwIElZEFa",
+                "external": true
+              },
+              {
+                "management": true,
+                "ran_connection": false,
+                "end_point_id": "OVvFhijLyHwFjKiKTHrZ",
+                "external": true
+              },
+              {
+                "management": false,
+                "ran_connection": false,
+                "end_point_id": "fuZPJqqvkuiddmXkvskh",
+                "external": false
+              }
             ],
-            "on_boarded_nsd_info_id": [
-              "PsPXXVoPvJAUchALkJdP",
-              "pXMPHDNMQWAfXajtzJtP",
-              "bXzrxjNoOaNgWVRPpjdN"
+            "translation_rules": [
+              {
+                "nst_id": "iaSstWxHjYaKFPDzGVsH",
+                "ns_flavour_id": "uhyRMdHgDsbxmRmGHHHJ",
+                "input": [
+                  {
+                    "max_value": 8482,
+                    "parameter_id": "faWKieaTaPOAThHOvSxz",
+                    "min_value": 2240
+                  },
+                  {
+                    "max_value": 5965,
+                    "parameter_id": "yoIwTmBPgGLEejKmXWDf",
+                    "min_value": 4950
+                  },
+                  {
+                    "max_value": 7128,
+                    "parameter_id": "huWDxcICXCtsmrxVnrXU",
+                    "min_value": 5418
+                  }
+                ],
+                "nsd_version": "KddobdTPshmCcuNdGNHl",
+                "nsd_id": "XOaHEMqvzHiSYNmEZQLT",
+                "ns_instantiation_level_id": "RgFuwvpXYMBYWfakWaLY",
+                "blueprint_id": "1",
+                "nsd_info_id": "oDGOrRkiDRQXsTjsQHER"
+              }
             ],
+            "parameters": [
+              {
+                "parameter_id": "jPekNrueezpHmhRWXzmb",
+                "parameter_type": "XsJsVUpwuxMntlONdOdG",
+                "applicability_field": "iqadfrmTbgIhxBBGaGit",
+                "parameter_name": "UKIqpJmMmLKCiVKmOCYP",
+                "parameter_description": "ARCORMiVDLienbdCODTe"
+              },
+              {
+                "parameter_id": "znrkgCRmvgVYKOnpNNzw",
+                "parameter_type": "ateWgrUPrDfSzjmMnPdJ",
+                "applicability_field": "EkqWyxQBbnpWyCqiFuCu",
+                "parameter_name": "PLkCvhXgBIjkxXvYgYcx",
+                "parameter_description": "VGktnjuGNFikwTjYagVc"
+              },
+              {
+                "parameter_id": "iFYbJFrDQtJAskKZYhmF",
+                "parameter_type": "cXjIaUPXfEvjILeSZoXx",
+                "applicability_field": "xpcaSypSWBjwuiccEtaQ",
+                "parameter_name": "OZIzQebGkVqVNngrDcmY",
+                "parameter_description": "ykMkwInSfOrEikKnltsX"
+              }
+            ],
+            "embb_service_category": "BROADBAND_ACCESS_IN_A_CROWD",
+            "version": "version_1",
             "name": "name_1",
-            "on_boarded_mec_app_package_info_id": [
-              "nrvPPAlhdRndBLtXrEuH",
-              "TmIOfdoRLPAZevjdkftl",
-              "rJVgXgkRdqtacrPBxNdg"
+            "application_metrics": [
+              {
+                "metric_collection_type": "GAUGE",
+                "topic": "tmPVrqjWaChhSWciAMAc",
+                "unit": "JddZRtbLjFynmFmXQIeR",
+                "name": "Bianca Salas DDS",
+                "metric_id": "dNToCRSCcuhYkLUTEDOE",
+                "interval": "bIAKGruOBNJkBTqaufse"
+              },
+              {
+                "metric_collection_type": "GAUGE",
+                "topic": "UJkrMLjikQFknCwyEYaL",
+                "unit": "RkmrCdnuflPeMXtONqVX",
+                "name": "Adrian Cobb DDS",
+                "metric_id": "rquaxoMigtNXgzCtyTSQ",
+                "interval": "OSfVPxBaaXwjGGnDrbFT"
+              },
+              {
+                "metric_collection_type": "CUMULATIVE",
+                "topic": "fryLQiaaWISXbSAwtWvB",
+                "unit": "DdyinkYfSUjUJlINYKfG",
+                "name": "Drew Hogan",
+                "metric_id": "MfqrlSoKakBhqHzZJbxI",
+                "interval": "ZIBaYLvhtXVzEdJmtPAZ"
+              }
             ],
-            "owner": "sfWxlWqFfGZsscjxIMIe",
-            "vs_blueprint_version": "version_1",
-            "vs_blueprint_id": "1",
-            "vs_blueprint": {
-              "configurable_parameters": [
-                "tPfzqlXOjYEOaKBFEFxP",
-                "DHwGUAuTKtFEHUudfsBE",
-                "kLrmkbFUxQjRVAkcIXbt"
-              ],
-              "application_metrics": [
-                {
-                  "name": "Dr. Alexis Long II",
-                  "topic": "HmVwOqXLJbwgvLSuojil",
-                  "interval": "pBTFCFLkXEyRBooTGwqI",
-                  "metric_collection_type": "DELTA",
-                  "unit": "GhojrOjpcORkaHldMGyv",
-                  "metric_id": "BSvHRIJpssyfaFhCyTro"
-                },
-                {
-                  "name": "Dr. Gavin Richardson Jr.",
-                  "topic": "mNMdNvlcTVyoJUaNxvIH",
-                  "interval": "LgViRCOfFFNqeJPNXtzx",
-                  "metric_collection_type": "DELTA",
-                  "unit": "DnJOuQiWwnKjDLzBXnpO",
-                  "metric_id": "PQViScrMoYvTASogFOeO"
-                },
-                {
-                  "name": "Miss Nina Cortez DDS",
-                  "topic": "WynbPDAYhAplRUzhRBcG",
-                  "interval": "eMfvnVpTPrSWDroRbcte",
-                  "metric_collection_type": "GAUGE",
-                  "unit": "CAfksOjpbOLWCHCXWwuX",
-                  "metric_id": "mPkOnNSYGDlqPzjhAqqa"
-                }
-              ],
-              "name": "name_1",
-              "connectivity_services": [
-                {
-                  "name": "Ariana Rice",
-                  "end_point_ids": [
-                    "iElrDyUmctoWcWIUzVbS",
-                    "MgmUxIvudAqCkqbCcusO",
-                    "uZrvvwKVidKZeEcxzjpw"
-                  ],
-                  "connectivity_properties": [
-                    "ezyhbSMHfyCliMPpVfLu",
-                    "noVtkTwLmiVOWBqTRXdG",
-                    "uUxVZHVXjQcDBBywMQIh"
-                  ],
-                  "external": false
-                },
-                {
-                  "name": "Ronnie Brooks",
-                  "end_point_ids": [
-                    "DAuyqbQFJkzVvzJHnirW",
-                    "IYkzsRwzbDKZRMUBcaZj",
-                    "zlYIbvyvhaalQqvBFYnJ"
-                  ],
-                  "connectivity_properties": [
-                    "QNrzFlylVDqFVKMzapRh",
-                    "wSRFggXRdwohtnbTWFtg",
-                    "uvgeYZJAKLvOJjDTXKpX"
-                  ],
-                  "external": false
-                },
-                {
-                  "name": "Omar Mcdaniel",
-                  "end_point_ids": [
-                    "ImaxjhdAwbsHmqCKiHDg",
-                    "ZunOcTaPAURLUzlvEPIg",
-                    "LFPsDNBsbuHQONTXDAqd"
-                  ],
-                  "connectivity_properties": [
-                    "QWWZxZDFFxgJMiaTErNQ",
-                    "JjXlgBsJhCDJegKZhnTg",
-                    "OPYykzlXiYXEnqNJPRRR"
-                  ],
-                  "external": false
-                }
-              ],
-              "inter_site": true,
-              "end_points": [
-                {
-                  "ran_connection": true,
-                  "management": false,
-                  "end_point_id": "SodxiGoloLeSfCfijrDe",
-                  "external": true
-                },
-                {
-                  "ran_connection": false,
-                  "management": false,
-                  "end_point_id": "EPVPEIqwYzZtWLGNBqGy",
-                  "external": false
-                },
-                {
-                  "ran_connection": false,
-                  "management": true,
-                  "end_point_id": "OEesuSDpyYvjqYQuATJv",
-                  "external": true
-                }
-              ],
-              "blueprint_id": "1",
-              "embb_service_category": "AIRPLANES_CONNECTIVITY",
-              "urllc_service_category": "PROCESS_AUTOMATION_REMOTE_CONTROL",
-              "description": "Meeting prepare stage various feel low a. Her night ever oil must performance picture.\nCentral system grow week church want always. Father happen far. Join will less decade few meet get tend.",
-              "slice_service_type": "M_IOT",
-              "parameters": [
-                {
-                  "applicability_field": "fPQzGJCgauxyzdNFCtnV",
-                  "parameter_type": "UUoBFwVXMcyKnqltBsMl",
-                  "parameter_description": "CdgHefANHqnetugkDdBX",
-                  "parameter_name": "jxJmDQFLzRzCJHDWrMvr",
-                  "parameter_id": "BGJUrWTSzYFaBnLskZAV"
-                },
-                {
-                  "applicability_field": "LyhPyuqWAnaSiSXIPXsX",
-                  "parameter_type": "UXBvobSuWlqctcyHFjgB",
-                  "parameter_description": "ITfKZRSysFLlaGMkXHeq",
-                  "parameter_name": "hnlrGeIlASZPPqghMipL",
-                  "parameter_id": "ckPzAcqWFHXONcupRRJM"
-                },
-                {
-                  "applicability_field": "RELsIxLvrSPbEFtcKKrp",
-                  "parameter_type": "WDsFsrPQKcJZHLSAZaFd",
-                  "parameter_description": "QjyDbDLvoFItQiXDRjPL",
-                  "parameter_name": "qHyxUBTHzPMbbAULqSZE",
-                  "parameter_id": "AKjlEesBEGWJhUuOYTor"
-                }
-              ],
-              "version": "version_1",
-              "atomic_components": [
-                {
-                  "servers_number": 3534,
-                  "image_urls": [
-                    "uZJDHtKlrwgsHEswjtYf",
-                    "YaQzfFAFNHJjSGOxdnpT",
-                    "FlvZtBekedLYmlLgEhKF"
-                  ],
-                  "compatible_site": null,
-                  "associated_vsb_id": "kaBvbnwmopKcNJylAJxa",
-                  "placement": "CLOUD",
-                  "type": "FUNCTION",
-                  "lifecycleOperations": {},
-                  "component_id": "DVdPDhCzbXGtWmWxXzbX",
-                  "end_points_ids": [
-                    "PQpaDgNsPgtpXJKIPCbl",
-                    "VuoCJMsJrvLFzQMqVhnA",
-                    "agfsjaLtWfUQlLsbhOJh"
-                  ]
-                }
-              ],
-              "service_sequence": [
-                {
-                  "vs_component_id": "HwtbhHSYSkWGrzpZvvAz"
-                },
-                {
-                  "vs_component_id": "DhqYzXOYfwokdTgHHpej"
-                },
-                {
-                  "vs_component_id": "MSZwgdOueYvuXPTVPuGW"
-                }
-              ]
-            },
-            "active_vsd_id": [
-              "0",
-              "1",
-              "2",
-              "3",
-              "4"
+            "connectivity_services": [
+              {
+                "name": "Dr. Eric Mcintyre",
+                "connectivity_properties": [
+                  "urgayXjeEFseQmuvqZtF",
+                  "qAuXevxsfLyUlmvVbsiD",
+                  "byqdfaixfYhUyDpoHgDQ"
+                ],
+                "end_point_ids": [
+                  "OXYfMFGeHpXcoSUwrvri",
+                  "LnlcsDsShOqYMAwCihqZ",
+                  "TnfQIuLYKXcXdmLVjRym"
+                ],
+                "external": false
+              },
+              {
+                "name": "Mr. Fernando Conner",
+                "connectivity_properties": [
+                  "WzcvzUJqoxayCHZVgaIh",
+                  "tqRGSJyFMOrmcQLasxJE",
+                  "FWCpxucdHqjXttCRsIMx"
+                ],
+                "end_point_ids": [
+                  "ZVPQGUvpmoHUGytkglJJ",
+                  "wxJTfVzZjXqMjevWsfFo",
+                  "OSiNkORQWTWKPvKzpDFh"
+                ],
+                "external": true
+              },
+              {
+                "name": "Kari Kelley",
+                "connectivity_properties": [
+                  "MFustDKdfftfKRLIVFSR",
+                  "TdBArBPWRfvkRhKEjMhs",
+                  "ckiXoIMUFUCPxzHhgwgV"
+                ],
+                "end_point_ids": [
+                  "AJJjmCJYLJhXhFazZhSM",
+                  "dRLeaudmtSorLaVUpwsr",
+                  "xQBsBINZXPXqYzEbceYU"
+                ],
+                "external": false
+              }
+            ],
+            "urllc_service_category": "PROCESS_AUTOMATION_REMOTE_CONTROL",
+            "inter_site": true,
+            "service_sequence": [
+              {
+                "vs_component_id": "AQhHtnMYxrsnTdOKMtVX"
+              },
+              {
+                "vs_component_id": "SAPsauzqmpJbdAgBGOBb"
+              },
+              {
+                "vs_component_id": "MWgEBiqKFXEmiTtIuTvN"
+              }
+            ],
+            "blueprint_id": "1",
+            "description": "Past whole cell. Seek effort soon its new.\nSuffer series recently rich society. Choose medical poor doctor yes discussion her theory.",
+            "configurable_parameters": [
+              "AnLbnyOEqZGpTqlGPJkH",
+              "FfvdaqlHtKJtcmKSTTsM",
+              "fBRaFeiJZTTwlHgZNjAp"
             ]
-          }
+          },
+          "active_vsd_id": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+          ]
         }
       },
       {
-        "descriptor": {
+        "vsd": {
           "is_public": true,
-          "management_type": "PROVIDER_MANAGED",
-          "domain_id": "NHziLtRZMAtuHefLbopn",
+          "nested_vsd_ids": {},
+          "vs_blueprint_id": "2",
+          "associated_vsd_id": "zwcGGMvbJOmBvFEqDpPm",
           "service_constraints": [
             {
-              "atomic_component_id": "XwRsKUdkHBgyBNnqKQHU",
-              "preferred_providers": [
-                "nGxuoKWkaAEjOABNTIch",
-                "FtkFZYXpotqcYPlbdPCy",
-                "eKxdVSDlEFpZbKoYlzzU"
-              ],
               "sharable": false,
-              "prohibited_providers": [
-                "RYVzuVNbFtIfNLRBKBps",
-                "MMNvqrwxabbjtiDsgXXs",
-                "XAJxnAAtzotgZoxZSEyn"
-              ],
+              "atomic_component_id": "mezeixfsplRcJwnrNYZP",
               "non_preferred_providers": [
-                "pLIhHRIaCGeBFSSKLFwa",
-                "TpoVaSBSDprNeUShrRPU",
-                "FwkJgYMitewixSMwhMor"
+                "WpBVxwJumDbDMBjJSTAk",
+                "KoKejlgqZBRyozTgiGfo",
+                "kliRzbajHRjiakczhOCr"
               ],
-              "include_shared_elements": true
+              "include_shared_elements": true,
+              "prohibited_providers": [
+                "hpghneIqxHbxQkxOsEJy",
+                "jLcYnWlHMCzWjuJxhZyS",
+                "xVzEUUJjiXRrQYBYEmWY"
+              ],
+              "preferred_providers": [
+                "sSgvbRYlxqRmJHtacTLI",
+                "nMvaOKQERtHDzFTPnfer",
+                "ZpPgAuKrXfThXDkaJyuP"
+              ]
             },
             {
-              "atomic_component_id": "bGflLBPBfYLaSSUlIysm",
-              "preferred_providers": [
-                "DzaGNxQieZjNUCgnPNWK",
-                "rVGkMDjllZprHZrsfQqK",
-                "dHKPSkrzyrYuKajgrwqd"
-              ],
               "sharable": false,
-              "prohibited_providers": [
-                "yEihczqpfQKtZkpnvhSn",
-                "DaRTzqtqMeaheIBIOSXb",
-                "jgpCLwcnrMCBAxwsYyYp"
-              ],
+              "atomic_component_id": "HYtjhwNbsLInJDGCgbuK",
               "non_preferred_providers": [
-                "eThbGTMWuCAtOFTtDNrs",
-                "gMGaFBSrJskgopOQrFOx",
-                "IbjOTZYGbyYzaJAzucbO"
+                "zjVLVUoBlwbOqHXvesfQ",
+                "NdEWYDxAdyoIyTAcOMJh",
+                "oiYFJzXyazwbpxFyLzaI"
               ],
-              "include_shared_elements": true
+              "include_shared_elements": false,
+              "prohibited_providers": [
+                "nfuOSiOvmMjBrbSMnuit",
+                "QZgqRjMkSFYiQHjCXCPx",
+                "mxwdZXujOWHgazNPVOmp"
+              ],
+              "preferred_providers": [
+                "NwZJuBXHOpKGoFwzdaGE",
+                "ZhNmtyQgZSCfUWxnFtYB",
+                "LAqDOusXPhPxiYMqLrbH"
+              ]
             },
             {
-              "atomic_component_id": "dkGhzRMqoiiUUZLhVlWh",
-              "preferred_providers": [
-                "SIIIYAHXGJMXKTEnabub",
-                "WDoNjOYHKEccMfIBqlmL",
-                "WDnaJmWcFUvtpRMITfWu"
-              ],
               "sharable": true,
-              "prohibited_providers": [
-                "eNTEegxEjbOSlzuSFHgJ",
-                "vlejeyWrkyNoWVfHwwyv",
-                "ANNmbpslPEadaPThADMs"
-              ],
+              "atomic_component_id": "fpISlgnbZiUUaPBbSnNi",
               "non_preferred_providers": [
-                "cOFpkrQqvCjNLWRebygU",
-                "MKnyLrvwFaugqRReIIrN",
-                "FnLTiCzzvzxAPxxqVqbO"
+                "zbfFVtwMEgEmAzESbZFW",
+                "wXPUoplLgYewnxqCfXaP",
+                "MucftHyAqdfNknBQSERE"
               ],
-              "include_shared_elements": false
+              "include_shared_elements": false,
+              "prohibited_providers": [
+                "tLWdngdsqFtMaThALhtY",
+                "EKhLgoLrDZJrAhcdQsxc",
+                "dgIzHrmzNFmDHVNtIfjm"
+              ],
+              "preferred_providers": [
+                "oTqJjUObXfaFXgVbyknS",
+                "sbeLjodInXjCkxFSEiCw",
+                "mgCpvzWukAkenQryKbHI"
+              ]
             }
           ],
-          "name": "Dr. Mark Shaw",
-          "nested_vsd_ids": {},
+          "domain_id": "dtCUScTwwfmQGuiKAgxo",
+          "version": "iJHoVEijVrfDnMfsZvqP",
+          "management_type": "TENANT_MANAGED",
+          "name": "Mr. Clayton Cuevas",
           "qos_parameters": {},
           "descriptor_id": "2",
-          "version": "MGsejVZIzpLmChlnkqRV",
-          "associated_vsd_id": "FhfJOfREwZMnOUNcMLFm",
           "sla": {
-            "low_cost_required": true,
-            "service_creation_time": "SERVICE_CREATION_TIME_MEDIUM",
-            "availability_coverage": "UNDEFINED"
+            "service_creation_time": "UNDEFINED",
+            "availability_coverage": "AVAILABILITY_COVERAGE_HIGH",
+            "low_cost_required": true
           },
-          "tenant_id": "tenant",
+          "tenant_id": "tenant"
+        },
+        "vs_blueprint_info": {
+          "on_boarded_nst_info_id": [
+            "CmSYQutHzdleqinnDNdd",
+            "hmHlpaNhyNwCKgtRBTvI",
+            "kSnGmgIbhSOBgiONuHmY"
+          ],
+          "on_boarded_vnf_package_info_id": [
+            "UYXdkPgmlypmuBqyPLRe",
+            "xEGaWhIcXiWzAbngkEqv",
+            "rMcxDtMdJzCGxwhHfsOF"
+          ],
+          "owner": "fKaOQYczzyfjUwLraxGi",
+          "vs_blueprint_id": "2",
+          "vs_blueprint_version": "version_2",
+          "on_boarded_nsd_info_id": [
+            "fxkQtvyWGrqGzbfJOzkP",
+            "lwMwXcwPmNWKhsEgLTYK",
+            "kydpnExDIlMOyOjUbLWR"
+          ],
+          "name": "name_2",
+          "on_boarded_mec_app_package_info_id": [
+            "BxyUYtTgKgncVFVFuszE",
+            "zJPsrKHFjZnRizjFsAiB",
+            "mKMeIkOtRIhaEbyeCODS"
+          ],
           "vs_blueprint": {
-            "on_boarded_nst_info_id": [
-              "PeuQLQFbNcZAWTkrElHF",
-              "KkYWRhkKPtvmzjPJjFhG",
-              "tjrHGpfpjjicCKDmuRMO"
+            "slice_service_type": "M_IOT",
+            "atomic_components": [
+              {
+                "compatible_site": "MCjyWzUJwljoocPvmKUK",
+                "type": "OTHER",
+                "component_id": "RkFGODcPNzWbqNLlnnKC",
+                "placement": "CLOUD",
+                "associated_vsb_id": "zeIhfNgOXjTeDNAEgprb",
+                "servers_number": 2768,
+                "lifecycleOperations": {},
+                "end_points_ids": [
+                  "OOBOztQTSRRYrjWUVryi",
+                  "PfzGiTWTwLhvUytDolJo",
+                  "otJaqKTwAEuvjHgkLhxK"
+                ],
+                "image_urls": [
+                  "dejTSOjaOYjuSBcaiGnl",
+                  "yBNFOgUdVIVpDFivapmr",
+                  "dsDJAAoUaJzoqLGPBAxs"
+                ]
+              },
+              {
+                "compatible_site": "TMKwJmbvswSnHbOmJIiL",
+                "type": "FUNCTION",
+                "component_id": "xytDkONQKbmuArSvwOnx",
+                "placement": "EDGE",
+                "associated_vsb_id": "oFrCRIjlbTkwEffvJdRi",
+                "servers_number": 8095,
+                "lifecycleOperations": {},
+                "end_points_ids": [
+                  "VhmNIltIyGFzyLujCqWs",
+                  "gPozKksJDjjxJMOMQbgY",
+                  "rOykEQmwZUGBvZpUAMgE"
+                ],
+                "image_urls": [
+                  "aIRNKqhRcWppzDOnhPOb",
+                  "tbnZpIKzlYsHLjajbPie",
+                  "VeGfjxrcgTsvDSMZKoME"
+                ]
+              },
+              {
+                "compatible_site": "YTCDGaVbGhWuLGRIbXPE",
+                "type": "OTHER",
+                "component_id": "jBnAnalloqTppJPdNXoi",
+                "placement": "CLOUD",
+                "associated_vsb_id": "vWFpNcXcHwsGWAxabeBS",
+                "servers_number": 6194,
+                "lifecycleOperations": {},
+                "end_points_ids": [
+                  "qdUzImvttqRooGBNJuzZ",
+                  "BjLVOMgpCEqzympddNAM",
+                  "ptVhfCSRnfieewMKzKKJ"
+                ],
+                "image_urls": [
+                  "jITjzIQaVYeZbICgqxfD",
+                  "stzNbwNxVhbZIuFKJVSk",
+                  "gnsgFFNySTdIIvCHlRVB"
+                ]
+              }
             ],
-            "on_boarded_vnf_package_info_id": [
-              "FehmBGJhiTXslLKjZMYd",
-              "DTyKmNhWhqFhIYqUJQom",
-              "NdTkYlfBISMPnmqQSLgT"
+            "end_points": [
+              {
+                "management": false,
+                "ran_connection": true,
+                "end_point_id": "kOnVrVUnAZSPYWRQGGfg",
+                "external": false
+              },
+              {
+                "management": true,
+                "ran_connection": false,
+                "end_point_id": "HoEhOBKurwFLUimlyJDY",
+                "external": true
+              },
+              {
+                "management": false,
+                "ran_connection": true,
+                "end_point_id": "iBVtxRNEIkpmmoLOtKSR",
+                "external": true
+              }
             ],
-            "on_boarded_nsd_info_id": [
-              "zYuUmNSXpAmbtnildVJE",
-              "apYzdnOIJsXJtYEEYVUG",
-              "fOIceOcLdQKLykNtolBN"
+            "translation_rules": [
+              {
+                "nst_id": "HsgGsdBSEhwXvqqHVvmS",
+                "ns_flavour_id": "NnVcKhIhixsnJMliquoK",
+                "input": [
+                  {
+                    "max_value": 4514,
+                    "parameter_id": "IPZRPpWFEmdzQzlwDRrh",
+                    "min_value": 614
+                  },
+                  {
+                    "max_value": 1351,
+                    "parameter_id": "aaHLZwAjwSJoLgxvWZXe",
+                    "min_value": 5354
+                  },
+                  {
+                    "max_value": 9817,
+                    "parameter_id": "VIfbUcCHUScvlVWsUcZt",
+                    "min_value": 4084
+                  }
+                ],
+                "nsd_version": "GsrXDBmbNbKnnWRdbdiv",
+                "nsd_id": "yYGfiQiYBxLudleyQRNr",
+                "ns_instantiation_level_id": "gKONAmxwKxdVrllCwPRU",
+                "blueprint_id": "2",
+                "nsd_info_id": "QZSqBbogiKAaEhUWlRxs"
+              }
             ],
+            "parameters": [
+              {
+                "parameter_id": "InUbrEjqWsQSWMCpTCGm",
+                "parameter_type": "fOhTWcgofikRjDUFthPQ",
+                "applicability_field": "FULVirLuSJyBoNFCYiOC",
+                "parameter_name": "osYKvCYnfSuacEPmowKp",
+                "parameter_description": "PVtBnRgclrqPHBIWTBbT"
+              },
+              {
+                "parameter_id": "HPzBCWZglFshAyhclsuh",
+                "parameter_type": "XOMCNbpHNHekEebKcFHR",
+                "applicability_field": "bjWqYrgMKNYYMtYbDVFp",
+                "parameter_name": "zdfVoXgiPmCfERHJWbko",
+                "parameter_description": "bOhxlseybpZfLLsyFNyF"
+              },
+              {
+                "parameter_id": "NLkDkmaFlyCzuMXAADTn",
+                "parameter_type": "ILXfZVOkNfaLTLvfrmNx",
+                "applicability_field": "HPxDesIktOrdxjqBgdfb",
+                "parameter_name": "GKIwRGbRGAIIowpxAGOW",
+                "parameter_description": "GxFOaGbzvHowPcSJWRsm"
+              }
+            ],
+            "embb_service_category": "DENSE_URBAN",
+            "version": "version_2",
             "name": "name_2",
-            "on_boarded_mec_app_package_info_id": [
-              "GCQaQhSlsomnPNCCVXPK",
-              "HgApGaFDjQKeMNVNEEuc",
-              "ogDRzmpsIgJZxhpxphQO"
+            "application_metrics": [
+              {
+                "metric_collection_type": "GAUGE",
+                "topic": "sGzDwmcaGtWqyCEpFltc",
+                "unit": "tRFfZNQwLzvQKzFdGACm",
+                "name": "Mr. Jaime Ortega III",
+                "metric_id": "yxEXgqLPIXYeHoldZgKA",
+                "interval": "iLdoTuXwqHCCFsuGxTVN"
+              },
+              {
+                "metric_collection_type": "CUMULATIVE",
+                "topic": "IracVvZHyBgAdJobDJYi",
+                "unit": "CipRGlLHOBwiUXcNNNAi",
+                "name": "Mr. Steve Bright DVM",
+                "metric_id": "FqAZPZrODFOhonUUHQSB",
+                "interval": "WrRjeuuDHFrpGrOTipDk"
+              },
+              {
+                "metric_collection_type": "CUMULATIVE",
+                "topic": "yVSUWzHmWDefCYjIBLUS",
+                "unit": "DhSqezempzBktVgQBDzp",
+                "name": "Frank Horne IV",
+                "metric_id": "YgcMvPxWTHSNZfuVRrSU",
+                "interval": "UeyuphkBeaGUiweUFlBx"
+              }
             ],
-            "owner": "ZjBnqjYwnoxUOcgRdOLi",
-            "vs_blueprint_version": "version_2",
-            "vs_blueprint_id": "2",
-            "vs_blueprint": {
-              "configurable_parameters": [
-                "aICXDrrTTDIbItNJJTRt",
-                "RKUKWfODzzeJdNDywneO",
-                "PuzhURIXXvdVVDunBlVf"
-              ],
-              "application_metrics": [
-                {
-                  "name": "Marcus Olson",
-                  "topic": "VgPglPOPXhJMQLlwZDaB",
-                  "interval": "bkkflxDvtAyNXRRKmrvs",
-                  "metric_collection_type": "DELTA",
-                  "unit": "ASuosRbLbIqGaCyfFeiE",
-                  "metric_id": "FZuBDxwgZxENCSQdGJYk"
-                },
-                {
-                  "name": "Dr. Marco Watts",
-                  "topic": "CAiJPejJsHXQfuGDAJaI",
-                  "interval": "XszAHAJjibqihuIWfpEc",
-                  "metric_collection_type": "CUMULATIVE",
-                  "unit": "afsXkBUbzxAirWNNxENw",
-                  "metric_id": "ZejMwcnDVffFvCUFilUx"
-                },
-                {
-                  "name": "Haley Ramos MD",
-                  "topic": "lvTDmCrCfePQidlOkjzS",
-                  "interval": "KXGMcgVOzauDMeVjnGwv",
-                  "metric_collection_type": "DELTA",
-                  "unit": "AZiJhIxywlwDKHXFpWPH",
-                  "metric_id": "pUTQwvRGuWKRlHaZrMKQ"
-                }
-              ],
-              "name": "name_2",
-              "connectivity_services": [
-                {
-                  "name": "Ms. Abigail Charles MD",
-                  "end_point_ids": [
-                    "PfexSPUnTftOHVhVcrhe",
-                    "jTWBPXQrLJNZshzfaqJp",
-                    "PVyrqvbeDOVVCOKSntEx"
-                  ],
-                  "connectivity_properties": [
-                    "IGteUnwdxNlfIKKrNQDE",
-                    "ZJXDEJsbmYsmfErHhtaP",
-                    "pcYtNnePTTmOsepfREAB"
-                  ],
-                  "external": true
-                },
-                {
-                  "name": "Dr. Darryl Good",
-                  "end_point_ids": [
-                    "wRjohQPpGvMmLmQdJQlN",
-                    "zjKOsywxUhffFRKvYgVb",
-                    "JLTcmXKDBYjDVwSeAVQt"
-                  ],
-                  "connectivity_properties": [
-                    "LecooMdoajukoLJkzVHk",
-                    "KlXuPmSmelLHatdfdzHw",
-                    "RLUGySjNWIghDeMnQkKb"
-                  ],
-                  "external": true
-                },
-                {
-                  "name": "Dr. Shaun Cobb III",
-                  "end_point_ids": [
-                    "hgHBsYNRGzqhRnpwQIii",
-                    "pnSfzXhtcYhKSqVmrdHD",
-                    "jLUreAAbULbsrWehiIVF"
-                  ],
-                  "connectivity_properties": [
-                    "JxATSOFDXMEYPRsFvPUX",
-                    "tBfOerFCVXFKboUbXrVQ",
-                    "btWXPMoaNIuNrwlXDRuF"
-                  ],
-                  "external": false
-                }
-              ],
-              "inter_site": true,
-              "end_points": [
-                {
-                  "ran_connection": true,
-                  "management": false,
-                  "end_point_id": "YAcJRzEuzwsMtaJOjKbO",
-                  "external": false
-                },
-                {
-                  "ran_connection": true,
-                  "management": false,
-                  "end_point_id": "VXSYlNzMYYElsRFMNRPe",
-                  "external": true
-                },
-                {
-                  "ran_connection": false,
-                  "management": false,
-                  "end_point_id": "ZrdTTMqTipVdDHHhxQff",
-                  "external": false
-                }
-              ],
-              "blueprint_id": "2",
-              "embb_service_category": "URBAN_MACRO",
-              "urllc_service_category": "ELECTRICITY_DISTRIBUTION_HIGH_VOLTAGE",
-              "description": "Clear store impact animal hard huge hear once. End their southern far wonder down. Nothing water team individual focus brother single officer.\nPeople season item owner. Middle teacher minute do.",
-              "slice_service_type": "EMBB",
-              "parameters": [
-                {
-                  "applicability_field": "SWtwkBfiYdyJXuellBzX",
-                  "parameter_type": "BmNJMvqDRDMUotBNiVGY",
-                  "parameter_description": "HjAnITfLeFacjAxMCzfM",
-                  "parameter_name": "uZKzrWIjKUJOEQexZIri",
-                  "parameter_id": "SYSMXbYCnYESYqJMqyCt"
-                },
-                {
-                  "applicability_field": "WioxAuFtygdcWQSEueOQ",
-                  "parameter_type": "DfUIBpAkrUPUDIQsNfAg",
-                  "parameter_description": "mVEvxjqENXdxivrMosxj",
-                  "parameter_name": "EOGLdJAVhaJPJGqhAsCX",
-                  "parameter_id": "SbdQVaTHitxwFLhgWXRR"
-                },
-                {
-                  "applicability_field": "MUCyuEDUXTUBZPWHKVTJ",
-                  "parameter_type": "TDVVnzprPbQGUUvIHkwu",
-                  "parameter_description": "XxZbrquwEXyigESbOXfi",
-                  "parameter_name": "IhqjfSIphOgQyNyKhVHx",
-                  "parameter_id": "DXsAhDjkFocPobWqcAfE"
-                }
-              ],
-              "version": "version_2",
-              "atomic_components": [
-                {
-                  "servers_number": 1493,
-                  "image_urls": [
-                    "VFtrhvhYcHeXFbOJuRNg",
-                    "tHdJahWSBdeJQKenbEUC",
-                    "SqAoyAZxQvEHmXXFUaMe"
-                  ],
-                  "compatible_site": "PLrjtILyiIhFMlklHiDr",
-                  "associated_vsb_id": "ggbXSbKedEacETsChdPB",
-                  "placement": "EDGE",
-                  "type": "FUNCTION",
-                  "lifecycleOperations": {},
-                  "component_id": "PZvBVIHlHJrhlVSjnJVe",
-                  "end_points_ids": [
-                    "bkfXVbrpjUHiFckwqPPn",
-                    "RHHeNjaEFqtpEhgweokX",
-                    "SQDfPPAJqvLATXgaJVCY"
-                  ]
-                },
-                {
-                  "servers_number": 2031,
-                  "image_urls": [
-                    "PHJUZNNorePwiOMltADP",
-                    "GTEyPPqhyJbjnosbKCvN",
-                    "RJjNAoFzQItSCdiBKfli"
-                  ],
-                  "compatible_site": "qPRCdLrXwaEKhciGTyUT",
-                  "associated_vsb_id": "oLrYZyyKcBopuPePFXFz",
-                  "placement": "CLOUD",
-                  "type": "FUNCTION",
-                  "lifecycleOperations": {},
-                  "component_id": "hfriSiiJffMagSVVuYCm",
-                  "end_points_ids": [
-                    "zaPzkuqiXngWCSfVAawY",
-                    "efuRnLKQGJhMefpLCVUL",
-                    "KNVLpozDsrTuPSLLBbjA"
-                  ]
-                },
-                {
-                  "servers_number": 9812,
-                  "image_urls": [
-                    "VoWIfBYwumIyIKpPfMsh",
-                    "esdXNbJOVYKkBprhexbn",
-                    "LhAwtBGSqvxmErNDCpxP"
-                  ],
-                  "compatible_site": "wgUZDpliGRztxjfAlAhV",
-                  "associated_vsb_id": "XDBizTFQgFlyiFvBlCHt",
-                  "placement": "CLOUD",
-                  "type": "OTHER",
-                  "lifecycleOperations": {},
-                  "component_id": "mqGljjDEaGuZkwHwlYRD",
-                  "end_points_ids": [
-                    "MGYMWtQmVKwZnWKHSJCQ",
-                    "ftIwYiMjUJjlTxSBBXrG",
-                    "TTixlpZKsDWjQUgzGmQa"
-                  ]
-                }
-              ],
-              "service_sequence": [
-                {
-                  "vs_component_id": "YFZdKFuUhluoHiLdDluF"
-                },
-                {
-                  "vs_component_id": "BAvHIRyiYhFbTFEVYbXe"
-                },
-                {
-                  "vs_component_id": "NJODvDnRxNMGILGSaZyO"
-                }
-              ]
-            },
-            "active_vsd_id": [
-              "0",
-              "1",
-              "2",
-              "3",
-              "4"
+            "connectivity_services": [
+              {
+                "name": "Haley Grimes",
+                "connectivity_properties": [
+                  "yQKrBbJghlPQiiNfTFYL",
+                  "xQhLVPFgGEAAmQIHfqqp",
+                  "mZKLtsOCyCMGrKTALyqY"
+                ],
+                "end_point_ids": [
+                  "LgDPxCkuNxmgcgJyAZPS",
+                  "gaaEiuXGdPCekafdWFRw",
+                  "TCFhPlmmDKnPkZWzjNTd"
+                ],
+                "external": true
+              },
+              {
+                "name": "Alejandro Velazquez",
+                "connectivity_properties": [
+                  "xjRIcZcmrxvePIFmmXqJ",
+                  "iwVEXswRuFckXYoVMsQJ",
+                  "ndSqNwNCLXlyNzdjvErD"
+                ],
+                "end_point_ids": [
+                  "qIBsjOPZJOhMxKNSwOux",
+                  "rtaeaMxtjVgpiWXAIexo",
+                  "pTGPgaLdyPHdImtVFfhy"
+                ],
+                "external": false
+              },
+              {
+                "name": "Chloe Lucas DVM",
+                "connectivity_properties": [
+                  "OVtlCoScSUAObGEUrIAz",
+                  "EELLZmEGlBPHOoPfFLiM",
+                  "lNKPKrXMzepaSiGWElrP"
+                ],
+                "end_point_ids": [
+                  "jGSxrGJOdguzSnJtAdWj",
+                  "GCReTuGUNTCImUmasCDP",
+                  "OgXDHMumromODqHytQvn"
+                ],
+                "external": false
+              }
+            ],
+            "urllc_service_category": "ELECTRICITY_DISTRIBUTION_HIGH_VOLTAGE",
+            "inter_site": false,
+            "service_sequence": [
+              {
+                "vs_component_id": "iMLExGrjISOTWxHYoRqe"
+              },
+              {
+                "vs_component_id": "rbYZqHkQMAzjvHSkNoOH"
+              },
+              {
+                "vs_component_id": "kEPbwYQJQFyiIXJGCCrp"
+              }
+            ],
+            "blueprint_id": "2",
+            "description": "Long western west floor score win science. Everything situation field significant.\nGeneration little eight best. Resource decade occur today.\nBall traditional call tax eye often allow arm.",
+            "configurable_parameters": [
+              "CegUZEHHgbXeznScUEzc",
+              "TErjXQNroOCpGJPDMNOS",
+              "opCrKdowtNHpcPMhCsjX"
             ]
-          }
+          },
+          "active_vsd_id": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+          ]
         }
       },
       {
-        "descriptor": {
-          "is_public": false,
-          "management_type": "TENANT_MANAGED",
-          "domain_id": "HFZKaaRrDkUkzcwWaJEp",
+        "vsd": {
+          "is_public": true,
+          "nested_vsd_ids": {},
+          "vs_blueprint_id": "3",
+          "associated_vsd_id": "DpRKFMSWqyRGzbpogtOU",
           "service_constraints": [
             {
-              "atomic_component_id": "pwBMjAuVfdAPBMfgXxCD",
-              "preferred_providers": [
-                "jLtzLKKMbwkCPEUjKcfZ",
-                "NMsjpCGMLUrnMrlfAqgh",
-                "MRwlGbyEcDsdYRIZmvuC"
-              ],
               "sharable": false,
-              "prohibited_providers": [
-                "HIMcERnCLEtntAOhgaBa",
-                "WByHMeYtSvksNJjweriH",
-                "fkcrykDeEHAmIxWTyCLg"
-              ],
+              "atomic_component_id": "vqLmtafSVLzOIbXenMvx",
               "non_preferred_providers": [
-                "rzjffzZfIacosNkyoEzG",
-                "IiZPJSYZhRTcGhPYsNYb",
-                "axIojQdoTnKoKfrcQPnf"
+                "rjjqPmyjbfMDCljOSATj",
+                "rswcAxixjMbmwEhPRnWV",
+                "pyRqIUJYrskmPwMKjWtl"
               ],
-              "include_shared_elements": true
+              "include_shared_elements": false,
+              "prohibited_providers": [
+                "yzIYtVYHwTPEhGHXkzdl",
+                "gnwDzgdtgnTQfCrlABNH",
+                "NboIFiZohYxgFvtNwwDp"
+              ],
+              "preferred_providers": [
+                "iZYduRfXTvklaDYiUNAO",
+                "iCIFSrjvIxGwjJGStlJH",
+                "ptxsmWgZsTvEemRdlDHH"
+              ]
             },
             {
-              "atomic_component_id": "dIexcKChTuCDKNGAVJpl",
-              "preferred_providers": [
-                "OGsHlNWtJnPHwTpZVksA",
-                "BteFyKkesWJWKSDqNpEd",
-                "NigrOQlalEXgDuFjXvLU"
-              ],
-              "sharable": false,
-              "prohibited_providers": [
-                "TLDJIJJbpwnEyaJgCFqE",
-                "jPXQittpclemgNhiOgEY",
-                "dfLHRKYzugQOPQmlTZix"
-              ],
-              "non_preferred_providers": [
-                "YABDMjnyrMwvMiUTonQU",
-                "txkZNBuUFYWxmosPDxfI",
-                "mKBVQnHNaNmQlatltqQT"
-              ],
-              "include_shared_elements": true
-            },
-            {
-              "atomic_component_id": "xuOUYbgpEprztNksfkgg",
-              "preferred_providers": [
-                "mamubVCDrcXDBFAgmEPM",
-                "QBYDMYqRBNbddDSJQCSv",
-                "rnvGZZaBItmkRaCuEBYX"
-              ],
               "sharable": true,
-              "prohibited_providers": [
-                "eBRUdmomyarfZmkodeEz",
-                "DfAXVftJbUppLIFXqGUd",
-                "ZTHpTnKrThQkfBaXOYsm"
-              ],
+              "atomic_component_id": "utezFzpsYtIJBERNbYjD",
               "non_preferred_providers": [
-                "oHFeiTkQFmcYdmzpKHnn",
-                "fvkgbLzsbhBuzoXFSFdR",
-                "CvSbvfoxYCUcdzBTmBAz"
+                "wYdgmkkaHZukFPDboJeq",
+                "TdtfDUyxapufqKRUSWpa",
+                "eKPJtSHCNbUihdXVkemG"
               ],
-              "include_shared_elements": true
+              "include_shared_elements": true,
+              "prohibited_providers": [
+                "sKscJnGPTnZExmPDwfai",
+                "BaZSsgxxLLSecBUhlmvH",
+                "CrfnqfHlsHFHdaSqHqkJ"
+              ],
+              "preferred_providers": [
+                "dPSqKLUSdcYFaROYYdTY",
+                "iirPVzWJpyZTsWiPMsDE",
+                "afnwbhMJDMKQBtYEREvi"
+              ]
+            },
+            {
+              "sharable": true,
+              "atomic_component_id": "BrvDtKFoBTahkLTKpGYV",
+              "non_preferred_providers": [
+                "gpnFsCljjdzzOXcQxqDK",
+                "sIqFpGhWjgtOUHBhDBES",
+                "dEUvufsrPLYQmDIDGzqb"
+              ],
+              "include_shared_elements": true,
+              "prohibited_providers": [
+                "vqNgnKrPiKelbFMBgere",
+                "rAWIKmWwXfaGHNViKcHa",
+                "UZJwRAwBfinEGmwMvlJo"
+              ],
+              "preferred_providers": [
+                "yYjsKovDUMmnWFgpXaUp",
+                "mNaEetTgNQqFaGFlbxrK",
+                "UEGvHEYEKWqaUmkXHPHB"
+              ]
             }
           ],
-          "name": "Dr. Vanessa Cain",
-          "nested_vsd_ids": {},
+          "domain_id": "EnMvfcXhZFxuogfDBqrJ",
+          "version": "ufaCrZBleToibSuoibrN",
+          "management_type": "PROVIDER_MANAGED",
+          "name": "Ms. Maureen Shepard MD",
           "qos_parameters": {},
           "descriptor_id": "3",
-          "version": "cvhfqQOSdXlSOdzYJeJs",
-          "associated_vsd_id": "wRCPOBZPKUJqUWQKNWzn",
           "sla": {
-            "low_cost_required": false,
-            "service_creation_time": "UNDEFINED",
-            "availability_coverage": "UNDEFINED"
+            "service_creation_time": "SERVICE_CREATION_TIME_LOW",
+            "availability_coverage": "UNDEFINED",
+            "low_cost_required": true
           },
-          "tenant_id": "tenant",
+          "tenant_id": "tenant"
+        },
+        "vs_blueprint_info": {
+          "on_boarded_nst_info_id": [
+            "vxVjDBvACtOplcUlXjtj",
+            "HMsFNgyfFcJRQPxXSGBL",
+            "LWVyILGHdPiNXihBGyJJ"
+          ],
+          "on_boarded_vnf_package_info_id": [
+            "ncakhrmTbXBtOvuwMUOu",
+            "jMreSdAITJhIFJfYdoEk",
+            "FKUGZxhHhXpXKPmMYgrw"
+          ],
+          "owner": "tvmvLVAyuUlsjPLQEpzH",
+          "vs_blueprint_id": "3",
+          "vs_blueprint_version": "version_3",
+          "on_boarded_nsd_info_id": [
+            "pqxbEppmJpgXIhcpqqbQ",
+            "zkTzTQZASrLrFaqQKQUs",
+            "EteVcAaDwscgihjOiBBK"
+          ],
+          "name": "name_3",
+          "on_boarded_mec_app_package_info_id": [
+            "iQjczsIKdBxMbIyMsqzL",
+            "XXSrDJMCCSgRglmkWhxt",
+            "HSQegOpkpCfFAEyonQEg"
+          ],
           "vs_blueprint": {
-            "on_boarded_nst_info_id": [
-              "eyKqTvNEGcQgOuOgwGUh",
-              "pNTfMnlaeUdadiBkKulR",
-              "CLFShCDxpsmuAzWUkuAJ"
+            "slice_service_type": "NONE",
+            "atomic_components": [
+              {
+                "compatible_site": "jxKlTgMIkQtxLoCdwWJo",
+                "type": "OTHER",
+                "component_id": "IBHZMEUmanrhOWPVwKVt",
+                "placement": "CLOUD",
+                "associated_vsb_id": "sQLDOtUlUEpqPxZVLVcc",
+                "servers_number": 46,
+                "lifecycleOperations": {},
+                "end_points_ids": [
+                  "xidzmYXkKTOinPPJYeQq",
+                  "cgawPsrwrudrztBGrFMG",
+                  "lNwchFaMmtEiTyHgbvsD"
+                ],
+                "image_urls": [
+                  "swHgHVlmrBFEPsboyqRH",
+                  "qWpsPeuLciqIhwttDNAv",
+                  "cVwvYauanCnbEjBByhZr"
+                ]
+              },
+              {
+                "compatible_site": "TKOeMhrEuEkoxUEchxbZ",
+                "type": "OTHER",
+                "component_id": "YIqRIVINfvFOpioyoMwE",
+                "placement": "EDGE",
+                "associated_vsb_id": "uYSOGrYXMZtNGbfwKOCv",
+                "servers_number": 5456,
+                "lifecycleOperations": {},
+                "end_points_ids": [
+                  "WYrcxYVWypbFlzaLSGaB",
+                  "GRwDLhBxmjuzdjbJllyP",
+                  "oOMRYZRhxYrPpeQuHWzJ"
+                ],
+                "image_urls": [
+                  "ZUfVlcTrUpaVurRwGEsW",
+                  "BNXxBYNlMdddEkeUXGoG",
+                  "ddhZUXfzxGTkKvVuTSPC"
+                ]
+              },
+              {
+                "compatible_site": "qFPwzcfdZieKGgfykyhs",
+                "type": "FUNCTION",
+                "component_id": "ICPMvhAaoWQvNEoxqlPk",
+                "placement": "EDGE",
+                "associated_vsb_id": "KxhMdZyBRwjBlmWBZqxm",
+                "servers_number": 5715,
+                "lifecycleOperations": {},
+                "end_points_ids": [
+                  "dMttxYIVtgcvnynlNVWV",
+                  "axWzswIYnaMoWndaREKt",
+                  "lkrUXvtPcSbMHZnDWglu"
+                ],
+                "image_urls": [
+                  "iqgzsqCLGJtWrOQgiHEb",
+                  "SKXNxtxahRMeNOKPGtFb",
+                  "CjPirzySytIerWQcvRbv"
+                ]
+              }
             ],
-            "on_boarded_vnf_package_info_id": [
-              "ZOSpIgHKGhxnVrNmUsGW",
-              "EuvslUNLfBGMQLbeSvMp",
-              "VAPLSuGbvwTtKrSvmJDo"
+            "end_points": [
+              {
+                "management": false,
+                "ran_connection": true,
+                "end_point_id": "QevxwkkIJKtwrHGVdtzt",
+                "external": false
+              },
+              {
+                "management": false,
+                "ran_connection": false,
+                "end_point_id": "TuTSqYfXvqwmdUoJeJim",
+                "external": false
+              },
+              {
+                "management": true,
+                "ran_connection": true,
+                "end_point_id": "RQtGCPYpSZsXTYCfjMeH",
+                "external": true
+              }
             ],
-            "on_boarded_nsd_info_id": [
-              "OBBcuxAKlpMylWyvnOts",
-              "haLubxBfEBHyxyVphiEM",
-              "oqxqZXKwJhOiJJrlEtVz"
+            "translation_rules": [
+              {
+                "nst_id": "cKfwXMbkYOyHsCMVGvCp",
+                "ns_flavour_id": "ShbPMuhxxGJrPOzHamGD",
+                "input": [
+                  {
+                    "max_value": 678,
+                    "parameter_id": "pxwmAASrhjqNDMIlkdMd",
+                    "min_value": 6311
+                  },
+                  {
+                    "max_value": 8158,
+                    "parameter_id": "MiAMuOAUOoXUVStnRuCH",
+                    "min_value": 4867
+                  },
+                  {
+                    "max_value": 5918,
+                    "parameter_id": "ofbpuJVfbGPMldGXSuJK",
+                    "min_value": 4041
+                  }
+                ],
+                "nsd_version": "pUWnaqowczFJyaKAuGnS",
+                "nsd_id": "CuBnBeFavVxnQxukWAFb",
+                "ns_instantiation_level_id": "xWCTBrUSIldCoBxxalBy",
+                "blueprint_id": "3",
+                "nsd_info_id": "IPLYJEVmXVGwFUCDQhiH"
+              }
             ],
+            "parameters": [
+              {
+                "parameter_id": "AdauHhHvHbuKUiXawwbw",
+                "parameter_type": "JGORoVvuriinXGDSnbyT",
+                "applicability_field": "wknjzGTHcYqHIJTPizEI",
+                "parameter_name": "YNAoTAUvevjvcNdODNkM",
+                "parameter_description": "vCdlHCQoeruXgxNGIvej"
+              },
+              {
+                "parameter_id": "BxCKpIWSbZqtGYINIpwt",
+                "parameter_type": "uvapdMYtWjtQBjRlBkRq",
+                "applicability_field": "OKexnalgPjlATGnNNRUC",
+                "parameter_name": "VinxKrXNbWwynUaRNvSH",
+                "parameter_description": "mMPSUHswDcvZImtwprRf"
+              },
+              {
+                "parameter_id": "JvtsIKDTtoZtRCzdvywG",
+                "parameter_type": "QecNMggwVMjhyhtDUXCL",
+                "applicability_field": "aTufvtWVOLLewmokXBtj",
+                "parameter_name": "imQwjBprwIZFRljXsWhJ",
+                "parameter_description": "xQEhBMUEXssAZhXiQOGr"
+              }
+            ],
+            "embb_service_category": "RURAL_MACRO",
+            "version": "version_3",
             "name": "name_3",
-            "on_boarded_mec_app_package_info_id": [
-              "UaeLiWPdgNCPIGEVXieG",
-              "QMbuMUlNmXrzyvsSuHuL",
-              "YXwCVALRgeTtlTwNVAAc"
+            "application_metrics": [
+              {
+                "metric_collection_type": "CUMULATIVE",
+                "topic": "vhacrHIMsXnoyfgQDrfD",
+                "unit": "DieZyHTfCwSfeumtbgmF",
+                "name": "Mr. Ruben Montgomery Jr.",
+                "metric_id": "kiWgwWQzsQOKfPsyPaPu",
+                "interval": "CDwnZKdeRyidHxlWWPoJ"
+              },
+              {
+                "metric_collection_type": "GAUGE",
+                "topic": "nDmYSLsoGONkXhjlcHFJ",
+                "unit": "uHaPTiCuRwEAKIRlZmth",
+                "name": "Ms. Yesenia Pena",
+                "metric_id": "VAaBSKPZrwhvKwpKGXnC",
+                "interval": "QeMUlNbtBnLMxurgmJHn"
+              },
+              {
+                "metric_collection_type": "GAUGE",
+                "topic": "sgWBwaavPuqOgxiliere",
+                "unit": "VqGRuibjijdRXcbGRlyM",
+                "name": "Jay Hardin",
+                "metric_id": "pxghhlCQcrYdxoKRzyyn",
+                "interval": "GiVNhGudeEhyVNsdWhBP"
+              }
             ],
-            "owner": "yXemIZTVAiSMMvwbHbmb",
-            "vs_blueprint_version": "version_3",
-            "vs_blueprint_id": "3",
-            "vs_blueprint": {
-              "configurable_parameters": [
-                "zDWdufOUNOYBxanJYgVm",
-                "JjTpdlBAaNaapkvWfUfG",
-                "DypLVWuLafQsvXFJVdLR"
-              ],
-              "application_metrics": [
-                {
-                  "name": "Miss Priscilla Graves",
-                  "topic": "SaQoADYHzQqdqwdLCDWv",
-                  "interval": "XVBQwWhNTuTAmKJTrqvC",
-                  "metric_collection_type": "GAUGE",
-                  "unit": "UebuZAByVfdrueuUMMlI",
-                  "metric_id": "coryjOQoMozxzWZtgVRU"
-                },
-                {
-                  "name": "Jeremy Harmon DVM",
-                  "topic": "tLwjLOzHPLQZsbAopArW",
-                  "interval": "QKiCfysfqPIHyenWzztO",
-                  "metric_collection_type": "CUMULATIVE",
-                  "unit": "xtpREuHNkmLtWbnNIxpw",
-                  "metric_id": "svHTJLxdYmCdekGsQSgW"
-                },
-                {
-                  "name": "Mr. Martin Mckinney",
-                  "topic": "wcLFlzwBJBTzxEahFsTr",
-                  "interval": "cnapWCUjdKDptSLPAjQl",
-                  "metric_collection_type": "GAUGE",
-                  "unit": "dxcLMBGugusryXaiKnJl",
-                  "metric_id": "ZPGfJsisNeoCRkOqRErm"
-                }
-              ],
-              "name": "name_3",
-              "connectivity_services": [
-                {
-                  "name": "Clayton Gay MD",
-                  "end_point_ids": [
-                    "jURXOkjrNqCpYYWDZEUm",
-                    "FAnjmhrngiGRRNcZrKhr",
-                    "KagYPMfLVMCAXddIFFDv"
-                  ],
-                  "connectivity_properties": [
-                    "ShKWgeAsuPnjonHKNhze",
-                    "dyPGQaYIpZlXrHMGEZsL",
-                    "tJHiESqhqNwXScfxcxQf"
-                  ],
-                  "external": false
-                },
-                {
-                  "name": "Mr. Grant Woodward IV",
-                  "end_point_ids": [
-                    "TNJUncAMtvHDGhwLUWDh",
-                    "WLuzXdItRqHgTZZLPtxh",
-                    "jxGRXliIdfoSygTubhVR"
-                  ],
-                  "connectivity_properties": [
-                    "DXfRRnOOXiZsQlqILZNT",
-                    "pWqQFhlrQLuVUBoBBBXD",
-                    "CpOZimsjUBZCMVupPZAQ"
-                  ],
-                  "external": true
-                },
-                {
-                  "name": "Stephanie Melton DVM",
-                  "end_point_ids": [
-                    "ItUIAdkHhrbYBbgKoJWs",
-                    "GSVNHazQYeGKcPyawIGp",
-                    "ofBBrWIPsypHCBMUvUEj"
-                  ],
-                  "connectivity_properties": [
-                    "dYTwsYHPigtVxDCyZdhI",
-                    "MpCkXtXKuwLexhQhryVd",
-                    "dVLUTWYFBroHtOjaOEzj"
-                  ],
-                  "external": false
-                }
-              ],
-              "inter_site": true,
-              "end_points": [
-                {
-                  "ran_connection": false,
-                  "management": false,
-                  "end_point_id": "AVfBvvziUQoPBgxokieX",
-                  "external": true
-                },
-                {
-                  "ran_connection": false,
-                  "management": true,
-                  "end_point_id": "rsvleOwElNRSLgqJMRQH",
-                  "external": true
-                },
-                {
-                  "ran_connection": true,
-                  "management": true,
-                  "end_point_id": "NKiQFMjBuOjhQfydGzXy",
-                  "external": false
-                }
-              ],
-              "blueprint_id": "3",
-              "embb_service_category": "RURAL_MACRO",
-              "urllc_service_category": "PROCESS_AUTOMATION_MONITORING",
-              "description": "Couple have during tend. Cup simply others often girl amount network nearly. Outside bad beautiful class everything expert.",
-              "slice_service_type": "M_IOT",
-              "parameters": [
-                {
-                  "applicability_field": "YqwkkEdjmffbmXNzuZzo",
-                  "parameter_type": "nTnFcLwbtrgEzjuVkkAA",
-                  "parameter_description": "DhuAbTNdaAnVisiGxhvu",
-                  "parameter_name": "ecAqLTFzXpgdEsBXDveW",
-                  "parameter_id": "MnFGkvzxhAwcEAklagpG"
-                },
-                {
-                  "applicability_field": "zVEKgKzHuDxPkPUHapvj",
-                  "parameter_type": "tdeoMcDqtdSJhIZRkcXw",
-                  "parameter_description": "uWyXQpkKZtAZBjBBpbXY",
-                  "parameter_name": "mdjQgVQWrMHwlCkYeoDo",
-                  "parameter_id": "KTKzuNypKLdGdOfpBXjW"
-                },
-                {
-                  "applicability_field": "jxXbwdxsHvqndXJEmNVg",
-                  "parameter_type": "zwHYRFGGSlbSEtERPZon",
-                  "parameter_description": "FXdZseKaHEyNyPeFhDqG",
-                  "parameter_name": "WCclxuPUejSQbdSDHJyN",
-                  "parameter_id": "ZFoDiGkjWKpKKunKGVvA"
-                }
-              ],
-              "version": "version_3",
-              "atomic_components": [
-                {
-                  "servers_number": 4164,
-                  "image_urls": [
-                    "xFvwBjDZUkuWykAAuyHN",
-                    "qBLXigglexfDTaWgKvlY",
-                    "VlRoBkGiWMyXUoHpEqYd"
-                  ],
-                  "compatible_site": "rUhLduUdEnrtsXwrEaCT",
-                  "associated_vsb_id": "iJPsyzzzTsiDjymJlTrr",
-                  "placement": "CLOUD",
-                  "type": "OTHER",
-                  "lifecycleOperations": {},
-                  "component_id": "COJwAtSEwxVjtHAXYZoN",
-                  "end_points_ids": [
-                    "lKbabzplYjolAwWYBttb",
-                    "jwAXWrGvSipWtmQzbVwh",
-                    "cUdDiFjGwLXLtHrYsSED"
-                  ]
-                },
-                {
-                  "servers_number": 2216,
-                  "image_urls": [
-                    "bdAGprgltkYjDxQoFXJk",
-                    "tEOMZXvVTniEMeHtQtOB",
-                    "eUZMqGkIsBwykelgjmAr"
-                  ],
-                  "compatible_site": "eKxOqiJLUjtapQFrfOSj",
-                  "associated_vsb_id": "IWkvZMIGilVfjUEdEzUi",
-                  "placement": "CLOUD",
-                  "type": "FUNCTION",
-                  "lifecycleOperations": {},
-                  "component_id": "hbhGebTHqvlmLpVUfMZp",
-                  "end_points_ids": [
-                    "RylnnhjmcCGKedsISfLV",
-                    "hHgCKxwsnGczbRagxiah",
-                    "eNNZZQaaynutYxgVFapu"
-                  ]
-                },
-                {
-                  "servers_number": 845,
-                  "image_urls": [
-                    "vVUkWuuRwipLjcvzmKyM",
-                    "ZQmQaIPZMfDfNZEbCyQX",
-                    "rJpImqZWkVPMsfOgmgsq"
-                  ],
-                  "compatible_site": "AFyzwyjPBtxzLcCPqJUS",
-                  "associated_vsb_id": "zsRSYkxOTvCQRiQDXCeh",
-                  "placement": "CLOUD",
-                  "type": "SERVICE",
-                  "lifecycleOperations": {},
-                  "component_id": "wibRUdJEbuVtMPjNbLSg",
-                  "end_points_ids": [
-                    "OXYPgSsbfvlhktIWCazM",
-                    "tyJAhFVVXOHQzaAaILSx",
-                    "kMJWdrPZDJNdGncGKQqN"
-                  ]
-                }
-              ],
-              "service_sequence": [
-                {
-                  "vs_component_id": "sqrXxQskCuismudHQebJ"
-                },
-                {
-                  "vs_component_id": "nOEcXLRvyNQmfkGCSDVY"
-                },
-                {
-                  "vs_component_id": "iRvVVhUZIQTOXBZWkrHc"
-                }
-              ]
-            },
-            "active_vsd_id": [
-              "0",
-              "1",
-              "2",
-              "3",
-              "4"
+            "connectivity_services": [
+              {
+                "name": "Miss Sheena Avery PhD",
+                "connectivity_properties": [
+                  "atRmxNxaIDJkePPcGmhN",
+                  "QYLYlJZMxeeKJsKcYGnI",
+                  "zgyauFZNFaprNUCpARQY"
+                ],
+                "end_point_ids": [
+                  "ZmcYzfJKqTSpPRPRxWVR",
+                  "krsxevDztYAkexWTUbkC",
+                  "IYHBHQRRADLErPWEHsMu"
+                ],
+                "external": false
+              },
+              {
+                "name": "Mr. Erik Cook",
+                "connectivity_properties": [
+                  "lyPYufnXjCLsxotJQQud",
+                  "fyGZgsCxrvBdLxVNJSyp",
+                  "pZxvKAYanXqDJBgcIoLv"
+                ],
+                "end_point_ids": [
+                  "jGkkPWcPqweVJwzBUqFl",
+                  "FUMuqRdxPMGjVhySoFyI",
+                  "XrnfCvbRNoWTfsjXBXdn"
+                ],
+                "external": false
+              },
+              {
+                "name": "Dr. Adam Reese Jr.",
+                "connectivity_properties": [
+                  "PQvMlVATMxmOWtwnYfII",
+                  "dplLvzkzZsqVaGpNJzhJ",
+                  "HvkizDZrLYWwiohDAutI"
+                ],
+                "end_point_ids": [
+                  "SEjszlYhtVxRoHyubLBx",
+                  "BDSeIVOcioWImVFFWrVo",
+                  "HyAJxKlTbGSXtEeobZZO"
+                ],
+                "external": true
+              }
+            ],
+            "urllc_service_category": "INTELLIGENT_TRANSPORT_SYSTEMS_INFRASTRUCTURE_BACKHAUL",
+            "inter_site": true,
+            "service_sequence": [
+              {
+                "vs_component_id": "dSaWfDbxjmoieXxtLFhu"
+              },
+              {
+                "vs_component_id": "szHUFnrUnzyzRrlXfAES"
+              },
+              {
+                "vs_component_id": "lwkMyKOBikGDOldzktsS"
+              }
+            ],
+            "blueprint_id": "3",
+            "description": "He involve quickly country have. Understand white long writer cost water seven. Check bill degree eye address time.",
+            "configurable_parameters": [
+              "HdBmiFGJrJpcuVLLXBkX",
+              "mXRmMszUEVuUMTdUUHzl",
+              "wTtMEClieaHSeIdbBucG"
             ]
-          }
+          },
+          "active_vsd_id": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+          ]
         }
       },
       {
-        "descriptor": {
-          "is_public": false,
-          "management_type": "TENANT_MANAGED",
-          "domain_id": "EeGUapaHJfgnMrAruXwV",
+        "vsd": {
+          "is_public": true,
+          "nested_vsd_ids": {},
+          "vs_blueprint_id": "4",
+          "associated_vsd_id": "OireaqWDGAgxntggVYnT",
           "service_constraints": [
             {
-              "atomic_component_id": "JEPjOureXjxVhOxpaXAq",
-              "preferred_providers": [
-                "xsyPAWNOMLQTYxUSHekt",
-                "NZMEXfPxIRLUiRCOicYd",
-                "adfqYEWSmHvLnosTqiIB"
-              ],
-              "sharable": true,
-              "prohibited_providers": [
-                "UdtpXUORPpgUyFUgoAsA",
-                "aVPUTFjvvMCJcIEheMUt",
-                "NEruGmAyckzKoipvPwWB"
-              ],
-              "non_preferred_providers": [
-                "HCWcumbXvPpVSzXKVwVe",
-                "AutSdLFEKAhrEDmfdmev",
-                "xacADfNDYqmeamKWinxi"
-              ],
-              "include_shared_elements": false
-            },
-            {
-              "atomic_component_id": "jUFrKgQKasxNjzCkuCol",
-              "preferred_providers": [
-                "RyVnXAqjJHNTxHYKdxyH",
-                "gkRBWopETTPgYKsPVsOY",
-                "OCCPagxxHmTucLevCcjN"
-              ],
               "sharable": false,
-              "prohibited_providers": [
-                "fxONVMMzAqxnzPyCTYSx",
-                "eSRiVpKribwpRBLHWfld",
-                "scfQFBzTjLlMIxgORMMH"
-              ],
+              "atomic_component_id": "rCvrfGxNXSqycSkyuSIU",
               "non_preferred_providers": [
-                "pYHmNwXOxiLmgLLdUqJY",
-                "vliGknJkkhvasRwiHdoW",
-                "OjbWAQbsPCsZuygFRuZH"
+                "PTKjRZYByMLUAcVycfaW",
+                "SNNjbBpdWnVNPGRwVLaq",
+                "IYnmUefCZguYRZBGTgnH"
               ],
-              "include_shared_elements": true
-            },
-            {
-              "atomic_component_id": "lwUIylbAmDMdYznGdfJp",
+              "include_shared_elements": false,
+              "prohibited_providers": [
+                "vdHAbKQrfeIEiEyZHpen",
+                "UcCPkuJWFDxNStCQRrqf",
+                "SqFzYNxKBUyLcByClfJp"
+              ],
               "preferred_providers": [
-                "vifVPTqowgKbfgcHCCUZ",
-                "eltqljPMmfxgvLFqEkFb",
-                "wMvcVLDxjGJTbldXznru"
-              ],
-              "sharable": true,
-              "prohibited_providers": [
-                "EWqczawTzUscIAplDLCh",
-                "gIQVPZOWzoPdSXrpVThn",
-                "xOuihCfEZNIblghEggrr"
-              ],
-              "non_preferred_providers": [
-                "HxPxGLDpDroHJdTuNRmk",
-                "lnjKYBDlZrhRIAUJhzmQ",
-                "YlyYWlqbXFvKELzzqSUx"
-              ],
-              "include_shared_elements": true
-            }
-          ],
-          "name": "Kelsey Paul DVM",
-          "nested_vsd_ids": {},
-          "qos_parameters": {},
-          "descriptor_id": "4",
-          "version": "MMZDdSVuKlKZraFXlKqB",
-          "associated_vsd_id": "fiuDSJvDmHDHYADDQMFa",
-          "sla": {
-            "low_cost_required": false,
-            "service_creation_time": "SERVICE_CREATION_TIME_LOW",
-            "availability_coverage": "AVAILABILITY_COVERAGE_HIGH"
-          },
-          "tenant_id": "tenant",
-          "vs_blueprint": {
-            "on_boarded_nst_info_id": [
-              "hpuPnSDQEyJYKOLXYjXL",
-              "bhbfAlPDTQPErlgaAReD",
-              "klAGpHCaZJOpZOZeAQtW"
-            ],
-            "on_boarded_vnf_package_info_id": [
-              "tYuVbwsYShGoRIUwQGsd",
-              "ACXHuCQBMhqbWqUdHOzj",
-              "iNopDNFaqJxTHYKYwsdW"
-            ],
-            "on_boarded_nsd_info_id": [
-              "djhgvTjQjrufAPMZPtbk",
-              "YcrJUORxNtypEgJRLSnH",
-              "FrVfbWOEJEhSUQoaUKMR"
-            ],
-            "name": "name_4",
-            "on_boarded_mec_app_package_info_id": [
-              "CICrQxNFWSOSXonCVhqy",
-              "JMSqrfsdDFmnxwNAEzhJ",
-              "CvcpcMcdELWYKdPXhhpC"
-            ],
-            "owner": "eTDmUbEXaKDRAnpmXWbo",
-            "vs_blueprint_version": "version_4",
-            "vs_blueprint_id": "4",
-            "vs_blueprint": {
-              "configurable_parameters": [
-                "RThYxxxmKpuLQLdzQtUW",
-                "FAiSsQtvUeHedMaVhNbZ",
-                "IFjihHeZOBLUmmyDULUl"
-              ],
-              "application_metrics": [
-                {
-                  "name": "Terrance Salazar",
-                  "topic": "vHYaLExvgKpfnmUJpIqv",
-                  "interval": "IbnseCDoYzwqFOwVsOOT",
-                  "metric_collection_type": "GAUGE",
-                  "unit": "OKrGPSjPPzAVlhBQLtQe",
-                  "metric_id": "lRYugNYIfWvkaVXoKuES"
-                },
-                {
-                  "name": "Miss Jillian Hampton DVM",
-                  "topic": "cHZMwCBRvRrboBdeaGYX",
-                  "interval": "BSNWooEscicSpyyAxvjH",
-                  "metric_collection_type": "DELTA",
-                  "unit": "BuiDEZiwrTkxvjAjjgTv",
-                  "metric_id": "BzLoYvkdNyUyzToZgjuP"
-                },
-                {
-                  "name": "Miss Rachel Hamilton DVM",
-                  "topic": "QHFNLQpDftYSmkqvzRtC",
-                  "interval": "KsgkJXMUxjHmSvkUBNVA",
-                  "metric_collection_type": "CUMULATIVE",
-                  "unit": "dPbAzMBhmNMcTddqiQlr",
-                  "metric_id": "gOVJLczddAcPqpxwiCrr"
-                }
-              ],
-              "name": "name_4",
-              "connectivity_services": [
-                {
-                  "name": "Ms. Leslie Glass",
-                  "end_point_ids": [
-                    "yavUcalbOYmurvkuVtAg",
-                    "JmVUSHbEVmpcpcXsCimh",
-                    "HGeBmUIgzBvDjrFNDKxM"
-                  ],
-                  "connectivity_properties": [
-                    "hArPYBhSoCxCnpmsrhsm",
-                    "IcFIQPMyUZGfrBtcPEke",
-                    "QpBUkOSupDLMEihNGFkT"
-                  ],
-                  "external": false
-                },
-                {
-                  "name": "Alyssa Mcgrath",
-                  "end_point_ids": [
-                    "NcdvAuGNMTordmNIJADc",
-                    "RsFglHjPcQJexWttRAmZ",
-                    "dWzpJfqUTLcLeExvwzAK"
-                  ],
-                  "connectivity_properties": [
-                    "ylhTpaiKlzjPmYBbqZJm",
-                    "tChuyyyZHgIfMVZskRzF",
-                    "FgHUXaZdnhICsxtYcdEm"
-                  ],
-                  "external": false
-                },
-                {
-                  "name": "Mr. Maxwell Lutz DDS",
-                  "end_point_ids": [
-                    "etevUceJYNJCNjGCzycE",
-                    "JRmWovRgGFWfSibKZSaZ",
-                    "YQysngmgOtNAjvVkFiYs"
-                  ],
-                  "connectivity_properties": [
-                    "awCExPemvuCDQsElgSwX",
-                    "PodqUjrIRFfvqSjayjtX",
-                    "PhRgRuVEcXbpOXgUiHBv"
-                  ],
-                  "external": false
-                }
-              ],
-              "inter_site": true,
-              "end_points": [
-                {
-                  "ran_connection": true,
-                  "management": false,
-                  "end_point_id": "OffISQAAaioHyNbGkyVV",
-                  "external": true
-                },
-                {
-                  "ran_connection": false,
-                  "management": false,
-                  "end_point_id": "DpXZEyVAbRYwKXevWtMO",
-                  "external": false
-                },
-                {
-                  "ran_connection": true,
-                  "management": false,
-                  "end_point_id": "luVNIvkvJFHOzNppweQf",
-                  "external": true
-                }
-              ],
-              "blueprint_id": "4",
-              "embb_service_category": "INDOOR_HOTSPOT",
-              "urllc_service_category": "ELECTRICITY_DISTRIBUTION_MEDIUM_VOLTAGE",
-              "description": "Explain financial record particular shoulder however radio. Wonder able crime use quite group.",
-              "slice_service_type": "NONE",
-              "parameters": [
-                {
-                  "applicability_field": "aOmsveizIWERmjJMBGUQ",
-                  "parameter_type": "KVJyCdJmwbnWkWcQXzqO",
-                  "parameter_description": "nCQgBimaNsrUBZPcOxhq",
-                  "parameter_name": "TeeVoHNEWFtyckZtPOwg",
-                  "parameter_id": "MuceEdWqTzegOIAhZstO"
-                },
-                {
-                  "applicability_field": "sqhSPbtCGsCjnuuByVDi",
-                  "parameter_type": "dvqZnniWBuHanuAAFsJP",
-                  "parameter_description": "KWUAdZnzIWubOyXiZMbS",
-                  "parameter_name": "JgUJutwovIgOJGFAULiL",
-                  "parameter_id": "GMZWpfBEXRUIMjQmNVnl"
-                },
-                {
-                  "applicability_field": "VwuImdZfrsggYEPSQDeW",
-                  "parameter_type": "jjXcJOHpYsDEYiUfeXjp",
-                  "parameter_description": "AmjmFJjDgaXmSzVPbAvX",
-                  "parameter_name": "fVdMTTTgyCIRWbcahxzr",
-                  "parameter_id": "lqYUkUxmAcDMpKKWgTBT"
-                }
-              ],
-              "version": "version_4",
-              "atomic_components": [
-                {
-                  "servers_number": 9885,
-                  "image_urls": [
-                    "uzgJpGAzxTXvaYmjWVvP",
-                    "NgvGEDmGZZhTIpQRCcwj",
-                    "iOVhXOOiEUTkpCnTyPqr"
-                  ],
-                  "compatible_site": "mhCwkAmgsRaAbwbnESSb",
-                  "associated_vsb_id": "eIePxVuWwHgtOSjHOAPZ",
-                  "placement": "CLOUD",
-                  "type": "SERVICE",
-                  "lifecycleOperations": {},
-                  "component_id": "WiIatwfMYIHQmrRicxvL",
-                  "end_points_ids": [
-                    "SNXmXjtXEjFQuklYUGmM",
-                    "IFIPuYSjpvPmbAbgLSAQ",
-                    "CznwUwcltaPUuPTmFQkY"
-                  ]
-                },
-                {
-                  "servers_number": 3871,
-                  "image_urls": [
-                    "XXKUIjpqDgIweJnimRKt",
-                    "OcOeCjJfmZKTnfQgqwFs",
-                    "UWYwlQrUOrSsYQnQodDQ"
-                  ],
-                  "compatible_site": "ZjkmhdVgcRdzaypmKiHj",
-                  "associated_vsb_id": "xHwlNgtPZqqfSlDaQLaf",
-                  "placement": "EDGE",
-                  "type": "FUNCTION",
-                  "lifecycleOperations": {},
-                  "component_id": "JSdgRCPlkZhftDHQaiWQ",
-                  "end_points_ids": [
-                    "eyqoZRIRMzxkjOSbLUtQ",
-                    "qRgAzSMTwLvMJETzawQQ",
-                    "eDLxzxIVLiUqxSFFSIgQ"
-                  ]
-                },
-                {
-                  "servers_number": 2775,
-                  "image_urls": [
-                    "opQciNNjwnwAFbQmZzHT",
-                    "EydyfNbvJehOqABIYZOO",
-                    "kbpFVvfSlfvgvuaNRkfO"
-                  ],
-                  "compatible_site": "cJaFfusOWoYIhFGTvyZa",
-                  "associated_vsb_id": "aqpDlTGnvmuxJmahIoRf",
-                  "placement": "CLOUD",
-                  "type": "OTHER",
-                  "lifecycleOperations": {},
-                  "component_id": "rWOIfMIbrzSQHYIegszq",
-                  "end_points_ids": [
-                    "LrZgRBOZUqqlliXJgcfC",
-                    "DzJZrJPzCAznLJorjRvx",
-                    "RYzZTPfSIzUTvKxzyJbD"
-                  ]
-                }
-              ],
-              "service_sequence": [
-                {
-                  "vs_component_id": "vZlECltvDTxlXNRbJRuL"
-                },
-                {
-                  "vs_component_id": "BQvBOfdUFUZbDHPoqlEA"
-                },
-                {
-                  "vs_component_id": "JNNBSDFNjSEADQZCBkXO"
-                }
+                "OfRfgAEcWvVReOFlJvtD",
+                "CxBxnEHUgeIItOBhEYmc",
+                "PFlwMJiWuCVzWAckzzwn"
               ]
             },
-            "active_vsd_id": [
-              "0",
-              "1",
-              "2",
-              "3",
-              "4"
+            {
+              "sharable": true,
+              "atomic_component_id": "SFUAxoSIwBSNiPkXvTXp",
+              "non_preferred_providers": [
+                "kXSoanRZHEmsALwxeOqH",
+                "RaUnGWMsheEFLCOdSUIZ",
+                "MQdlJcczvKWjyEKIhVzW"
+              ],
+              "include_shared_elements": false,
+              "prohibited_providers": [
+                "EmBahQuPyjUqvVvXqbPT",
+                "HcZFBZisoDRfQogAJrAX",
+                "WiaGwrzBqetHTVkgLfYg"
+              ],
+              "preferred_providers": [
+                "XvXwLfHLSNLEtcUtGDYg",
+                "SMLUXRPMEQTRKpbrtWMd",
+                "KGZbjrYDwcAFzPRqYYwU"
+              ]
+            },
+            {
+              "sharable": true,
+              "atomic_component_id": "HBhzKalicoyWmbDVoMPg",
+              "non_preferred_providers": [
+                "zOeubYgwZuPnYygoVKLH",
+                "rxWQHCpJeDwhdOCmUxYf",
+                "gVMuDCpfFQyzyEExnJvF"
+              ],
+              "include_shared_elements": false,
+              "prohibited_providers": [
+                "kzAIgmnuhqfquuVgcDOe",
+                "umNlvbHuzWYGBQPlKmjL",
+                "ONxupQjhxsXlOfRGeVFK"
+              ],
+              "preferred_providers": [
+                "rSGildjddbaymamrxKEn",
+                "nDcyXSddXosgjGUUonZF",
+                "oyRiiNdJGhGYoeHJFtxo"
+              ]
+            }
+          ],
+          "domain_id": "uFLEGibmNSQLZgGsMMyR",
+          "version": "MPrLlCZdGslfLjUfBNUk",
+          "management_type": "TENANT_MANAGED",
+          "name": "Alex Callahan",
+          "qos_parameters": {},
+          "descriptor_id": "4",
+          "sla": {
+            "service_creation_time": "SERVICE_CREATION_TIME_LOW",
+            "availability_coverage": "AVAILABILITY_COVERAGE_MEDIUM",
+            "low_cost_required": true
+          },
+          "tenant_id": "tenant"
+        },
+        "vs_blueprint_info": {
+          "on_boarded_nst_info_id": [
+            "LVlpuupKIBpjpIVkELVB",
+            "WMFeetNWKuWQwzvNPnPT",
+            "aZrQTzGtwiFASfGnkbDo"
+          ],
+          "on_boarded_vnf_package_info_id": [
+            "wkANDtmhECKXAbhKNCFU",
+            "QgyqTFRCSLTJTkPgeTXS",
+            "KWCMqtoMxUQTmGdFDIGR"
+          ],
+          "owner": "euyKgLLjFqXSHbqSajAK",
+          "vs_blueprint_id": "4",
+          "vs_blueprint_version": "version_4",
+          "on_boarded_nsd_info_id": [
+            "iEFwaajcqaCmMCzzidvj",
+            "yMoOvzruanGCZEHBpdKu",
+            "cpQFonNrhlOYOTUtwAki"
+          ],
+          "name": "name_4",
+          "on_boarded_mec_app_package_info_id": [
+            "PxoNpmIHzFnGGQXkxTWR",
+            "HIxVGIanZLFOSNkpVetN",
+            "nmYuNRfRJqCQNSWojpQe"
+          ],
+          "vs_blueprint": {
+            "slice_service_type": "M_IOT",
+            "atomic_components": [
+              {
+                "compatible_site": "LQFSZUpkBVSIRoIjbBIU",
+                "type": "FUNCTION",
+                "component_id": "qjmjtyhabUhcGwZlByMB",
+                "placement": "EDGE",
+                "associated_vsb_id": "rwZFYvhtNvNSaaHgtNVs",
+                "servers_number": 7748,
+                "lifecycleOperations": {},
+                "end_points_ids": [
+                  "xbwbyBSgVjWXukwqFyRp",
+                  "zifeyEUWKsNWfzVbrwpL",
+                  "SmOgFvcWYAjHkjfDelMT"
+                ],
+                "image_urls": [
+                  "ElPXshaqTTIOajOLOSqM",
+                  "AOkIzkxRcMjxIjWBUWok",
+                  "gWWZBhypnnskJvcRmFAG"
+                ]
+              },
+              {
+                "compatible_site": "tCvfgBAuVgrFKtuiPznh",
+                "type": "OTHER",
+                "component_id": "OJuZVbrvKoxJIeqznqHX",
+                "placement": "CLOUD",
+                "associated_vsb_id": "JyDFTVWDfPScSqSzlcCp",
+                "servers_number": 3987,
+                "lifecycleOperations": {},
+                "end_points_ids": [
+                  "pyCaATDrsSOjcPpKiYmX",
+                  "lTjXPzTVPJxtWKNHLJcd",
+                  "tsNXjXulOtsBIkXAFFRH"
+                ],
+                "image_urls": [
+                  "ptiZINhgcArrzTMoEAfw",
+                  "xFzyBegQxYIjJOhvEkKh",
+                  "yjYteRgMolvCYpWlgVLp"
+                ]
+              },
+              {
+                "compatible_site": "fbrsXllSQfLcHcnWOJBX",
+                "type": "SERVICE",
+                "component_id": "qWtsjBhALWTLacuxxvEe",
+                "placement": "EDGE",
+                "associated_vsb_id": "pAyPQjAwAjbWXSZGhghk",
+                "servers_number": 5501,
+                "lifecycleOperations": {},
+                "end_points_ids": [
+                  "YmbHJNZjhQYDMXwkLXYH",
+                  "jijVAICQuOnBmXJfujkl",
+                  "EGrZvgDpkFyNBCQiunoN"
+                ],
+                "image_urls": [
+                  "svwdEMBlvFgHrucwsxDH",
+                  "nUSMFmjFpwhsqGzjJKby",
+                  "rgCmjaaahWaZoPggvFkg"
+                ]
+              }
+            ],
+            "end_points": [
+              {
+                "management": true,
+                "ran_connection": false,
+                "end_point_id": "yxncQWQJLcQaGlBFUYcm",
+                "external": true
+              },
+              {
+                "management": true,
+                "ran_connection": true,
+                "end_point_id": "wvbBqFtYZjLWApPRFSSM",
+                "external": true
+              },
+              {
+                "management": false,
+                "ran_connection": false,
+                "end_point_id": "lDqMocxnAcZDTIrxXwvW",
+                "external": true
+              }
+            ],
+            "translation_rules": [
+              {
+                "nst_id": "AyIIMikbaYJIkfurCwYl",
+                "ns_flavour_id": "yrvVFOHuHPeCeoFofYsy",
+                "input": [
+                  {
+                    "max_value": 4222,
+                    "parameter_id": "NJfxKVbogvOGdeAVdrRT",
+                    "min_value": 8998
+                  },
+                  {
+                    "max_value": 5760,
+                    "parameter_id": "WUNBVBEVQmJEbfVpZHZR",
+                    "min_value": 378
+                  },
+                  {
+                    "max_value": 6420,
+                    "parameter_id": "bpnPLfxrbmaQaYtALjAU",
+                    "min_value": 8253
+                  }
+                ],
+                "nsd_version": "KlqByeIUTfQXrjFcwQGd",
+                "nsd_id": "uJJMPpJWXFrkkzeYmJyX",
+                "ns_instantiation_level_id": "ZhznlQuddCIpwdHPJUyP",
+                "blueprint_id": "4",
+                "nsd_info_id": "VbCcBAojXEDXWDGabBiA"
+              }
+            ],
+            "parameters": [
+              {
+                "parameter_id": "kKzeNMNnrwLzrfrgDKPn",
+                "parameter_type": "ZyBfDpfxUJnZrnjqcsnd",
+                "applicability_field": "opYOMHoVjbIlMjIZCJcE",
+                "parameter_name": "zOniEtTOBDwLXXSObaPT",
+                "parameter_description": "uCJVklkXpTDiwruEonKe"
+              },
+              {
+                "parameter_id": "FAIGwnCTHQkYAlmaSvGr",
+                "parameter_type": "aycEHNJnMbumNeZJfOjx",
+                "applicability_field": "SUJQYzxaQRZgBVeDQBMl",
+                "parameter_name": "bDnmJJCNuijftAIKxkIz",
+                "parameter_description": "ndirAmtQoHiROrWmqDBr"
+              },
+              {
+                "parameter_id": "LbeKFrZGbgzrSyeLyHLL",
+                "parameter_type": "ygkdSADNIVlIamZyJPQC",
+                "applicability_field": "xCQFoBHEZlttBXrnABPJ",
+                "parameter_name": "PruxGnjDNDLvhWnFwhtS",
+                "parameter_description": "hMSjxZmdysdGVsudTFCZ"
+              }
+            ],
+            "embb_service_category": "DENSE_URBAN",
+            "version": "version_4",
+            "name": "name_4",
+            "application_metrics": [
+              {
+                "metric_collection_type": "CUMULATIVE",
+                "topic": "FMvjewcfWgVPxvrPeZTj",
+                "unit": "FWfjMbybMmBUfLlMEvlL",
+                "name": "Dr. Bobby Hurley",
+                "metric_id": "FREmMWtDRWfLcxtouEaj",
+                "interval": "ayMlwbMSLHvDuryABYMJ"
+              },
+              {
+                "metric_collection_type": "GAUGE",
+                "topic": "janZfsCkeTnHfObiRRUB",
+                "unit": "jnTNpyvCRJTkXnCkhUVP",
+                "name": "Dr. Hailey Zavala DVM",
+                "metric_id": "kwVStEpVRHPlGCEXrBoU",
+                "interval": "uAkkezMhvoXAgsbtCqCJ"
+              },
+              {
+                "metric_collection_type": "DELTA",
+                "topic": "YZjvggYAoRbTirCGLbYX",
+                "unit": "jDAWrVWSKcQFjwUlaCus",
+                "name": "Dr. Judy Cole",
+                "metric_id": "yvBuYchGDRPMZYHYmlOV",
+                "interval": "cOLHTHlinslkZlnSuugT"
+              }
+            ],
+            "connectivity_services": [
+              {
+                "name": "Sandra Garner",
+                "connectivity_properties": [
+                  "YeVZAWEdbPbedjiElrXt",
+                  "mKqFjyAoTIalhYcrvDMr",
+                  "EJtavlHQvsfncyNyRZSo"
+                ],
+                "end_point_ids": [
+                  "DmsXSSWWWhivUlXlzRzQ",
+                  "OTLRTxdARcnlFukQDaVA",
+                  "MerlKTxjlEhYQyRSUwqG"
+                ],
+                "external": true
+              },
+              {
+                "name": "Dr. Cristian Preston MD",
+                "connectivity_properties": [
+                  "uyuxhjfEoyCqKANHxZcH",
+                  "LZxsRBOfHUsyhVkZCrBr",
+                  "bQYinQuOTcDSYqTrwQwd"
+                ],
+                "end_point_ids": [
+                  "XhEpPleSbMruMPqGNoKd",
+                  "lbCIuuSQAYxdTNOtjkID",
+                  "EJnRNgUypoUhWFKajsOJ"
+                ],
+                "external": true
+              },
+              {
+                "name": "Crystal Phelps PhD",
+                "connectivity_properties": [
+                  "TDLplqnTKAVWHQmXxPqx",
+                  "irArEZYDJbZEseisBuMf",
+                  "dBwDuGfGcXfGsMFaafjR"
+                ],
+                "end_point_ids": [
+                  "MEOXQqjrhdIPYYiJDiwp",
+                  "uBFxEWrFUcqkYPDyJxkv",
+                  "iUQyofrOLfEaGBbwFBMd"
+                ],
+                "external": true
+              }
+            ],
+            "urllc_service_category": "ELECTRICITY_DISTRIBUTION_HIGH_VOLTAGE",
+            "inter_site": false,
+            "service_sequence": [
+              {
+                "vs_component_id": "HILZFbKTpiRApieiLsmT"
+              },
+              {
+                "vs_component_id": "zLBRoPwwiPjfNRJBJSLG"
+              },
+              {
+                "vs_component_id": "mVzecXadscyQBCbLIRGB"
+              }
+            ],
+            "blueprint_id": "4",
+            "description": "Keep bag hot push forget. Point exist green carry there side. Adult public approach example eye everything wear.",
+            "configurable_parameters": [
+              "sjwKTWhdmhMsFVcxslrR",
+              "zNleVyVrNESjgELLoAeM",
+              "NmpKwquUvvvcFWtKLJqS"
             ]
-          }
+          },
+          "active_vsd_id": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+          ]
         }
       }
     ]

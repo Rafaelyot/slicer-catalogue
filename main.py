@@ -32,6 +32,6 @@ def init_rabbit():
 
 
 if __name__ == '__main__':
-    init_rabbit()
+    # init_rabbit()
     init_flask()
 

@@ -22,6 +22,14 @@ class VsdNsdTranslationRule(Document):
     ns_instantiation_level_id = StringField()
     nsd_info_id = StringField()
 
+    @classmethod
+    def get_or_404(cls, **kwargs):
+        return get_or_error(cls, **kwargs)
+
+    @classmethod
+    def get_collection(cls):
+        return cls._get_collection()
+
 
 # vsBlueprint
 class VsBlueprintParameter(EmbeddedDocument):
@@ -88,10 +96,14 @@ class VsBlueprint(Document):
     slice_service_type = StringField(choices=SliceServiceType.get_values())  # EnumField(SliceServiceType)
     embb_service_category = StringField(choices=EMBBServiceCategory.get_values())  # EnumField(EMBBServiceCategory)
     urllc_service_category = StringField(choices=URLLCServiceCategory.get_values())  # EnumField(URLLCServiceCategory)
-    
+
     @classmethod
     def get_or_404(cls, **kwargs):
         return get_or_error(cls, **kwargs)
+
+    @classmethod
+    def get_collection(cls):
+        return cls._get_collection()
 
 
 # VsBlueprintInfo
@@ -109,3 +121,7 @@ class VsBlueprintInfo(Document):
     @classmethod
     def get_or_404(cls, **kwargs):
         return get_or_error(cls, **kwargs)
+
+    @classmethod
+    def get_collection(cls):
+        return cls._get_collection()

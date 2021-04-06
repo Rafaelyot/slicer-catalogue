@@ -26,3 +26,24 @@ class AlreadyExistingEntityException(HTTPException):
 
     def __init__(self, description):
         self.description = description
+
+
+class NotFoundException(HTTPException):
+    code = HTTPStatus.NOT_FOUND
+
+    def __init__(self, description):
+        self.description = description
+
+
+class MalformedTarFileException(HTTPException):
+    code = HTTPStatus.BAD_REQUEST
+
+    def __init__(self, description):
+        self.description = description
+
+
+class IllegalStateException(HTTPException):
+    code = HTTPStatus.CONFLICT
+
+    def __init__(self, description):
+        self.description = description

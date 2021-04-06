@@ -43,7 +43,7 @@ mixer = MyMixer()
 if __name__ == '__main__':
     for i in range(5):
         nsd = mixer.blend(Nsd)
-        vsd_nsd_translation_rule = mixer.blend(VsdNsdTranslationRule)
+        vsd_nsd_translation_rule = mixer.blend(VsdNsdTranslationRule, blueprint_id=str(i))
         on_board_vnf_package_request = mixer.blend(OnBoardVnfPackageRequest)
         args = dict(blueprint_id=f'{i}', version=f'version_{i}', name=f'name_{i}')
         if i == 1:

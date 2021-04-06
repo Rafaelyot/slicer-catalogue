@@ -9,8 +9,12 @@ from api.serializers.catalogues import OnBoardVnfPackageRequestSerializer
 class VsBlueprintRequestSerializer(Schema):
     nsds = List(Nested(NsdSerializer))
     translation_rules = List(Nested(VsdNsdTranslationRuleSerializer))
+    nsts = List(Nested(NstSerializer))
+    owner = String()
     vs_blueprint = Nested(VsBlueprintSerializer, required=True,
                           error_messages={"required": "Onboard VS blueprint request without VS blueprint"})
-    nsts = List(Nested(NstSerializer))
     vnf_packages = List(Nested(OnBoardVnfPackageRequestSerializer))
-    owner = String()
+
+
+
+
