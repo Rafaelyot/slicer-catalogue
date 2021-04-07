@@ -7,7 +7,7 @@ from api.serializers.requests import VsBlueprintRequestSerializer
 from api.serializers.vs_blueprint import VsdNsdTranslationRuleSerializer, VsdParameterValueRangeSerializer, \
     VsBlueprintParameterSerializer, VsBlueprintSerializer, VsComponentSerializer, VsbForwardingPathEndPointSerializer, \
     VsbEndpointSerializer
-from api.serializers.catalogues import OnBoardVnfPackageRequestSerializer
+from api.serializers.vnf import OnBoardVnfPackageRequestSerializer
 from api.serializers.vs_descriptor import VsDescriptorSerializer
 
 
@@ -16,10 +16,10 @@ def generate_data(cls, remove_fields=None):
         remove_fields = []
 
     data = {}
-    # Retry blending, because it is very unstable (sometimes it is returning None) # TODO: Check this error
-    for _ in range(100):
+
+    for i in range(100):
         data = mixer.blend(cls)
-        if data:
+        if data is not None:
             break
 
     for field in remove_fields:

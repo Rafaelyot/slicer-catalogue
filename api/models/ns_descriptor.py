@@ -1,8 +1,9 @@
 from mongoengine import Document, EmbeddedDocument
 from mongoengine.fields import StringField, ListField, EnumField, BooleanField, IntField, EmbeddedDocumentField, \
     MapField, EmbeddedDocumentListField
-from api.enums.ns_descriptor import LayerProtocol, CpRole, AddressType, IpVersion, ServiceAvailabilityLevel, \
-    NsScaleType, LcmEventType, AffinityType, AffinityScope, ScalingProcedureType, LogicOperation, RelationalOperation
+from api.enums.ns_descriptor import NsScaleType, ScalingProcedureType, LogicOperation, RelationalOperation
+from api.enums.descriptor import LayerProtocol, CpRole, AddressType, IpVersion, ServiceAvailabilityLevel, LcmEventType, \
+    AffinityType, AffinityScope
 
 
 class AddressData(EmbeddedDocument):

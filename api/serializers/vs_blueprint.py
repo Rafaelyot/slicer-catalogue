@@ -8,6 +8,7 @@ class VsdParameterValueRangeSerializer(Schema):
     parameter_id = String(required=True, error_messages={"required": "VSD parameter value range without ID."})
     min_value = Integer()
     max_value = Integer()
+    waw = Dict()
 
 
 class VsdNsdTranslationRuleSerializer(Schema):
@@ -131,4 +132,3 @@ class VsBlueprintInfoSerializer(Schema):
     on_boarded_vnf_package_info_id = List(String())
     on_boarded_mec_app_package_info_id = List(String())
     active_vsd_id = List(String())
-

@@ -1,16 +1,10 @@
 from marshmallow import Schema
 from marshmallow.fields import String, List, Boolean, Integer, Dict, Nested
-from api.enums.ns_descriptor import LayerProtocol, CpRole, AddressType, IpVersion, ServiceAvailabilityLevel, NsScaleType, \
-    LcmEventType, AffinityType, AffinityScope, ScalingProcedureType, LogicOperation, RelationalOperation
-
-
-class AddressDataSerializer(Schema):
-    address_type = String(choices=AddressType.get_values())
-    ip_address_assignment = Boolean()
-    floating_ip_activated = Boolean()
-    management = Boolean()
-    ip_address_type = String(choices=IpVersion.get_values())
-    number_of_ip_address = Integer()
+from api.enums.ns_descriptor import NsScaleType, ScalingProcedureType, LogicOperation, RelationalOperation
+from api.enums.descriptor import LayerProtocol, CpRole
+from api.serializers.descriptor import AddressDataSerializer, ConnectivityTypeSerializer, VirtualLinkDfSerializer, \
+    QoSSerializer, MonitoringParameterSerializer, AffinityRuleSerializer, LinkBitrateRequirementsSerializer, \
+    VirtualLinkProfileSerializer, AffinityOrAntiAffinityGroupSerializer, LifeCycleManagementScriptSerializer
 
 
 class SapdSerializer(Schema):
@@ -22,24 +16,6 @@ class SapdSerializer(Schema):
     sap_address_assignment = Boolean()
     ns_virtual_link_desc_id = String()
     associated_cdp_id = String()
-
-
-class ConnectivityTypeSerializer(Schema):
-    layer_protocol = String(choices=LayerProtocol.get_values())
-    flow_pattern = String()
-
-
-class QoSSerializer(Schema):
-    latency = Integer()
-    packet_delay_variation = Integer()
-    packet_loss_ratio = Integer()
-    priority = Integer()
-
-
-class VirtualLinkDfSerializer(Schema):
-    flavour_id = String()
-    qos = Nested(QoSSerializer)
-    service_availability_level = String(choices=ServiceAvailabilityLevel.get_values())
 
 
 class SecurityParametersSerializer(Schema):
@@ -78,15 +54,6 @@ class VnffgdSerializer(Schema):
 class VnfIndicatorDataSerializer(Schema):
     vnfd_id = String()
     vnf_indicator = String()
-
-
-class MonitoringParameterSerializer(Schema):
-    monitoring_parameter_id = String()
-    name = String()
-    performance_metric = String()
-    exporter = String()
-    params = Dict(keys=String(), values=String())
-    type = String()
 
 
 class MonitoredDataSerializer(Schema):
@@ -136,16 +103,6 @@ class NsAutoscalingRuleSerializer(Schema):
     rule_actions = List(Nested(AutoscalingActionSerializer))
 
 
-class LifeCycleManagementScriptSerializer(Schema):
-    event = List(String(choices=LcmEventType.get_values()))
-    script = String()
-
-
-class AffinityRuleSerializer(Schema):
-    affinity_type = String(choices=AffinityType.get_values())
-    affinity_scope = String(choices=AffinityScope.get_values())
-
-
 class NsVirtualLinkConnectivitySerializer(Schema):
     virtual_link_profile_id = String()
     cpd_id = List(String())
@@ -180,21 +137,6 @@ class PnfProfileSerializer(Schema):
     ns_virtual_link_connectivity = List(Nested(NsVirtualLinkConnectivitySerializer))
 
 
-class LinkBitrateRequirementsSerializer(Schema):
-    root = String()
-    leaf = String()
-
-
-class VirtualLinkProfileSerializer(Schema):
-    virtual_link_profile_id = String()
-    virtual_link_desc_id = String()
-    flavour_id = String()
-    local_affinity_or_anti_affinity_rule = List(Nested(AffinityRuleSerializer))
-    affinity_or_anti_affinity_group_id = List(String())
-    max_bitrate_requirements = Nested(LinkBitrateRequirementsSerializer)
-    min_bitrate_requirements = Nested(LinkBitrateRequirementsSerializer)
-
-
 class VnfToLevelMappingSerializer(Schema):
     vnf_profile_id = String()
     number_of_instances = Integer()
@@ -223,12 +165,6 @@ class NsScalingAspectSerializer(Schema):
     name = String()
     description = String()
     ns_scale_level = List(Nested(NsLevelSerializer))
-
-
-class AffinityOrAntiAffinityGroupSerializer(Schema):
-    group_id = String()
-    affinity_type = String(choices=AffinityType.get_values())
-    affinity_scope = String(choices=AffinityScope.get_values())
 
 
 class NsProfileSerializer(Schema):

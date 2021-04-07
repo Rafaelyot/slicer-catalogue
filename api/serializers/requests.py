@@ -3,7 +3,7 @@ from marshmallow.fields import String, List, Nested
 from api.serializers.ns_descriptor import NsdSerializer
 from api.serializers.ns_template import NstSerializer
 from api.serializers.vs_blueprint import VsdNsdTranslationRuleSerializer, VsBlueprintSerializer
-from api.serializers.catalogues import OnBoardVnfPackageRequestSerializer
+from api.serializers.vnf import OnBoardVnfPackageRequestSerializer
 
 
 class VsBlueprintRequestSerializer(Schema):

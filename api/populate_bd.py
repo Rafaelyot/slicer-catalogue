@@ -6,7 +6,7 @@ from mixer.backend.mongoengine import TypeMixer, Mixer
 from api.models.ns_template import Nst
 from api.models.ns_descriptor import Nsd
 from api.models.vs_blueprint import VsdNsdTranslationRule, VsBlueprint, VsBlueprintInfo, VsComponent
-from api.models.catalogues import OnBoardVnfPackageRequest
+from api.models.vnf import OnBoardVnfPackageRequest
 from api.models.vs_descriptor import VsDescriptor
 
 connection_data = {
