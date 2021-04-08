@@ -2,8 +2,9 @@ from bson import ObjectId
 from api.enums.vs_blueprint import VsComponentType
 from api.exceptions.exceptions import MalFormedException, AlreadyExistingEntityException, FailedOperationException
 from api.models.vs_descriptor import VsDescriptor
-from api.models.vs_blueprint import VsBlueprintInfo, VsBlueprint
-from api.queries.utils import transaction
+from api.models.vs_blueprint import VsBlueprintInfo
+from api.queries.utils import transaction, aggregate_transactions
+import api.queries.vs_blueprint as vs_blueprint_queries
 
 
 def get_vs_descriptors(tenant_id=None, vsd_id=None):
@@ -42,7 +43,7 @@ def delete_vs_descriptor(tenant_id, vsd_id):
 
     if vsd.tenant_id == tenant_id or is_admin:
         def delete_callback(session):
-            VsDescriptor._get_collection().delete_one({
+            VsDescriptor.get_collection().delete_one({
                 "descriptor_id": vsd_id
             }, session=session)
 
@@ -51,7 +52,7 @@ def delete_vs_descriptor(tenant_id, vsd_id):
 
             query = {"vs_blueprint_id": vsd.vs_blueprint_id}
             updated_values = {"$set": {"active_vsd_id": active_vsd_id}}
-            VsBlueprintInfo._get_collection().update_one(query, updated_values, session=session)
+            VsBlueprintInfo.get_collection().update_one(query, updated_values, session=session)
 
         transaction(delete_callback)
 
@@ -68,20 +69,23 @@ def _store_vsd(data):
 
     _id = ObjectId()
     data['_id'] = _id
-    data['descriptor_id'] = vs_descriptor_id = str(_id)
+    data['vs_descriptor_id'] = vs_descriptor_id = str(_id)
 
-    def create_callback(session):
-        VsDescriptor._get_collection().insert_one(data, session=session)
+    transaction_data = [
+        {
+            'collection': VsDescriptor.get_collection(),
+            'operation': 'insert_one',
+            'args': (data,)
+        }
+    ]
 
-    transaction(create_callback)
-
-    return vs_descriptor_id
+    return vs_descriptor_id, transaction_data
 
 
 def _onboard_nested_vsd(component, data):
     name = f"{data.get('name')}_{component.component_id}"
     nested_vsd_qos_params = list(filter(lambda param_id: param_id.startswith(f"{component.component_id}."),
-                                        data.get('qos_parameters').keys()))
+                                        data.get('qos_parameters', {}).keys()))
 
     qos_params = {}
     for param in nested_vsd_qos_params:
@@ -93,17 +97,16 @@ def _onboard_nested_vsd(component, data):
     data['qos_parameters'] = qos_params
 
     if component.compatible_site is None:
-        return create_vs_descriptor(data)
+        return _create_vs_descriptor(data)
 
     else:
         data['domain_id'] = component.compatible_site
         return _store_vsd(data)
 
 
-def create_vs_descriptor(data):
-    vs_blueprint_id, tenant_id, nested_vsd_ids = data.get('vs_blueprint_id'), data.get('tenant_id'), data.get(
-        'nested_vsd_ids')
-    vs_blueprint = VsBlueprint.get_or_404(blueprint_id=vs_blueprint_id)
+def _create_vs_descriptor(data):
+    vs_blueprint_id, tenant_id = data.get('vs_blueprint_id'), data.get('tenant_id')
+    vs_blueprint = vs_blueprint_queries.get_vs_blueprints(vsb_id=vs_blueprint_id, tenant_id=tenant_id)[0].vs_blueprint
 
     nested_vsd_ids = {}
     for component in vs_blueprint.atomic_components:
@@ -113,17 +116,28 @@ def create_vs_descriptor(data):
     nested_vsd_ids.update(data.get('nested_vsd_ids', {}))
 
     data['nested_vsd_ids'] = nested_vsd_ids
-    vs_descriptor_id = _store_vsd(data)
+    vs_descriptor_id, transaction_data = _store_vsd(data)
 
-    vs_blueprint_info = VsBlueprintInfo.get_or_404(vs_blueprint_id=vs_blueprint_id)
+    vs_blueprint_info = vs_blueprint_queries.get_vs_blueprints(vsb_id=vs_blueprint_id)[0]
     active_vsd_id = list(vs_blueprint_info.active_vsd_id)
 
-    def create_callback(session):
-        query = {"vs_blueprint_id": vs_blueprint_info.vs_blueprint_id}
-        active_vsd_id.append(vs_descriptor_id)
-        updated_values = {"$set": {"active_vsd_id": active_vsd_id}}
-        VsBlueprintInfo._get_collection().update_one(query, updated_values, session=session)
+    query = {"vs_blueprint_id": vs_blueprint_info.vs_blueprint_id}
+    active_vsd_id.append(vs_descriptor_id)
+    updated_values = {"$set": {"active_vsd_id": active_vsd_id}}
 
-    transaction(create_callback)
+    transaction_data += [
+        {
+            'collection': VsBlueprintInfo.get_collection(),
+            'operation': 'update_one',
+            'args': (query, updated_values,)
+        }
+    ]
+
+    return vs_descriptor_id, transaction_data
+
+
+def create_vs_descriptor(data):
+    vs_descriptor_id, transaction_data = _create_vs_descriptor(data)
+    transaction(aggregate_transactions(transaction_data))
 
     return vs_descriptor_id

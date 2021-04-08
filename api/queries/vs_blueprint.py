@@ -3,20 +3,20 @@ from api.models.vs_blueprint import VsBlueprintInfo, VsBlueprint, VsdNsdTranslat
 from api.models.ns_template import Nst
 from api.exceptions.exceptions import MalFormedException, FailedOperationException, AlreadyExistingEntityException
 from api.exceptions.utils import exception_message_elements
-from mongoengine.queryset.visitor import Q
 from api.queries.utils import transaction
-from api.queries.vs_descriptor import get_vs_descriptors
+import api.queries.vs_descriptor as vs_descriptor_queries
 from copy import deepcopy
 
 
 # noinspection PyBroadException
 def _post_process_vsb(original_vs_blueprint_info, tenant_id):
     target_vs_blueprint_info = deepcopy(original_vs_blueprint_info)
+    target_vs_blueprint_info.vs_blueprint = original_vs_blueprint_info.vs_blueprint
     target_vs_blueprint_info.active_vsd_id = []
 
     for id_ in original_vs_blueprint_info.active_vsd_id:
         try:
-            target_vs_blueprint_info.active_vsd_id.append(get_vs_descriptors(tenant_id, id_)[0])
+            target_vs_blueprint_info.active_vsd_id.append(vs_descriptor_queries.get_vs_descriptors(tenant_id, id_)[0])
         except Exception:
             continue
 
@@ -85,11 +85,11 @@ def delete_vs_blueprint(vsb_id):
         raise FailedOperationException("There are some VSDs associated to the VS Blueprint. Impossible to remove it.")
 
     def delete_callback(session):
-        VsBlueprintInfo._get_collection().delete_one({
+        VsBlueprintInfo.get_collection().delete_one({
             "vs_blueprint_id": vsb_id
         }, session=session)
 
-        VsBlueprint._get_collection().delete_one({
+        VsBlueprint.get_collection().delete_one({
             "blueprint_id": vsb_id
         }, session=session)
 
@@ -137,15 +137,14 @@ def _process_ns_descriptor_onboarding(data):
             raise AlreadyExistingEntityException(f"NsTemplate with name {nst_name} and version {version} or ID exists")
 
     def create_callback(session):
-        Nst._get_collection().insert_many(nsts, session=session)
+        Nst.get_collection().insert_many(nsts, session=session)
 
     transaction(create_callback)
 
 
 def create_vs_blueprint(data):
-    _process_ns_descriptor_onboarding(data)
+    # _process_ns_descriptor_onboarding(data)
 
-    """
     vs_blueprint = data.get('vs_blueprint', {})
 
     name, version, owner = vs_blueprint.get('name'), vs_blueprint.get('version'), data.get('owner')
@@ -153,7 +152,6 @@ def create_vs_blueprint(data):
     if VsBlueprintInfo.objects.filter(name=name, vs_blueprint_version=version).count() > 0 or \
             VsBlueprint.objects.filter(name=name, version=version).count() > 0:
         class_name, args = exception_message_elements(VsBlueprint, name=name, version=version)
-
         raise AlreadyExistingEntityException(f"{class_name} with {args} already present in DB")
 
     _id = ObjectId()
@@ -177,4 +175,3 @@ def create_vs_blueprint(data):
     transaction(create_callback)
 
     return vs_blueprint_id
-    """

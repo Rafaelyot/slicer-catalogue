@@ -1,4 +1,4 @@
-from marshmallow import Schema
+from marshmallow import Schema, validate
 from marshmallow.fields import String, List, Boolean, Integer, Nested, Float
 from api.enums.ns_template import UEMobilityLevel, SliceType, NsstType
 
@@ -44,9 +44,9 @@ class NstServiceProfileSerializer(Schema):
     max_number_of_UEs = Integer()
     coverage_area_TA_list = List(String())
     latency = Integer()
-    uE_mobility_level = String(choices=UEMobilityLevel.get_values())
+    uE_mobility_level = String(validate=validate.OneOf(UEMobilityLevel.get_values()))
     resource_sharing_level = Boolean()
-    sST = String(choices=SliceType.get_values())
+    sST = String(validate=validate.OneOf(SliceType.get_values()))
     availability = Float()
 
 
@@ -57,8 +57,8 @@ class NstSerializer(Schema):
     nst_provider = String()
     geographical_area_info_list = List(Nested(GeographicalAreaInfoSerializer))
     nsst_ids = List(String())
-    nsst = List(Nested('self'))
+    # nsst = List(Nested('self'))
     nsd_id = String()
     nsd_version = String()
     nst_service_profile = Nested(NstServiceProfileSerializer)
-    nsst_type = String(choices=NsstType.get_values())
+    nsst_type = String(validate=validate.OneOf(NsstType.get_values()))

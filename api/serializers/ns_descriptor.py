@@ -1,4 +1,4 @@
-from marshmallow import Schema
+from marshmallow import Schema, validate
 from marshmallow.fields import String, List, Boolean, Integer, Dict, Nested
 from api.enums.ns_descriptor import NsScaleType, ScalingProcedureType, LogicOperation, RelationalOperation
 from api.enums.descriptor import LayerProtocol, CpRole
@@ -9,8 +9,8 @@ from api.serializers.descriptor import AddressDataSerializer, ConnectivityTypeSe
 
 class SapdSerializer(Schema):
     cpi_id = String()
-    layer_protocol = String(choices=LayerProtocol.get_values())
-    cp_role = String(choices=CpRole.get_values())
+    layer_protocol = String(validate=validate.OneOf(LayerProtocol.get_values()))
+    cp_role = String(validate=validate.OneOf(CpRole.get_values()))
     description = String()
     address_data = List(Nested(AddressDataSerializer))
     sap_address_assignment = Boolean()
@@ -72,25 +72,25 @@ class ScaleNsToLevelDataSerializer(Schema):
 
 
 class AutoscalingActionSerializer(Schema):
-    scale_type = String(choices=NsScaleType.get_values())
+    scale_type = String(validate=validate.OneOf(NsScaleType.get_values()))
     scale_ns_to_level_data = Nested(ScaleNsToLevelDataSerializer)
 
 
 class AutoscalingRuleCriteriaSerializer(Schema):
     name = String()
     scale_in_threshold = Integer()
-    scale_in_relational_operation = String(choices=RelationalOperation.get_values())
+    scale_in_relational_operation = String(validate=validate.OneOf(RelationalOperation.get_values()))
     scale_out_threshold = Integer()
-    scale_out_relational_operation = String(choices=RelationalOperation.get_values())
+    scale_out_relational_operation = String(validate=validate.OneOf(RelationalOperation.get_values()))
     ns_monitoring_param_ref = String()
 
 
 class AutoscalingRuleConditionSerializer(Schema):
     name = String()
-    scaling_type = String(choices=ScalingProcedureType.get_values())
+    scaling_type = String(validate=validate.OneOf(ScalingProcedureType.get_values()))
     enabled = Boolean()
-    scale_in_operation_type = String(choices=LogicOperation.get_values())
-    scale_out_operation_type = String(choices=LogicOperation.get_values())
+    scale_in_operation_type = String(validate=validate.OneOf(LogicOperation.get_values()))
+    scale_out_operation_type = String(validate=validate.OneOf(LogicOperation.get_values()))
     threshold_time = Integer()
     cooldown_time = Integer()
     initial_instantiation_level = String()

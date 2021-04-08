@@ -1,4 +1,4 @@
-from marshmallow import Schema, pre_load, ValidationError
+from marshmallow import Schema, pre_load, ValidationError, validate
 from marshmallow.fields import String, Dict, Url, Nested, List, Date, Integer, Boolean
 
 from api.enums.descriptor import LayerProtocol, CpRole, AddressType, IpVersion, ServiceAvailabilityLevel, AffinityType, \
@@ -6,19 +6,19 @@ from api.enums.descriptor import LayerProtocol, CpRole, AddressType, IpVersion, 
 
 
 class AddressDataSerializer(Schema):
-    address_type = String(choices=AddressType.get_values())
+    address_type = String(validate=validate.OneOf(AddressType.get_values()))
     ip_address_assignment = Boolean()
     floating_ip_activated = Boolean()
     management = Boolean()
-    ip_address_type = String(choices=IpVersion.get_values())
+    ip_address_type = String(validate=validate.OneOf(IpVersion.get_values()))
     number_of_ip_address = Integer()
 
 
 class CpdSerializer(Schema):
     cpd_id = String(required=True, error_messages={"required": "CPD without I"})
-    layer_protocol = String(choices=LayerProtocol.get_values(), required=True,
+    layer_protocol = String(validate=validate.OneOf(LayerProtocol.get_values()), required=True,
                             error_messages={"required": "CPD without layer protocol"})
-    cp_role = String(choices=CpRole.get_values())
+    cp_role = String(validate=validate.OneOf(CpRole.get_values()))
     description = String()
     address_data = List(Nested(AddressDataSerializer))
 
@@ -98,7 +98,7 @@ class VirtualStorageDescSerializer(Schema):
 
 
 class ConnectivityTypeSerializer(Schema):
-    layer_protocol = String(choices=LayerProtocol.get_values())
+    layer_protocol = String(validate=validate.OneOf(LayerProtocol.get_values()))
     flow_pattern = String()
 
 
@@ -112,12 +112,12 @@ class QoSSerializer(Schema):
 class VirtualLinkDfSerializer(Schema):
     flavour_id = String(required=True, error_messages={"required": "VL DF without flavour ID"})
     qos = Nested(QoSSerializer)
-    service_availability_level = String(choices=ServiceAvailabilityLevel.get_values())
+    service_availability_level = String(validate=validate.OneOf(ServiceAvailabilityLevel.get_values()))
 
 
 class AffinityRuleSerializer(Schema):
-    affinity_type = String(choices=AffinityType.get_values())
-    affinity_scope = String(choices=AffinityScope.get_values())
+    affinity_type = String(validate=validate.OneOf(AffinityType.get_values()))
+    affinity_scope = String(validate=validate.OneOf(AffinityScope.get_values()))
 
 
 class LinkBitrateRequirementsSerializer(Schema):
@@ -150,12 +150,12 @@ class TerminateVnfOpConfigSerializer(Schema):
 
 class AffinityOrAntiAffinityGroupSerializer(Schema):
     group_id = String(required=True, error_messages={"required": "Affinity group without ID"})
-    affinity_type = String(choices=AffinityType.get_values())
-    affinity_scope = String(choices=AffinityScope.get_values())
+    affinity_type = String(validate=validate.OneOf(AffinityType.get_values()))
+    affinity_scope = String(validate=validate.OneOf(AffinityScope.get_values()))
 
 
 class LifeCycleManagementScriptSerializer(Schema):
-    event = List(String(choices=LcmEventType.get_values()))
+    event = List(String(validate=validate.OneOf(LcmEventType.get_values())))
     script = String(required=True, error_messages={"required": "LCM script without script info"})
 
     @pre_load

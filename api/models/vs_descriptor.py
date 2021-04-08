@@ -1,13 +1,15 @@
 from mongoengine import Document, EmbeddedDocument
 from mongoengine.fields import StringField, EmbeddedDocumentListField, ListField, MapField, BooleanField, \
     EmbeddedDocumentField
-from api.enums.vs_descriptor import SliceManagementControlType, ServiceCreationTimeRange, AvailabilityCoverageRange
+from api.enums.vs_descriptor import SliceManagementControlType, ServiceCreationTimeRange, AvailabilityCoverageRange, \
+    ServicePriorityLevel
 from api.queries.utils import get_or_error
 
 
 class ServiceConstraints(EmbeddedDocument):
     sharable = BooleanField()
-    include_shared_elements = BooleanField()
+    can_include_shared_elements = BooleanField()
+    priority = StringField(choices=ServicePriorityLevel.get_values())
     preferred_providers = ListField(StringField())
     non_preferred_providers = ListField(StringField())
     prohibited_providers = ListField(StringField())
@@ -21,7 +23,7 @@ class VsdSla(EmbeddedDocument):
 
 
 class VsDescriptor(Document):
-    descriptor_id = StringField()
+    vs_descriptor_id = StringField()
     name = StringField()
     version = StringField()
     vs_blueprint_id = StringField()
@@ -39,3 +41,7 @@ class VsDescriptor(Document):
     @classmethod
     def get_or_404(cls, **kwargs):
         return get_or_error(cls, **kwargs)
+
+    @classmethod
+    def get_collection(cls):
+        return cls._get_collection()

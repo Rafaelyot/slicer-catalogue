@@ -50,3 +50,4 @@ def create_vs_descriptor():
 
     vs_descriptor_id = queries.create_vs_descriptor(validated_data)
     return response_template('Success', data={'vs_descriptor_id': vs_descriptor_id}, status_code=HTTPStatus.CREATED)
+

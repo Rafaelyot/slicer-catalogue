@@ -17,3 +17,9 @@ class AvailabilityCoverageRange(AutoName):
     AVAILABILITY_COVERAGE_HIGH = auto()
     AVAILABILITY_COVERAGE_MEDIUM = auto()
     UNDEFINED = auto()
+
+
+class ServicePriorityLevel(AutoName):
+    LOW = auto()
+    MEDIUM = auto()
+    HIGH = auto()

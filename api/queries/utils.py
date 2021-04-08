@@ -86,3 +86,12 @@ def get_json_in_folder(folder_path):
         raise IllegalStateException(f"Invalid json file extracted from vnf package path->{json_files[0]}")
 
     return content
+
+
+def aggregate_transactions(transactions):
+    def wrapper(session):
+        for data in transactions:
+            collection, operation, args = data.get('collection'), data.get('operation'), data.get('args')
+            getattr(collection, operation)(*args, session=session)
+
+    return wrapper

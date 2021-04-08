@@ -1,4 +1,4 @@
-from marshmallow import Schema, ValidationError, pre_load
+from marshmallow import Schema, ValidationError, pre_load, validate
 from marshmallow.fields import String, List, Boolean, Integer, Dict, Nested
 from api.enums.vs_blueprint import SliceServiceType, EMBBServiceCategory, URLLCServiceCategory, MetricCollectionType, \
     VsComponentPlacement, VsComponentType
@@ -8,7 +8,6 @@ class VsdParameterValueRangeSerializer(Schema):
     parameter_id = String(required=True, error_messages={"required": "VSD parameter value range without ID."})
     min_value = Integer()
     max_value = Integer()
-    waw = Dict()
 
 
 class VsdNsdTranslationRuleSerializer(Schema):
@@ -50,8 +49,8 @@ class VsComponentSerializer(Schema):
     image_urls = List(String())
     end_points_ids = List(String())
     lifecycleOperations = Dict(keys=String(), values=String())
-    placement = String(choices=VsComponentPlacement.get_values())
-    type = String(choices=VsComponentType.get_values())
+    placement = String(validate=validate.OneOf(VsComponentPlacement.get_values()))
+    type = String(validate=validate.OneOf(VsComponentType.get_values()))
     associated_vsb_id = String()
     compatible_site = String()
 
@@ -66,6 +65,16 @@ class VsbForwardingPathEndPointSerializer(Schema):
     vs_component_id = String(required=True,
                              error_messages={"required": "VS Forwarding Graph element without VS component"})
     end_point_id = String(required=True, error_messages={"required": "VS Forwarding Graph element without end point"})
+
+
+class VsbForwardingPathHopSerializer(Schema):
+    hop_end_points = List(Nested(VsbForwardingPathEndPointSerializer))
+
+    @pre_load
+    def is_valid(self, data, **kwargs):
+        if len(data.get('hop_end_points', [])) == 0:
+            raise ValidationError("VSB Forwarding Path hop without any end point")
+        return data
 
 
 class VsbEndpointSerializer(Schema):
@@ -86,9 +95,28 @@ class ApplicationMetricSerializer(Schema):
     topic = String()
     metric_id = String()
     name = String()
-    metric_collection_type = String(choices=MetricCollectionType.get_values())
+    metric_collection_type = String(validate=validate.OneOf(MetricCollectionType.get_values()))
     unit = String()
     interval = String()
+
+    @pre_load
+    def is_valid(self, data, **kwargs):
+        if data.get('topic', "") == "":
+            raise ValidationError("Application metric without topic", "topic")
+
+        elif data.get('metric_id', "") == "":
+            raise ValidationError("Metric without metricId", "metric_id")
+
+        elif data.get('name', "") == "":
+            raise ValidationError("Metric without name", "name")
+
+        elif data.get('unit', "") == "":
+            raise ValidationError("Metric without unit", "unit")
+
+        elif data.get('metric_collection_type', ""):
+            raise ValidationError("Metric without MetricCollectionType", "metric_collection_type")
+
+        return data
 
 
 class VsBlueprintSerializer(Schema):
@@ -98,15 +126,15 @@ class VsBlueprintSerializer(Schema):
     description = String()
     parameters = List(Nested(VsBlueprintParameterSerializer))
     atomic_components = List(Nested(VsComponentSerializer))
-    service_sequence = List(Nested(VsbForwardingPathEndPointSerializer))
+    service_sequence = List(Nested(VsbForwardingPathHopSerializer))
     end_points = List(Nested(VsbEndpointSerializer))
     connectivity_services = List(Nested(VsbLinkSerializer))
     configurable_parameters = List(String())
     application_metrics = List(Nested(ApplicationMetricSerializer))
     inter_site = Boolean()
-    slice_service_type = String(choices=SliceServiceType.get_values())
-    embb_service_category = String(choices=EMBBServiceCategory.get_values())
-    urllc_service_category = String(choices=URLLCServiceCategory.get_values())
+    slice_service_type = String(validate=validate.OneOf(SliceServiceType.get_values()))
+    embb_service_category = String(validate=validate.OneOf(EMBBServiceCategory.get_values()))
+    urllc_service_category = String(validate=validate.OneOf(URLLCServiceCategory.get_values()))
     translation_rules = List(Nested(VsdNsdTranslationRuleSerializer))
 
     @pre_load
@@ -123,9 +151,9 @@ class VsBlueprintSerializer(Schema):
 
 class VsBlueprintInfoSerializer(Schema):
     vs_blueprint = Nested(VsBlueprintSerializer)
-    vs_blueprint_id = String()
-    vs_blueprint_version = String()
-    name = String()
+    vs_blueprint_id = String(required=True, error_messages={"required": "VS Blueprint info without VS ID"})
+    vs_blueprint_version = String(required=True, error_messages={"required": "VS Blueprint info without VS version"})
+    name = String(required=True, error_messages={"required": "VS Blueprint info without VS name"})
     owner = String()
     on_boarded_nsd_info_id = List(String())
     on_boarded_nst_info_id = List(String())

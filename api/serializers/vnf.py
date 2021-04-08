@@ -1,5 +1,5 @@
-from marshmallow import Schema, pre_load, ValidationError
-from marshmallow.fields import String, Dict, Url, Nested, List,Integer, Boolean
+from marshmallow import Schema, pre_load, ValidationError, validate
+from marshmallow.fields import String, Dict, Url, Nested, List, Integer, Boolean
 
 from api.enums.vnf import VnfIndicatorSource
 from api.enums.descriptor import OperationalState, UsageState, \
@@ -29,7 +29,7 @@ class SoftwareImageInformationSerializer(Schema):
     checksum = String()
     container_format = String()
     disk_format = String()
-    created_at = Integer() # Unix Time
+    created_at = Integer()  # Unix Time
     min_disk = Integer()
     min_ram = Integer()
     size = Integer()
@@ -61,8 +61,8 @@ class OnboardedVnfPkgInfoSerializer(Schema):
     checksum = String(required=True, error_messages={"required": "Onboarded VNF package info without checksum"})
     software_image = List(Nested(VnfPackageSoftwareImageInformationSerializer))
     additional_artifact = List(Nested(VnfPackageArtifactInformationSerializer))
-    operational_state = String(choices=OperationalState.get_values())
-    usage_state = String(choices=UsageState.get_values())
+    operational_state = String(validate=validate.OneOf(OperationalState.get_values()))
+    usage_state = String(validate=validate.OneOf(UsageState.get_values()))
     deletion_pending = Boolean()
     user_defined_data = Dict(keys=String(), values=String())
     vnf_id = List(String())
@@ -212,7 +212,7 @@ class VnfDfSerializer(Schema):
     virtual_link_profile = List(Nested(VirtualLinkProfileSerializer))
     instantiation_level = List(Nested(InstantiationLevelSerializer))
     default_instantiation_level_id = String()
-    supported_operation = List(String(choices=VnfLcmOperation.get_values()))
+    supported_operation = List(String(validate=validate.OneOf(VnfLcmOperation.get_values())))
     vnf_lcm_operations_configuration = Nested(VnfLcmOperationsConfigurationSerializer, required=True,
                                               error_messages={
                                                   "required": "VNF DF without VNF LCM operation configuration"})
@@ -253,7 +253,7 @@ class VnfIndicatorSerializer(Schema):
     indicator_id = String(required=True, error_messages={"required": "VNF indicator without ID"})
     name = String()
     indicator_value = String()
-    source = String(choices=VnfIndicatorSource.get_values())
+    source = String(validate=validate.OneOf(VnfIndicatorSource.get_values()))
 
 
 class VnfdSerializer(Schema):

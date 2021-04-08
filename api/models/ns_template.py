@@ -3,6 +3,7 @@ from mongoengine.fields import StringField, ListField, BooleanField, IntField, E
     EmbeddedDocumentListField, FloatField, ReferenceField
 
 from api.enums.ns_template import UEMobilityLevel, SliceType, NsstType
+from api.queries.utils import get_or_error
 
 
 class GeographicalAreaInfo(EmbeddedDocument):
@@ -64,3 +65,11 @@ class Nst(Document):
     nsd_version = StringField()
     nst_service_profile = EmbeddedDocumentField(NstServiceProfile)
     nsst_type = StringField(choices=NsstType.get_values())
+
+    @classmethod
+    def get_or_404(cls, **kwargs):
+        return get_or_error(cls, **kwargs)
+
+    @classmethod
+    def get_collection(cls):
+        return cls._get_collection()
