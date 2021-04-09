@@ -30,9 +30,8 @@ def get_vs_descriptors():
 @app.route('/vsdescriptor', methods=('DELETE',))
 @login_required
 def delete_vs_descriptor():
-    # TODO: tenant_id it is obtained from the authenticated user (authentication not yet implemented)
     args = {
-        'tenant_id': request.args.get('tenant_id'),  # <-CHANGE THIS->
+        'tenant_id': current_user.tenantName,
         'vsd_id': request.args.get('vsd_id')
     }
 
