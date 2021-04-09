@@ -5,6 +5,7 @@ from api.views.vs_descriptor import app as vs_descriptor_api
 from api.settings import DevConfig
 from flask_mongoengine import MongoEngine
 from rabbitmq.messaging import MessageReceiver
+from api.auth import loginManager
 
 APPLICATION_NAME = os.environ.get('APPLICATION_NAME', 'catalogues')
 
@@ -23,6 +24,9 @@ def init_flask():
     db = MongoEngine()
     db.init_app(app)
 
+    # Authentication
+    loginManager.init_app(app)
+
     app.run()
 
 
@@ -34,4 +38,3 @@ def init_rabbit():
 if __name__ == '__main__':
     init_rabbit()
     init_flask()
-

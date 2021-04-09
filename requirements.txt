@@ -5,3 +5,4 @@ flask-mongoengine==1.0.0
 marshmallow==3.10.0
 pytest==6.2.2
 pika==1.2.0
+flask-login==0.5.0

@@ -5,6 +5,7 @@ from api.exceptions.utils import handle_exception
 from api.serializers.vs_descriptor import VsDescriptorSerializer
 from api.views.utils import response_template
 from api.exceptions.exceptions import BadVsBlueprintBody
+from api.auth import login_required, current_user
 import api.queries.vs_descriptor as queries
 
 app = Blueprint('vsdescriptor', __name__)
@@ -13,10 +14,10 @@ handle_exception(app)  # Handle errors
 
 
 @app.route("/vsdescriptor", methods=('GET',))
+@login_required
 def get_vs_descriptors():
-    # TODO: tenant_id it is obtained from the authenticated user (authentication not yet implemented)
     args = {
-        'tenant_id': request.args.get('tenant_id'),  # <-CHANGE THIS->,
+        'tenant_id': current_user.tenantName,
         'vsd_id': request.args.get('vsd_id')
     }
 
@@ -27,6 +28,7 @@ def get_vs_descriptors():
 
 
 @app.route('/vsdescriptor', methods=('DELETE',))
+@login_required
 def delete_vs_descriptor():
     # TODO: tenant_id it is obtained from the authenticated user (authentication not yet implemented)
     args = {
@@ -39,6 +41,7 @@ def delete_vs_descriptor():
 
 
 @app.route('/vsdescriptor', methods=('POST',))
+@login_required
 def create_vs_descriptor():
     request_data = request.get_json()
 
@@ -50,4 +53,3 @@ def create_vs_descriptor():
 
     vs_descriptor_id = queries.create_vs_descriptor(validated_data)
     return response_template('Success', data={'vs_descriptor_id': vs_descriptor_id}, status_code=HTTPStatus.CREATED)
-

@@ -7,6 +7,7 @@ from api.serializers.requests import VsBlueprintRequestSerializer
 from api.views.utils import response_template
 from api.exceptions.utils import handle_exception
 from api.exceptions.exceptions import BadVsBlueprintBody
+from api.auth import login_required, current_user
 
 # noinspection PyRedeclaration
 app = Blueprint('vsblueprint', __name__)
@@ -15,10 +16,10 @@ handle_exception(app)  # Handle errors
 
 
 @app.route('/vsblueprint', methods=('GET',))
+@login_required
 def get_vs_blueprints():
-    tenant_id = None  # TODO: tenant_id it is obtained from the authenticated user (authentication not yet implemented)
     args = {
-        'tenant_id': tenant_id,
+        'tenant_id': current_user.tenantName,
         'vsb_id': request.args.get('vsb_id'),
         'vsb_name': request.args.get('vsb_name'),
         'vsb_version': request.args.get('vsb_version'),
@@ -31,6 +32,7 @@ def get_vs_blueprints():
 
 
 @app.route('/vsblueprint', methods=('DELETE',))
+@login_required
 def delete_vs_blueprint():
     vsb_id = request.args.get('vsb_id')
 
@@ -40,6 +42,7 @@ def delete_vs_blueprint():
 
 
 @app.route('/vsblueprint', methods=('POST',))
+@login_required
 def create_vs_blueprint():
     request_data = request.get_json()
 
