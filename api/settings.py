@@ -10,7 +10,7 @@ class Config(object):
         # 'username': os.environ.get('MONGO_USERNAME', 'root'),
         # 'password': os.environ.get('MONGO_PASSWORD', 'root'),
         'host': os.environ.get('MONGO_URL', 'localhost'),
-        'port': 27017,
+        'port': 27012,
         'db': os.environ.get('MONGO_DB', 'catalogues'),
         # 'authentication_source': 'admin'
         # 'replicaset': 'rs0'

@@ -18,7 +18,8 @@ handle_exception(app)  # Handle errors
 def get_vs_descriptors():
     args = {
         'tenant_id': current_user.tenantName,
-        'vsd_id': request.args.get('vsd_id')
+        'vsd_id': request.args.get('vsd_id'),
+        'is_admin': current_user.is_admin()
     }
 
     serializer = VsDescriptorSerializer(many=True)

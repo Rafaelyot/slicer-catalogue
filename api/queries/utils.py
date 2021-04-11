@@ -1,6 +1,6 @@
 import shutil
 import urllib
-import uuid
+
 import urllib.request
 import json
 from os import listdir
@@ -50,9 +50,18 @@ def transaction(callback):
         session.with_transaction(callback)
 
 
-def download_file(remote_path):
+def aggregate_transactions(transactions):
+    def wrapper(session):
+        for data in transactions:
+            collection, operation, args = data.get('collection'), data.get('operation'), data.get('args')
+            getattr(collection, operation)(*args, session=session)
+
+    return wrapper
+
+
+def download_file(remote_path, file_name):
     Path(LOCAL_TEMP_DIR).mkdir(parents=True, exist_ok=True)  # Create directory if not exists
-    file_path = f'{LOCAL_TEMP_DIR}/{str(uuid.uuid4())}.tar'
+    file_path = f'{LOCAL_TEMP_DIR}/{file_name}.tar'
     try:
         urllib.request.urlretrieve(remote_path, file_path)
     except HTTPError as e:
@@ -69,6 +78,19 @@ def extract_file(path):
         raise MalformedTarFileException(e)
 
     return extracted_folder_path
+
+
+def move_file(source_path, to_path=f"{LOCAL_TEMP_DIR}/cloud-config.txt"):
+    shutil.move(source_path, to_path)
+
+
+def remove_file_and_folder(file_path, folder_path):
+    Path(file_path).unlink(missing_ok=False)
+    shutil.rmtree(folder_path)
+
+
+def file_exists(path):
+    return Path(path).is_file()
 
 
 def get_json_in_folder(folder_path):
@@ -88,10 +110,8 @@ def get_json_in_folder(folder_path):
     return content
 
 
-def aggregate_transactions(transactions):
-    def wrapper(session):
-        for data in transactions:
-            collection, operation, args = data.get('collection'), data.get('operation'), data.get('args')
-            getattr(collection, operation)(*args, session=session)
-
-    return wrapper
+def convert_all_fields_to_camel(data):
+    if isinstance(data, list):
+        return [convert_all_fields_to_camel(i) if isinstance(i, (dict, list)) else i for i in data]
+    return {a.replace('-', '_'): convert_all_fields_to_camel(b) if isinstance(b, (dict, list)) else b for a, b in
+            data.items()}

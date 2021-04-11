@@ -7,12 +7,13 @@ from api.queries.utils import transaction, aggregate_transactions
 import api.queries.vs_blueprint as vs_blueprint_queries
 
 
-def get_vs_descriptors(tenant_id=None, vsd_id=None):
+def get_vs_descriptors(tenant_id=None, vsd_id=None, is_admin=False):
     arguments = locals()
+    arguments.pop('is_admin', None)
     parameters_size = len(dict(filter(lambda a: a[-1] is not None, arguments.items())))
 
     if parameters_size == 1 and (tenant_id is not None):
-        if False:  # is_admin(tenant_id)
+        if is_admin:
             return VsDescriptor.objects.all()
 
         else:
@@ -25,7 +26,7 @@ def get_vs_descriptors(tenant_id=None, vsd_id=None):
             return vs_descriptors
 
     elif parameters_size == 2 and (tenant_id is not None) and (vsd_id is not None):
-        if False:  # is_admin(tenant_id)
+        if is_admin:  # is_admin(tenant_id)
             return [VsDescriptor.get_or_404(descriptor_id=vsd_id)]
         else:
             return [VsDescriptor.get_or_404(descriptor_id=vsd_id, tenant_id=tenant_id)]

@@ -8,9 +8,13 @@ login_required = login_required
 
 
 class Tenant(UserMixin):
-    def __init__(self, tenant_name):
+    def __init__(self, tenant_name, group):
         super().__init__()
         self.tenantName = tenant_name
+        self.group = group
+        
+    def is_admin(self):
+        return self.group == 'admin'
 
 
 @loginManager.user_loader
@@ -28,5 +32,5 @@ def request_loader(request):
 
         if response.status_code == 200:
             data = response.json()
-            user = Tenant(data["username"])
+            user = Tenant(data.get("username"), data.get('group'))
     return user

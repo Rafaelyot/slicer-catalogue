@@ -1,802 +1,348 @@
 {
-  "configurable_properties": {
-    "auto_scalable": false,
-    "additional_configurable_property": [
-      "loqsVbyzMnBQAlphBHVQ"
-    ],
-    "auto_healable": false
-  },
-  "vnf_product_name": "wOiFOQaDJFBtOoHBthFp",
-  "localization_language": [
-    "rnZQHtDZtRWbPJnBJeUd"
-  ],
-  "vnfd_version": "DIQIdKUgJcFNtgtNbBAY",
-  "int_virtual_link_desc": [
-    {
-      "monitoring_parameter": [
-        {
-          "type": "XZFFbXZvCdVwpQJqcyLV",
-          "params": {},
-          "performance_metric": "vDHGmcDiYyXWwsdFwHgx",
-          "exporter": "udlDzQPfrxDsQhdSBEaX",
-          "monitoring_parameter_id": "pXgkZTDeVGkRLsKqrGgV",
-          "name": "Jeffery Warner DDS"
-        },
-        {
-          "type": "nYVOYmjlQUDzbLkFoyVW",
-          "params": {},
-          "performance_metric": "dMYRSzcQgkHPEovpIwho",
-          "exporter": "VEzhCgUCuAWzLyEqHExN",
-          "monitoring_parameter_id": "jnpbaLwrPMwnQVCozAfU",
-          "name": "Ariana Beard"
-        },
-        {
-          "type": "CQSpLLPgefyXCPSvUFUw",
-          "params": {},
-          "performance_metric": "IVqxbtuZEXwemyVNlTVy",
-          "exporter": "OefoUOIiknJFuZrDiyPd",
-          "monitoring_parameter_id": "tGtIIcHEfMQHYaEswaPr",
-          "name": "Sherry Wiley DVM"
-        }
-      ],
-      "connectivity_type": {
-        "flow_pattern": "KsvuCukdoNphObXVqLHc",
-        "layer_protocol": "cHxKmYeXiBQRXKbGmxIh"
-      },
-      "description": "Oil throughout body.\nConcern condition unit cup effort whether other. Its matter top although type environment meet.",
-      "test_access": [
-        "zhVXReQErYLhSsqCNmts",
-        "LqYqjrEPwwzeEGNUEOvU",
-        "idlKyVlDJoeZnJQhMaVJ",
-        "gYoOqzfhmSppLxHBypYa"
-      ],
-      "virtual_link_desc_id": "kAjUQTNSnBXiWwECxEMJ",
-      "virtual_link_desc_flavour": [
-        {
-          "flavour_id": "DgCUWwEiAemcOcHZzPKU",
-          "qos": {
-            "priority": -7321110769195298967,
-            "packet_delay_variation": 3180095832028618510,
-            "latency": -2668610017125981558,
-            "packet_loss_ratio": -951175264232622536
+  "vnfd": {
+    "provider": "My Company",
+    "product-name": "complex-vnf",
+    "software-version": "1.0",
+    "version": "1.0",
+    "vnfm-info": "netconf",
+    "id": "complex-vnf",
+    "vdu": [
+      {
+        "id": "control-plane-active",
+        "name": "control-plane-active",
+        "int-cpd": [
+          {
+            "id": "internal",
+            "int-virtual-link-desc": "internal-vl",
+            "layer-protocol": "ipv4"
           },
-          "service_availability_level": "qNWTYBDcYlKgTHGyJPKF"
-        }
-      ]
-    }
-  ],
-  "deployment_flavour": [],
-  "life_cycle_management_script": [],
-  "vnf_ext_cpd": [],
-  "vnf_indicator": [
-    {
-      "indicator_value": "wfdBvGhWBQoEfYzjLlIp",
-      "source": "hfAajczmQnQgRmRZYkrA",
-      "indicator_id": "IFHwQURImHIXsnEoyFdE",
-      "name": "Mrs. Mercedes Klein MD"
-    }
-  ],
-  "vnfm_info": [
-    "RaOlgkYoOaxohfsIvwir",
-    "HPHCcnUXlIdodxTdcOde"
-  ],
-  "vnf_product_info_name": "XudCbjsQkEeSVMoEPYkK",
-  "default_localization_language": "wLmNQFZXBbdXnbkOAVZq",
-  "element_group": [],
-  "modifiable_attributes": {
-    "extension": {},
-    "metadata_ifa": {}
-  },
-  "virtual_compute_desc": [
-    {
-      "virtual_memory": {
-        "virtual_mem_oversubscription_policy": "RTWkqHMKTIbHSQlozqNq",
-        "numa_enabled": true,
-        "virtual_mem_size": -6617231330803533903
-      },
-      "virtual_cpu": {
-        "virtual_cpu_oversubscription_policy": "LXWnQQsrzOJLaSXDcXnt",
-        "cpu_architecture": "queUUaHlVuFGNAoWmZLw",
-        "virtual_cpu_clock": -3865264821962892033,
-        "num_virtual_cpu": -7486949910946082642
-      },
-      "logical_node": {},
-      "virtual_compute_desc_id": "UIvKJXEDezaRnklbnMHq",
-      "complexity_factor": "RyCmBkXnlIyhkSjWZTDK",
-      "request_additional_capabilities": [
-        {
-          "min_version": "koZIPDafAPMDXIoTakXw",
-          "preferred_version": "eHYggOUbNYAjXfCFVVeR",
-          "target_parameter": "IzozTeBHOZymqJFsOvPM",
-          "mandatory": false,
-          "name": "Mr. Glenn Gates MD"
-        }
-      ]
-    },
-    {
-      "virtual_memory": {
-        "virtual_mem_oversubscription_policy": "deGsTTxFBnGHSwXCFCJV",
-        "numa_enabled": false,
-        "virtual_mem_size": -3382745777790635007
-      },
-      "virtual_cpu": {
-        "virtual_cpu_oversubscription_policy": "GtDiQQZunaNmAIIFoEfx",
-        "cpu_architecture": "DLXXXAHdFYOQBwpajoxG",
-        "virtual_cpu_clock": -1105379729248111611,
-        "num_virtual_cpu": -7706675385992556095
-      },
-      "logical_node": {},
-      "virtual_compute_desc_id": "ixqkjGAwbBGLLHTbiNrw",
-      "complexity_factor": "jFLPaOfPXzDQNHXCRvMv",
-      "request_additional_capabilities": [
-        {
-          "min_version": "AwNGXXSjZzQJnZBFQYov",
-          "preferred_version": "sCSShoNfbRBMEjRXpIcl",
-          "target_parameter": "ANlIrnXcaszKmoxYLsIz",
-          "mandatory": true,
-          "name": "Connor Blair IV"
-        },
-        {
-          "min_version": "tgyvYXjpKoSvJnxiChSx",
-          "preferred_version": "gFKqxSqCHbcNSKBeLwXv",
-          "target_parameter": "GwFeixWZikXSdQlPxMDC",
-          "mandatory": false,
-          "name": "Noah Colon"
-        }
-      ]
-    },
-    {
-      "virtual_memory": {
-        "virtual_mem_oversubscription_policy": "sRXrLBuFXFhwIgaGpTdn",
-        "numa_enabled": false,
-        "virtual_mem_size": 4450772687675398753
-      },
-      "virtual_cpu": {
-        "virtual_cpu_oversubscription_policy": "JDuHLUuMBJuUTCmDEgLi",
-        "cpu_architecture": "WhRTsKJguIpcmbyMayYE",
-        "virtual_cpu_clock": 1432891422158223263,
-        "num_virtual_cpu": -4137152056740806069
-      },
-      "logical_node": {},
-      "virtual_compute_desc_id": "tibRNWLArsBjdVyOeDGp",
-      "complexity_factor": "xebYuOGSMBmdPYZIvrnj",
-      "request_additional_capabilities": [
-        {
-          "min_version": "qgfUwBOsGrFnXMYpmYuD",
-          "preferred_version": "MYvnwnrCWvoXguUHsqmS",
-          "target_parameter": "FFgXXuKYnUGPhxuctfre",
-          "mandatory": true,
-          "name": "Ms. Karen Fleming PhD"
-        }
-      ]
-    },
-    {
-      "virtual_memory": {
-        "virtual_mem_oversubscription_policy": "xYNqGYfJBOLnJaJlnSCE",
-        "numa_enabled": true,
-        "virtual_mem_size": -8197611073759817852
-      },
-      "virtual_cpu": {
-        "virtual_cpu_oversubscription_policy": "QFZUZMunpqODJfkXGcjR",
-        "cpu_architecture": "bnOWqegyhBMVbmUAdqaq",
-        "virtual_cpu_clock": 1197609942073267008,
-        "num_virtual_cpu": -7568873770981906619
-      },
-      "logical_node": {},
-      "virtual_compute_desc_id": "asufeALkCtLmDCRrXjos",
-      "complexity_factor": "xJMEtZrEnBkwmaXUnOuv",
-      "request_additional_capabilities": [
-        {
-          "min_version": "mxtLuchyapehliUGNhmD",
-          "preferred_version": "TqujtGLDNsvDsVKGiQrQ",
-          "target_parameter": "XYDypLTcKLYBuPcRyXeN",
-          "mandatory": false,
-          "name": "Melanie Buck"
-        },
-        {
-          "min_version": "wfVhvNbMFYQhWulungOR",
-          "preferred_version": "yNDbZqAWlQcVpvjDasuF",
-          "target_parameter": "OMWxuOfvXHlijCIGeNEm",
-          "mandatory": true,
-          "name": "Dr. Isaiah Spencer"
-        },
-        {
-          "min_version": "qYFISqImdFHRXEmPjZrZ",
-          "preferred_version": "wUUjzUDTsaxkBPPiHzyF",
-          "target_parameter": "doRYyPhGpjtuavOGfGKl",
-          "mandatory": false,
-          "name": "Jeanette Orozco"
-        }
-      ]
-    }
-  ],
-  "onboarded_vnf_pkg_info": {
-    "vnf_id": [
-      "lyHNcmbuRajipvqnWLrP"
-    ],
-    "vnf_provider": "rtjCrgPoMxUrRHnnyKaR",
-    "vnf_product_name": "rcOMnRnsOjTytcfkDvVe",
-    "onboarded_vnf_pkg_info_id": "iTsSLrRcXgJXaiMxJmRO",
-    "operational_state": "uRtOWBupOFgSYniqfYDK",
-    "checksum": "THmpkdIsZDVOZOqIgujJ",
-    "vnf_software_version": "LNhgBqDAoukNmyDwydAp",
-    "additional_artifact": [
-      {
-        "selector": "RdCvGCmAFNtbOOIfSxte",
-        "metadata": "IBqkRIFjUCaDYzTqypfp"
+          {
+            "id": "mgmt",
+            "int-virtual-link-desc": "mgmt",
+            "layer-protocol": "ipv4"
+          }
+        ],
+        "virtual-compute-desc": "CP",
+        "virtual-storage-desc": [
+          "root"
+        ],
+        "sw-image-desc": "CP"
       },
       {
-        "selector": "oRnVQQQqChxewcGVAcnh",
-        "metadata": "eIHzDTPLpBbBHeUHTIHG"
+        "id": "control-plane-standby",
+        "name": "control-plane-standby",
+        "int-cpd": [
+          {
+            "id": "internal",
+            "int-virtual-link-desc": "internal-vl",
+            "layer-protocol": "ipv4"
+          },
+          {
+            "id": "mgmt",
+            "int-virtual-link-desc": "mgmt",
+            "layer-protocol": "ipv4"
+          }
+        ],
+        "virtual-compute-desc": "CP",
+        "virtual-storage-desc": [
+          "root"
+        ],
+        "sw-image-desc": "CP"
       },
       {
-        "selector": "jCgxbZgAPbmAuNnLuvBe",
-        "metadata": "HybTxouTpLtzdObvPnGm"
-      },
-      {
-        "selector": "EPnurzezEybunqSwCMye",
-        "metadata": "DYTiOWLQfiomAyzIODKG"
+        "id": "data-plane",
+        "name": "data-plane",
+        "int-cpd": [
+          {
+            "id": "in",
+            "layer-protocol": "ipv4"
+          },
+          {
+            "id": "internal",
+            "int-virtual-link-desc": "internal-vl",
+            "layer-protocol": "ipv4"
+          },
+          {
+            "id": "out",
+            "layer-protocol": "ipv4"
+          }
+        ],
+        "virtual-compute-desc": "DP",
+        "virtual-storage-desc": [
+          "root"
+        ],
+        "sw-image-desc": "DP"
       }
     ],
-    "vnfd_version": "vWQGYTTWsqKuYjUwreQA",
-    "deletion_pending": true,
-    "software_image": [
+    "virtual-compute-desc": [
       {
-        "software_image_information": {
-          "software_image_id": "DrJzgVYrtIyfeWwbwWSB",
-          "disk_format": "JDHIVIgnthSdxFusJKDC",
-          "user_metadata": {},
-          "checksum": "WcGOaJaytSwaUtLGYckC",
-          "version": "vaTGIjqOgfxUsFHmJsEg",
-          "created_at": 8483593136750323902,
-          "min_ram": -960911916998180274,
-          "min_disk": 2049394297182993804,
-          "provider": "IShyaLOzettEhJYJoHFU",
-          "container_format": "qGDmgsPUJGAlcSoIhUzP",
-          "size": -9167918553773320902,
-          "name": "Dr. Jonathan Good IV"
+        "id": "CP",
+        "virtual-memory": {
+          "size": "16.0"
         },
-        "access_information": "PCHBtgjapkBsJNXgPLVP"
+        "virtual-cpu": {
+          "num-virtual-cpu": "8"
+        }
+      },
+      {
+        "id": "DP",
+        "virtual-memory": {
+          "size": "32.0"
+        },
+        "virtual-cpu": {
+          "num-virtual-cpu": "16"
+        }
       }
     ],
-    "usage_state": "keFXzYOfoNhXhEeuUeam",
-    "vnfd_id": "zPFTqSTGuZYynBYiNNIb",
-    "user_defined_data": {}
-  },
-  "vnf_provider": "FuTvHdBMRnOvEyGTYatX",
-  "vnf_product_info_description": "mRdqekmUfTfNZcVEBobY",
-  "vnf_software_version": "RVwxiTOeeBcgAZXKgwPP",
-  "vdu": [
-    {
-      "monitoring_parameter": [
-        {
-          "type": "RIXbSHkIeCVzsRUaGjsy",
-          "params": {},
-          "performance_metric": "OBIfuEyPywaRYZppPfoD",
-          "exporter": "hAGdIUiWFluqdMlqRNFQ",
-          "monitoring_parameter_id": "FOODqnlMfDlCIeBLzrMW",
-          "name": "Isabel Chen DVM"
+    "virtual-storage-desc": [
+      {
+        "id": "root",
+        "type-of-storage": "ephemeral-storage",
+        "size-of-storage": "10",
+        "rdma-enabled": "true",
+        "sw-image-desc": "CP"
+      }
+    ],
+    "sw-image-desc": [
+      {
+        "id": "CP",
+        "name": "CP",
+        "version": "1.1",
+        "checksum": {
+          "algorithm": "sha-224",
+          "hash": "deadbeef"
         },
-        {
-          "type": "mEehwPSEenMfrnjVlsgF",
-          "params": {},
-          "performance_metric": "wgxeGvweGRmvymYMRDVW",
-          "exporter": "KaLUtBLcDqPMLhvRejtt",
-          "monitoring_parameter_id": "asalVIZRMuQVZXrwTpXW",
-          "name": "Emma Mercado MD"
-        },
-        {
-          "type": "LnGYKbpbCixCthGAMvWf",
-          "params": {},
-          "performance_metric": "DRLDZJUJAFnrbphUNCGS",
-          "exporter": "JYYfTNwuYiVSxvgwWWjk",
-          "monitoring_parameter_id": "TrGFtFunswwerGmZAVIx",
-          "name": "Mr. Dustin Mueller DVM"
-        }
-      ],
-      "vdu_id": "QrSYeZyvgpKDzJOAnWII",
-      "description": "Pass tend stage white. Serve outside across. Certain give big power hot social. This choice owner radio.\nTrial about none teacher sing possible heart. Happen seat read TV oil.",
-      "virtual_compute_desc": "udHMFZWJRRtEjWCNHCEQ",
-      "boot_order": {},
-      "int_cpd": [
-        {
-          "layer_protocol": "guJgyrfOpNYGPaSUBkQg",
-          "description": "While plan evening nor. Her win author most. Despite laugh east race.\nExpect my year set analysis scene affect. Also nothing election growth site role. Most they everything news.",
-          "int_virtual_link_desc": "jmbbhJRkYyCnEpkCFHTE",
-          "cp_role": "KRrGWfoWKxmAqDaXoXHg",
-          "virtual_network_interface_requirements": [
-            {
-              "support_mandatory": true,
-              "description": "Probably use realize senior according. Talk establish value guess begin police several.\nSell across us between.",
-              "nic_io_requirements": "sUHjwDHOlMdbIJtoWqAT",
-              "net_requirement": "uqxHnlwDMDvsTyPZpqja",
-              "name": "Jennifer Ho DDS"
-            }
-          ],
-          "address_data": [
-            {
-              "management": true,
-              "ip_address_type": "GRjRjqlMFntWeJlMqGzy",
-              "number_of_ip_address": 4009524479593970627,
-              "address_type": "ltaZOwChqUJPBisShsiW",
-              "ip_address_assignment": true,
-              "floating_ip_activated": true
-            },
-            {
-              "management": false,
-              "ip_address_type": "rklslssaGQuudwvsBysN",
-              "number_of_ip_address": 395513613814337508,
-              "address_type": "yZhUzWcinOkfOiMFKlbf",
-              "ip_address_assignment": true,
-              "floating_ip_activated": true
-            }
-          ],
-          "bitrate_requirement": 4074897188869413784,
-          "cpd_id": "uQMuxKITAItueNZhJaXj"
-        },
-        {
-          "layer_protocol": "pvYWYfXyAsttXsiLuRLe",
-          "description": "Owner treatment eat practice quality seem drive memory. Amount wish between information step else again.",
-          "int_virtual_link_desc": "xXDRLmjipnAezyImrcUG",
-          "cp_role": "eXYIDiBwHFovmrXiKvdH",
-          "virtual_network_interface_requirements": [],
-          "address_data": [
-            {
-              "management": true,
-              "ip_address_type": "PurNmzzJSmgaiglbqFQK",
-              "number_of_ip_address": -8658679541051631819,
-              "address_type": "LZRzdDjDOpkoNyKsVFMT",
-              "ip_address_assignment": false,
-              "floating_ip_activated": false
-            }
-          ],
-          "bitrate_requirement": -375992955447189226,
-          "cpd_id": "JdHUBayznsGmfWoHTjRw"
-        },
-        {
-          "layer_protocol": "ykIIlyKahSstCYUDFwvC",
-          "description": "Six phone against son to stock. Attorney win agree care wonder likely fact need.\nExecutive whatever role. Process employee individual conference man.",
-          "int_virtual_link_desc": "JvlyqNXsEJAhrNsEzoPE",
-          "cp_role": "NaondYQrXCcWpzPqZapx",
-          "virtual_network_interface_requirements": [],
-          "address_data": [
-            {
-              "management": false,
-              "ip_address_type": "hgYSzLIKHLUAJXCgCLFK",
-              "number_of_ip_address": 87883768132400771,
-              "address_type": "bpQaMSDaDCaeUtwoxjGx",
-              "ip_address_assignment": true,
-              "floating_ip_activated": true
-            },
-            {
-              "management": true,
-              "ip_address_type": "kWWDPnVKYYaShkfFQuMq",
-              "number_of_ip_address": 820833712272556820,
-              "address_type": "eMocIFPFjdczEkuqJKFV",
-              "ip_address_assignment": true,
-              "floating_ip_activated": true
-            }
-          ],
-          "bitrate_requirement": 4781155671029914555,
-          "cpd_id": "yoevOiPcRgWsVTWqOvrB"
-        }
-      ],
-      "sw_image_desc": {
-        "sw_image_id": "AQBcQHCxnyevaJEhCnPy",
-        "operating_system": "MDZZceBGwNrzdLUNGwyA",
-        "disk_format": "TWKBPgmhgDhptClAfayg",
-        "sw_image": "DLkEuLRiJKTbDwYxUBJe",
-        "checksum": "cJbquSLrAwTgimbthiLe",
-        "version": "RjmaCuXyrLmKczVhyucu",
-        "min_ram": 5687212967013655415,
-        "supported_virtualization_environment": "zfvHZFSoqslrNbBEVcak",
-        "min_disk": -8838061338692437344,
-        "container_format": "xfEQpAvtJumFUYGAnqTh",
-        "size": 4597393457109334439,
-        "name": "Mrs. Sally Frank"
+        "container-format": "bare",
+        "disk-format": "qcow2",
+        "min-disk": "1",
+        "min-ram": "2.0",
+        "size": "1",
+        "image": "http://mycompany.images.com/control-plane.qcow2"
       },
-      "vdu_name": "dUckRUpiXdnRRZaiFkLM",
-      "nfvi_constraint": [
-        "OFzWWgdWwLDHCYvxSLmX",
-        "jNQhbfRGkbEdCvaobDlY",
-        "UWBGDVytkNlvClZGcUUq",
-        "FPaDqyioqxyEHdCHSCaT"
-      ],
-      "virtual_storage_desc": [
-        "napwYcBxTquSXXqfVPHh"
-      ]
-    },
-    {
-      "monitoring_parameter": [],
-      "vdu_id": "uKiSJfLYAcvYEvYUDNTZ",
-      "description": "He price south section son voice. Store cold computer commercial chance allow. Recently least performance various manager idea.",
-      "virtual_compute_desc": "QIbZsDkWookdfBCPjmHO",
-      "boot_order": {},
-      "int_cpd": [
-        {
-          "layer_protocol": "ejgddcodELucKVVMTIoU",
-          "description": "Bill center event lot. Election purpose woman lawyer religious from.\nSoon quite kind life. White over side. Together civil raise east year.",
-          "int_virtual_link_desc": "aRvkOOpOAJGyoqXXolhm",
-          "cp_role": "VocyhQMumRuQetamzdDU",
-          "virtual_network_interface_requirements": [
-            {
-              "support_mandatory": false,
-              "description": "Dinner back impact daughter respond. Accept leave amount certainly. Computer cover economic job interesting. Adult institution three baby manage court tend toward.",
-              "nic_io_requirements": "ScxnQxPqWEyfwJQXVFRN",
-              "net_requirement": "qjVNUwPZSlxOGlDwpwBB",
-              "name": "Mrs. Karen Dean"
-            },
-            {
-              "support_mandatory": false,
-              "description": "Family order chair Mr available six nation. Behind this environmental.\nInvolve game north property thought.",
-              "nic_io_requirements": "HlmsVFCcWlsmQTOECcej",
-              "net_requirement": "tIXKOlvDEZtSrXfmxwhC",
-              "name": "Ms. Maria Marshall"
-            },
-            {
-              "support_mandatory": true,
-              "description": "Less television American view sea how top. Pull both memory cold feeling past. Personal edge recently.\nAnswer member education development. Purpose minute seat determine.",
-              "nic_io_requirements": "UyOjAxksadwonGLADgnC",
-              "net_requirement": "pGlfwvbBnVwUDVcnZAIC",
-              "name": "Dr. Sue Clay"
-            },
-            {
-              "support_mandatory": false,
-              "description": "Team system other result enough.\nWhen vote leader job only able. Too manage could age never. Various early thus population back describe.\nName admit quality type above hard parent.",
-              "nic_io_requirements": "GCqaYVaraNWvdNEqtDTc",
-              "net_requirement": "ySAPetVbnszKHCLrUHZn",
-              "name": "Ms. Caitlin Freeman"
-            }
-          ],
-          "address_data": [
-            {
-              "management": false,
-              "ip_address_type": "EKqBTQDmBOIKDajKJabZ",
-              "number_of_ip_address": 6698481033125850199,
-              "address_type": "hBsNKdJOOmODvdsTaLtB",
-              "ip_address_assignment": true,
-              "floating_ip_activated": true
-            },
-            {
-              "management": false,
-              "ip_address_type": "YPueXFdbUmexpxoDgKUk",
-              "number_of_ip_address": 2517579341643291967,
-              "address_type": "FmYmMJNrCQGqOdTCPCGj",
-              "ip_address_assignment": true,
-              "floating_ip_activated": true
-            },
-            {
-              "management": false,
-              "ip_address_type": "QQwkRMfGpykWvRocgQhQ",
-              "number_of_ip_address": 7408206209065931011,
-              "address_type": "vKUlPZyaJYvSOAhsgHIo",
-              "ip_address_assignment": false,
-              "floating_ip_activated": false
-            },
-            {
-              "management": true,
-              "ip_address_type": "UdRJnKmEgzOvFqTQBKih",
-              "number_of_ip_address": 239403376208941867,
-              "address_type": "mKTusvzPgNFrvCDSoEEh",
-              "ip_address_assignment": false,
-              "floating_ip_activated": true
-            }
-          ],
-          "bitrate_requirement": 3919143632295300351,
-          "cpd_id": "KAWiJBDMXHHUbIYMXDDL"
+      {
+        "id": "DP",
+        "name": "DP",
+        "version": "1.1",
+        "checksum": {
+          "algorithm": "sha-224",
+          "hash": "deadbeef"
         },
-        {
-          "layer_protocol": "PLZwMlqDziZvTtooZlWe",
-          "description": "Partner standard indeed. Kind agree who memory power stay.",
-          "int_virtual_link_desc": "gEqyUindcvkOvOlqZsaB",
-          "cp_role": "wMdSGUxaUKYSZHpCUFBG",
-          "virtual_network_interface_requirements": [
-            {
-              "support_mandatory": true,
-              "description": "Beyond another either much kitchen. Her account find democratic.\nMission allow fight take seek ago. Yourself during investment specific. As least find yes catch bank.",
-              "nic_io_requirements": "MxNiIeiayBTZFUVNSxCN",
-              "net_requirement": "DfMrZCHmgEetKrhNgMVE",
-              "name": "Lauren Gutierrez"
-            },
-            {
-              "support_mandatory": false,
-              "description": "Difference majority executive another safe. Artist own throughout real offer. Yes sit answer form.\nHigh lay toward letter page level. Religious property than walk laugh either capital.",
-              "nic_io_requirements": "ZxpdGELPwrkMbAtXrtDb",
-              "net_requirement": "WGLqAMtBepgKieIebQlH",
-              "name": "Lisa Moon DVM"
-            },
-            {
-              "support_mandatory": true,
-              "description": "Sell couple account strategy. By set happen. Young suddenly thought she suddenly move.\nThese strong blood down. Mrs everything discover order answer tough bill.",
-              "nic_io_requirements": "rRsPTFzzXDEKKHLNvZhp",
-              "net_requirement": "ThdQKuIZRoIrAEDjtKvp",
-              "name": "Alyssa Watkins PhD"
-            },
-            {
-              "support_mandatory": false,
-              "description": "Deal event such worry save country. Occur safe themselves behind rise then agree. Very write unit result scientist day.",
-              "nic_io_requirements": "SHHMEXuygoTNYBqwqFTu",
-              "net_requirement": "JlGSLacTUkgjpqODTPMN",
-              "name": "Lucas Castillo"
-            }
-          ],
-          "address_data": [
-            {
-              "management": false,
-              "ip_address_type": "oFvOqNgFxKZQoGvoJuZX",
-              "number_of_ip_address": -8158992368316085028,
-              "address_type": "WbNwtdJitYPxCeIDprPP",
-              "ip_address_assignment": false,
-              "floating_ip_activated": true
-            },
-            {
-              "management": true,
-              "ip_address_type": "VVCVrDnmwKYvQumzVBbc",
-              "number_of_ip_address": 7266470741915016379,
-              "address_type": "awUIKNhjDEDmZtRFEZMe",
-              "ip_address_assignment": true,
-              "floating_ip_activated": true
-            },
-            {
-              "management": true,
-              "ip_address_type": "stfNsCHDbiByhnHmXdEy",
-              "number_of_ip_address": -8696795372905674472,
-              "address_type": "vGfnvTtqIANEoHtxBvSj",
-              "ip_address_assignment": true,
-              "floating_ip_activated": true
-            },
-            {
-              "management": false,
-              "ip_address_type": "UnqBvnreulRNBLDXvweE",
-              "number_of_ip_address": -3276806160574856688,
-              "address_type": "CsRNYFlVZrZBtAafswsT",
-              "ip_address_assignment": true,
-              "floating_ip_activated": false
-            }
-          ],
-          "bitrate_requirement": -730215909687345000,
-          "cpd_id": "rAvosJnmoDYEjnXTlYHH"
+        "container-format": "bare",
+        "disk-format": "qcow2",
+        "min-disk": "1",
+        "min-ram": "2.0",
+        "size": "1",
+        "image": "http://mycompany.images.com/data-plane.qcow2"
+      }
+    ],
+    "int-virtual-link-desc": [
+      {
+        "id": "internal-vl",
+        "connectivity-type": {
+          "layer-protocol": "ipv4"
         }
-      ],
-      "sw_image_desc": {
-        "sw_image_id": "dJpiSVNzCoZynGlaosSH",
-        "operating_system": "tLiYAwbYcWPAgygmnUwc",
-        "disk_format": "hWnroAKkwDTuMWCNAtnh",
-        "sw_image": "SHJVziZysVQZAvxWkuZz",
-        "checksum": "xVNwSCVquCtzrEnGLCtl",
-        "version": "XbMrxoKtdKIGGjoWoytm",
-        "min_ram": 7308800356292352306,
-        "supported_virtualization_environment": "QrBWSLNqIVizpdMoxSKH",
-        "min_disk": 5458755230999626469,
-        "container_format": "YdDgmwELtNsIgWERrLrX",
-        "size": 6801817687816292370,
-        "name": "Laurie Valenzuela DDS"
       },
-      "vdu_name": "DSYrbRVEinxJDwniwMyE",
-      "nfvi_constraint": [],
-      "virtual_storage_desc": []
-    },
-    {
-      "monitoring_parameter": [
-        {
-          "type": "xDSWwJpmcVKhfihpZyku",
-          "params": {},
-          "performance_metric": "DoWgrncbviSkSJzlkZuS",
-          "exporter": "ChKNWOeHEGZjeenNrzhS",
-          "monitoring_parameter_id": "hOukYWTivAlnnNRrEVUZ",
-          "name": "Brendan Reese Jr."
-        },
-        {
-          "type": "DZEpEzcIjcceosuJheiB",
-          "params": {},
-          "performance_metric": "tBaYpyIkiKokCXWHhUat",
-          "exporter": "fZraEptCmaUdKDUQuZRy",
-          "monitoring_parameter_id": "SIHQSspUmWEEHUfcmlVq",
-          "name": "Ms. Shirley Barnes DVM"
-        },
-        {
-          "type": "GDvNXkvoMkySAplwALME",
-          "params": {},
-          "performance_metric": "YcsBmesyaakPZhOrgfkP",
-          "exporter": "bsCcDAikDiltvViTqCOQ",
-          "monitoring_parameter_id": "FqveqUHXTnuODHirEtWn",
-          "name": "Lonnie Reilly DVM"
+      {
+        "id": "mgmt",
+        "connectivity-type": {
+          "layer-protocol": "ipv4"
         }
-      ],
-      "vdu_id": "yQNuhxRJVgcLmRodghEy",
-      "description": "Call president project. Agency because the another shoulder everybody.\nWhatever son wrong theory. Break group defense memory despite. Agree language argue enough rule wind particular.",
-      "virtual_compute_desc": "hMSepiGUrnfIaaxnvmxK",
-      "boot_order": {},
-      "int_cpd": [
-        {
-          "layer_protocol": "hjfOKoOUVgbyUstFqfep",
-          "description": "Front anything ball see stay subject tough call. Money since myself south see arrive everyone sister. Drug window industry open too back glass.",
-          "int_virtual_link_desc": "uZgmEemtZyFeXjHbybQP",
-          "cp_role": "QxNLDGRCcMuxDFllNIXD",
-          "virtual_network_interface_requirements": [],
-          "address_data": [
-            {
-              "management": false,
-              "ip_address_type": "BYvSEPbSLlbObsjwiCiT",
-              "number_of_ip_address": -2056392965927527032,
-              "address_type": "jaDaUEDfnRaowJjxQYjt",
-              "ip_address_assignment": true,
-              "floating_ip_activated": true
-            },
-            {
-              "management": true,
-              "ip_address_type": "lBWtkawXVnbHcptIieyi",
-              "number_of_ip_address": 1758004807053914073,
-              "address_type": "HJynjhhEfwQcioGrDEgm",
-              "ip_address_assignment": true,
-              "floating_ip_activated": false
-            },
-            {
-              "management": true,
-              "ip_address_type": "TxjoDdupYLOjkaSXNrNd",
-              "number_of_ip_address": -5608072895225838455,
-              "address_type": "pNDkwjbkjndnfejccXCG",
-              "ip_address_assignment": false,
-              "floating_ip_activated": false
-            },
-            {
-              "management": true,
-              "ip_address_type": "xiYiLrtordvmxZKniXKF",
-              "number_of_ip_address": 6877050231931234720,
-              "address_type": "NkODZpnwITtGhqPkuifz",
-              "ip_address_assignment": true,
-              "floating_ip_activated": true
-            }
-          ],
-          "bitrate_requirement": 1832625976261417242,
-          "cpd_id": "KcDveYVhyzOzqkuHlhHb"
+      }
+    ],
+    "ext-cpd": [
+      {
+        "id": "in",
+        "int-cpd": {
+          "vdu-id": "data-plane",
+          "cpd": "in"
         },
-        {
-          "layer_protocol": "GIslZPvIfxNUIrMICGbH",
-          "description": "Accept government PM condition believe one.\nWhat government relate possible finish toward. Claim together relate water. Technology perhaps along mouth.\nMust wait left. Gas green common build.",
-          "int_virtual_link_desc": "tEoGAEmTgjIOdxOBwjFC",
-          "cp_role": "LPrVmNFyUaarDzfQEDrT",
-          "virtual_network_interface_requirements": [
-            {
-              "support_mandatory": false,
-              "description": "With prepare culture everything. Visit others thus color just. New director cause industry.",
-              "nic_io_requirements": "BaKChiiPYnNXRhwKwrzv",
-              "net_requirement": "llvstPpahZvPXQrdyMce",
-              "name": "Alvin Barnett Jr."
-            }
-          ],
-          "address_data": [
-            {
-              "management": false,
-              "ip_address_type": "ACezYkbCQMYKxPoRCkwB",
-              "number_of_ip_address": -3285960560233213318,
-              "address_type": "SMLyPlPIoAggVDMLgKqG",
-              "ip_address_assignment": true,
-              "floating_ip_activated": false
-            },
-            {
-              "management": false,
-              "ip_address_type": "kiBnqDhXRoDoWwCCYpmr",
-              "number_of_ip_address": -406940136647698701,
-              "address_type": "omutBEnAGltzeOrVFojZ",
-              "ip_address_assignment": true,
-              "floating_ip_activated": true
-            },
-            {
-              "management": true,
-              "ip_address_type": "WjpkmghPxsiYSVMgUPmX",
-              "number_of_ip_address": -8882257644403737985,
-              "address_type": "VAIoRewMwbCSlCdDqYec",
-              "ip_address_assignment": true,
-              "floating_ip_activated": true
-            }
-          ],
-          "bitrate_requirement": 7965385252811551308,
-          "cpd_id": "tlMbXulTtiSLgGgilzcy"
-        },
-        {
-          "layer_protocol": "sQipzayXBGVNrhbaVuHc",
-          "description": "Ahead grow staff consumer tell table.\nEstablish season behavior add indeed until. Sea soldier serve bed else purpose responsibility. Price man rest commercial class.",
-          "int_virtual_link_desc": "TyuAElDTniEPxEtBiAEU",
-          "cp_role": "NExJTUHYPAQtLlwRqGZq",
-          "virtual_network_interface_requirements": [],
-          "address_data": [
-            {
-              "management": false,
-              "ip_address_type": "nDaupjITakpCXPBzzdUt",
-              "number_of_ip_address": 3405219960909943513,
-              "address_type": "VRWTHtIUndekzIZZexTQ",
-              "ip_address_assignment": false,
-              "floating_ip_activated": false
-            },
-            {
-              "management": true,
-              "ip_address_type": "IreTvfzhHzxzgCFtbVtT",
-              "number_of_ip_address": 1965181103605889219,
-              "address_type": "hOQOqWQaVFvIBWHoxZwZ",
-              "ip_address_assignment": false,
-              "floating_ip_activated": false
-            }
-          ],
-          "bitrate_requirement": -25550112797149359,
-          "cpd_id": "hnlXCcPGpIlxmXzSJVlJ"
-        },
-        {
-          "layer_protocol": "KopjvcuYOUWcjKxjjKgS",
-          "description": "But first knowledge matter owner society career. Personal main also series summer.\nAlso at hospital there. Like member big. Several although significant participant.",
-          "int_virtual_link_desc": "jjERNXEQjTNXzJPaeoxN",
-          "cp_role": "wwTMSpLNUTSlvSozXzVc",
-          "virtual_network_interface_requirements": [],
-          "address_data": [
-            {
-              "management": true,
-              "ip_address_type": "wVihezdXDRHKVFcmfdSR",
-              "number_of_ip_address": -771913289692783125,
-              "address_type": "wkcSdqEjHwbHaGNqftpO",
-              "ip_address_assignment": false,
-              "floating_ip_activated": false
-            },
-            {
-              "management": true,
-              "ip_address_type": "FjHPBXOTDJspVCQryhKH",
-              "number_of_ip_address": -1192235851932244109,
-              "address_type": "xAtkLETcTFIOwMklTqfV",
-              "ip_address_assignment": true,
-              "floating_ip_activated": true
-            },
-            {
-              "management": false,
-              "ip_address_type": "retfoiKVoiAllWGipftu",
-              "number_of_ip_address": -9148539082718238322,
-              "address_type": "PpeVmpQwplGVlTcaRIzI",
-              "ip_address_assignment": true,
-              "floating_ip_activated": false
-            },
-            {
-              "management": true,
-              "ip_address_type": "OlYopecyGIhRyrOsuAGn",
-              "number_of_ip_address": 4337098628290627050,
-              "address_type": "rWAvQTQxfzuLhWXGOWrt",
-              "ip_address_assignment": true,
-              "floating_ip_activated": false
-            }
-          ],
-          "bitrate_requirement": 8339810906058148325,
-          "cpd_id": "hOBnwhkIhqWhkTnCUaWZ"
-        }
-      ],
-      "sw_image_desc": {
-        "sw_image_id": "MnWpvPQIwXVItjJGpyUK",
-        "operating_system": "AnqjvtXKNkBkWeHieuZt",
-        "disk_format": "fYfxYjjGwPntbEorDEbY",
-        "sw_image": "PBNBfoVvazzTgIJWqPOx",
-        "checksum": "KyKTKGmtUWcPrDDMaQMV",
-        "version": "cFIKCHmDHlkmPSrDhJKG",
-        "min_ram": 6289542775354555822,
-        "supported_virtualization_environment": "JtwyHQUBHTbmIRKDZObH",
-        "min_disk": -1646841333997841518,
-        "container_format": "ditNQnksWZuAcgLOiiyo",
-        "size": -9125710050492226886,
-        "name": "Dr. Shane Pham"
+        "layer-protocol": "ipv4"
       },
-      "vdu_name": "GFTWNanlidorrGlGCJHm",
-      "nfvi_constraint": [
-        "fTcdvFGzkBYmLdPkKmcc"
-      ],
-      "virtual_storage_desc": [
-        "XgelKZRGfunxsyeacYvL",
-        "kSBzfrgJUdWPyViwEuCt"
-      ]
-    }
-  ],
-  "vnfd_id": "AxPIuRJXwynGgHPJqLEh",
-  "virtual_storage_desc": [
-    {
-      "rdma_enabled": false,
-      "size_of_storage": -7365262321775576917,
-      "storage_id": "kYOmkyeBfYQoWbcQFGab",
-      "type_of_storage": "jeqsdPYpQWezXvEBAHsV",
-      "sw_image_desc": "IQfvlwFwEDcDNrTnLnXp"
-    }
-  ]
+      {
+        "id": "mgmt",
+        "int-virtual-link-desc": "mgmt",
+        "layer-protocol": "ipv4"
+      },
+      {
+        "id": "out",
+        "int-cpd": {
+          "vdu-id": "data-plane",
+          "cpd": "out"
+        },
+        "layer-protocol": "ipv4"
+      }
+    ],
+    "df": [
+      {
+        "id": "gold",
+        "vdu-profile": [
+          {
+            "id": "control-plane-active",
+            "min-number-of-instances": "1",
+            "max-number-of-instances": "1",
+            "affinity-or-anti-affinity-group": [
+              {
+                "id": "control-plane"
+              }
+            ]
+          },
+          {
+            "id": "control-plane-standby",
+            "min-number-of-instances": "1",
+            "max-number-of-instances": "1",
+            "affinity-or-anti-affinity-group": [
+              {
+                "id": "control-plane"
+              }
+            ]
+          },
+          {
+            "id": "data-plane",
+            "min-number-of-instances": "2",
+            "max-number-of-instances": "8"
+          }
+        ],
+        "instantiation-level": [
+          {
+            "id": "il-1",
+            "vdu-level": [
+              {
+                "vdu-id": "control-plane-active",
+                "number-of-instances": "1"
+              },
+              {
+                "vdu-id": "control-plane-standby",
+                "number-of-instances": "1"
+              },
+              {
+                "vdu-id": "data-plane",
+                "number-of-instances": "2"
+              }
+            ]
+          },
+          {
+            "id": "il-2",
+            "vdu-level": [
+              {
+                "vdu-id": "control-plane-active",
+                "number-of-instances": "1"
+              },
+              {
+                "vdu-id": "control-plane-standby",
+                "number-of-instances": "1"
+              },
+              {
+                "vdu-id": "data-plane",
+                "number-of-instances": "4"
+              }
+            ]
+          }
+        ],
+        "default-instantiation-level": "il-1",
+        "lcm-operations-configuration": {
+          "scale-vnf-to-level-op-config": {
+            "arbitrary-target-levels-supported": "true"
+          },
+          "terminate-vnf-op-config": {
+            "min-graceful-termination": "1"
+          },
+          "operate-vnf-op-config": {
+            "min-graceful-stop-timeout": "1"
+          }
+        },
+        "affinity-or-anti-affinity-group": [
+          {
+            "id": "control-plane",
+            "type": "anti-affinity",
+            "scope": "nfvi-node"
+          }
+        ]
+      },
+      {
+        "id": "silver",
+        "vdu-profile": [
+          {
+            "id": "control-plane-active",
+            "min-number-of-instances": "1",
+            "max-number-of-instances": "1",
+            "affinity-or-anti-affinity-group": [
+              {
+                "id": "control-plane"
+              }
+            ]
+          },
+          {
+            "id": "control-plane-standby",
+            "min-number-of-instances": "1",
+            "max-number-of-instances": "1",
+            "affinity-or-anti-affinity-group": [
+              {
+                "id": "control-plane"
+              }
+            ]
+          },
+          {
+            "id": "data-plane",
+            "min-number-of-instances": "1",
+            "max-number-of-instances": "4"
+          }
+        ],
+        "instantiation-level": [
+          {
+            "id": "il-1",
+            "vdu-level": [
+              {
+                "vdu-id": "control-plane-active",
+                "number-of-instances": "1"
+              },
+              {
+                "vdu-id": "control-plane-standby",
+                "number-of-instances": "1"
+              },
+              {
+                "vdu-id": "data-plane",
+                "number-of-instances": "1"
+              }
+            ]
+          },
+          {
+            "id": "il-2",
+            "vdu-level": [
+              {
+                "vdu-id": "control-plane-active",
+                "number-of-instances": "1"
+              },
+              {
+                "vdu-id": "control-plane-standby",
+                "number-of-instances": "1"
+              },
+              {
+                "vdu-id": "data-plane",
+                "number-of-instances": "2"
+              }
+            ]
+          }
+        ],
+        "default-instantiation-level": "il-1",
+        "lcm-operations-configuration": {
+          "scale-vnf-to-level-op-config": {
+            "arbitrary-target-levels-supported": "true"
+          },
+          "terminate-vnf-op-config": {
+            "min-graceful-termination": "1"
+          },
+          "operate-vnf-op-config": {
+            "min-graceful-stop-timeout": "1"
+          }
+        },
+        "affinity-or-anti-affinity-group": [
+          {
+            "id": "control-plane",
+            "type": "anti-affinity",
+            "scope": "nfvi-node"
+          }
+        ]
+      }
+    ]
+  }
 }

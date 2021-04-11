@@ -1,11 +1,21 @@
+import api.queries.vs_descriptor as vs_descriptor_queries
+import uuid
 from bson import ObjectId
+from mongoengine.queryset.visitor import Q
+
+from api.models.ns_descriptor import Nsd
+from api.models.vnf import Vnfd
 from api.models.vs_blueprint import VsBlueprintInfo, VsBlueprint, VsdNsdTranslationRule
 from api.models.ns_template import Nst
-from api.exceptions.exceptions import MalFormedException, FailedOperationException, AlreadyExistingEntityException
+from api.exceptions.exceptions import MalFormedException, FailedOperationException, AlreadyExistingEntityException, \
+    NotExistingEntityException
 from api.exceptions.utils import exception_message_elements
-from api.queries.utils import transaction
-import api.queries.vs_descriptor as vs_descriptor_queries
+from api.queries.utils import transaction, extract_file, download_file, get_json_in_folder, file_exists, move_file, \
+    remove_file_and_folder, convert_all_fields_to_camel, aggregate_transactions
 from copy import deepcopy
+from api.serializers.utils import pyangbind_load
+from api.serializers.vnf import etsi_nfv_vnfd
+from api.serializers.ns_descriptor import etsi_nfv_nsd
 
 
 # noinspection PyBroadException
@@ -96,21 +106,116 @@ def delete_vs_blueprint(vsb_id):
     transaction(delete_callback)
 
 
+def _store_vnfd(vnf, vnfd):
+    vnfd_id, vnfd_version = vnfd.pop('id', None), vnf.get('version')
+
+    if Vnfd.objects.filter((Q(vnfd_id=vnfd) & Q(version=vnfd_version)) |
+                           (Q(name=vnf.get('name')) & Q(provider=vnf.get('provider')) &
+                            Q(version=vnf.get('version')))).count() > 0:
+        raise AlreadyExistingEntityException(f"Vnfd with vnfdId: {vnfd.vndf_id} already present in DB")
+
+    vnfd['vnfd_id'] = vnfd_id
+
+    return vnfd
+
+
 def _onboard_vnf_package(vnf):
-    pass
+    downloaded_file = download_file(vnf.get('vnf_package_path'), str(uuid.uuid4()))
+    folder = extract_file(downloaded_file)
+    json_content = get_json_in_folder(folder)
+
+    if file_exists(f'{folder}/cloud-config.txt'):
+        # need to not delete cloud init
+        move_file(f'{folder}/cloud-config.txt')
+
+    remove_file_and_folder(downloaded_file, folder)
+
+    vnfd = pyangbind_load(etsi_nfv_vnfd(), json_content, "Invalid content for Vnfd object").get('etsi-nfv-vnfd:vnfd')
+
+    if vnfd is None:
+        raise MalFormedException('VNFD for onboarding is empty')
+
+    return _store_vnfd(vnf, convert_all_fields_to_camel(vnfd))
 
 
-def _on_board_ns_template(data):
-    """
-    version, target_name, target_id = nst.get('nst_version'), nst.get('nst_name'), nst.get('nst_id')
+"""
+def _get_flavour_from_vnfd_id(df, vnfd_id):
+    for vnf_profile in df.get('vnf_profile', []):
+        if vnf_profile.get('vnfd_id') == vnfd_id:
+            return vnf_profile.get('flavour_id')
 
-    if Nst.objects.filter((Q(nst_name=target_name) & Q(nst_version=version)) | Q(nst_id=target_id)).count() > 0:
-        raise AlreadyExistingEntityException(f"NsTemplate with name {target_name} and version {version} or ID exists")
-    """
-    nsts, nsds, vnf_packages = data.get('nsts', []), data.get('nsds', []), data.get('vnf_packages', [])
+    raise NotExistingEntityException("Cannot obtain id of Osm vnfd from Ifa constituent vnfd")
 
+
+def _check_vnfd_existence(nsd, df):
+    vnfd_id_to_vnfd_uuid = {}
+    for vnfd_id in nsd.get('vnfd_id', []):
+        osm_vnfd_id = f"{vnfd_id}_{_get_flavour_from_vnfd_id(df, vnfd_id)}"
+        if osm_vnfd_id not in vnfd_id_to_vnfd_uuid:
+"""
+
+
+def _onboard_nsd(nsd):
+    return nsd
+
+
+def _store_ns_template(nst):
+    return
+
+
+def _on_board_ns_template(nst, nsds, vnf_packages):
+    # Vnf Packages
+    all_vnfd_data = []
     for vnf in vnf_packages:
-        pass
+        try:
+            vnfd_data = _onboard_vnf_package(vnf)
+            all_vnfd_data.append(vnfd_data)
+        except AlreadyExistingEntityException:
+            continue
+
+    transaction_data = []
+    if len(all_vnfd_data) > 0:
+        transaction_data += [
+            {
+                'collection': Vnfd.get_collection(),
+                'operation': 'insert_many',
+                'args': (all_vnfd_data,)
+            }
+        ]
+
+    # Nsds
+
+    all_nsd_data = []
+    for nsd in nsds:
+        try:
+            nsd_data = _onboard_nsd(convert_all_fields_to_camel(nsd))
+            all_nsd_data.append(nsd_data)
+        except AlreadyExistingEntityException:
+            continue
+
+    if len(all_nsd_data) > 0:
+        transaction_data += [
+            {
+                'collection': Nsd.get_collection(),
+                'operation': 'insert_many',
+                'args': (all_nsd_data,)
+            }
+        ]
+
+    nst_name, nst_version, nst_id = nst.get('nst_name'), nst.get('nst_version'), nst.get('nst_id')
+    if Nst.objects.filter((Q(nst_name=nst_name) & Q(nst_version=nst_version)) | Q(nst_id=nst_id)).count() > 0:
+        raise AlreadyExistingEntityException(
+            f"NsTemplate with name {nst_name} and version {nst_version} or ID exists")
+
+    if len(nst) > 0:
+        transaction_data += [
+            {
+                'collection': Nst.get_collection(),
+                'operation': 'insert_one',
+                'args': (nst,)
+            }
+        ]
+    return transaction_data
 
 
 def _process_ns_descriptor_onboarding(data):
@@ -119,31 +224,17 @@ def _process_ns_descriptor_onboarding(data):
     if len(nsts) == 0 and len(nsds) == 0 and len(vnf_packages) == 0:
         return
 
+    transaction_data = []
     if len(nsts) > 0:
-        pass
+        transaction_data += _on_board_ns_template(nsts[0], nsds, vnf_packages)
+        for nst in nsts[1:]:
+            transaction_data += _on_board_ns_template(nst, None, None)
 
-    if len(vnf_packages) > 0:
-        # TODO: Implement vnf_packages logic
-        pass
-
-    if len(nsds) > 0:
-        # TODO: Implement nsds logic
-        pass
-
-    for nst in nsts:
-        nst_name, version, nst_id = nst.nst_name, nst.nst_version, nst.nst_id
-        if Nst.objects.filter(nst_name=nst_name, version=version).count() > 0 or \
-                Nst.objects.filter(nst_id=nst_id).count() > 0:
-            raise AlreadyExistingEntityException(f"NsTemplate with name {nst_name} and version {version} or ID exists")
-
-    def create_callback(session):
-        Nst.get_collection().insert_many(nsts, session=session)
-
-    transaction(create_callback)
+    return transaction_data
 
 
-def create_vs_blueprint(data):
-    # _process_ns_descriptor_onboarding(data)
+def _create_vs_blueprint(data):
+    transaction_data = _process_ns_descriptor_onboarding(data)
 
     vs_blueprint = data.get('vs_blueprint', {})
 
@@ -160,18 +251,37 @@ def create_vs_blueprint(data):
 
     translation_rules = data.get('translation_rules', [])
     for translation_rule in translation_rules:
-        translation_rule.blueprint_id = vs_blueprint_id
+        translation_rule['blueprint_id'] = vs_blueprint_id
 
-    def create_callback(session):
-        VsBlueprint.get_collection().insert_one(data, session=session)
-        VsBlueprintInfo.get_collection().insert_one({
-            'vs_blueprint_id': vs_blueprint_id,
-            'vs_blueprint_version': version,
-            'name': name,
-            'owner': owner
-        }, session=session)
-        VsdNsdTranslationRule.get_collection().insert_many(translation_rules, session=session)
+    transaction_data += [
+        {
+            'collection': VsBlueprint.get_collection(),
+            'operation': 'insert_one',
+            'args': (data,)
+        },
+        {
+            'collection': VsBlueprintInfo.get_collection(),
+            'operation': 'insert_one',
+            'args': ({
+                         'vs_blueprint_id': vs_blueprint_id,
+                         'vs_blueprint_version': version,
+                         'name': name,
+                         'owner': owner
+                     },)
+        }
+    ]
+    if len(translation_rules) > 0:
+        transaction_data += [{
+            'collection': VsdNsdTranslationRule.get_collection(),
+            'operation': 'insert_many',
+            'args': (translation_rules,)
+        }]
 
-    transaction(create_callback)
+    return vs_blueprint_id, transaction_data
+
+
+def create_vs_blueprint(data):
+    vs_blueprint_id, transaction_data = _create_vs_blueprint(data)
+    transaction(aggregate_transactions(transaction_data))
 
     return vs_blueprint_id

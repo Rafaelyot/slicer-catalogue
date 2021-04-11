@@ -1,2 +1,0 @@
-bc681c5a4c3cdc09c013df2d2239f3d2  icons/osm_2x.png
-ec89fa49a94b4befd2a1d180bf4c32cb  slice_hackfest_vnfd.yaml
