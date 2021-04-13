@@ -51,13 +51,13 @@ class NstServiceProfileSerializer(Schema):
 
 
 class NstSerializer(Schema):
-    nst_id = String()
+    nst_id = String(required=True, error_messages={"required": "NST id not set"})
     nst_name = String()
-    nst_version = String()
-    nst_provider = String()
+    nst_version = String(required=True, error_messages={"required": "NST version not set"})
+    nst_provider = String(required=True, error_messages={"required": "NST provider not set"})
     geographical_area_info_list = List(Nested(GeographicalAreaInfoSerializer))
     nsst_ids = List(String())
-    # nsst = List(Nested('self'))
+    nsst = List(Nested('self'))
     nsd_id = String()
     nsd_version = String()
     nst_service_profile = Nested(NstServiceProfileSerializer)

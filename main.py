@@ -41,7 +41,7 @@ def init_flask():
     # Authentication
     loginManager.init_app(app)
 
-    app.run()
+    app.run(port=5010)
 
 
 def init_rabbit():

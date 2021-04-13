@@ -19,7 +19,10 @@ class MessageReceiver(Thread):
         if (vsi_id := content.get('vsiId')) is None:
             return
 
-        self.messaging.publish2Queue(f"vsLCM_{vsi_id}", json.dumps(get_info(content)))
+        data = get_info(content)
+        print(data)
+
+        self.messaging.publish2Queue(f"vsLCM_{vsi_id}", json.dumps())
 
     def run(self):
         print(' [*] Waiting for messages. To exit press CTRL+C')

@@ -20,15 +20,17 @@ def get_info(content):
         data = content.get('data')
         vsd_id, vssis = data.get('vsdId'), data.get('vssis', [])
 
-        requested_data = {'message': 'Success', 'error': False, 'data': {}}
+        requested_data = {'message': 'Success', 'error': False, 'vsdId': vsd_id, 'data': {}}
 
         # Need the tenant_id
         tenant_id = "tenant"
         try:
             vsd = VsDescriptorSerializer().dump(get_vs_descriptors(vsd_id=vsd_id, tenant_id=tenant_id)[0])
+            vsbi = None
 
             requested_data['data'] = {
-                'vsd': vsd
+                'vsd': vsd,
+                'vs_blueprint_info': vsbi
             }
         except HTTPException as e:
             requested_data['message'] = e.get_description()
