@@ -12,7 +12,7 @@ class Tenant(UserMixin):
         super().__init__()
         self.tenantName = tenant_name
         self.group = group
-        
+
     def is_admin(self):
         return self.group == 'admin'
 

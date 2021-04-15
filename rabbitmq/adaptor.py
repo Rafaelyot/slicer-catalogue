@@ -1,6 +1,7 @@
 import pika
 import os
 
+
 RABBIT_USERNAME = os.environ.get('RABBIT_USERNAME', 'admin')
 RABBIT_PASSWORD = os.environ.get('RABBIT_PASSWORD', 'admin')
 RABBIT_HOST = os.environ.get('RABBIT_HOST', 'localhost')

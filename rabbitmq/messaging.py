@@ -1,7 +1,6 @@
 from rabbitmq.adaptor import Messaging
 from rabbitmq.api_wrapper import get_info
 from threading import Thread
-
 import json
 
 
@@ -13,16 +12,12 @@ class MessageReceiver(Thread):
         self.messaging.consumeExchange("vsLCM_Management", self.callback)
 
     def callback(self, ch, method, properties, body):
-        print(" [x] Received status update %r" % body)
+        # print(" [x] Received status update %r" % body)
         content = json.loads(body)
 
-        if (vsi_id := content.get('vsiId')) is None:
-            return
-
         data = get_info(content)
-        print(data)
-
-        self.messaging.publish2Queue(f"vsLCM_{vsi_id}", json.dumps())
+        if data is not None:
+            self.messaging.publish2Exchange("vsLCM_Management", json.dumps(data))
 
     def run(self):
         print(' [*] Waiting for messages. To exit press CTRL+C')

@@ -42,7 +42,7 @@ def delete_vs_blueprint():
 
 
 @app.route('/vsblueprint', methods=('POST',))
-# @login_required
+@login_required
 def create_vs_blueprint():
     request_data = request.get_json()
 

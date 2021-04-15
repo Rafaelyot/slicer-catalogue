@@ -72,7 +72,7 @@ def get_vs_blueprints(vsb_id=None, vsb_name=None, vsb_version=None, tenant_id=No
         vsbi = VsBlueprintInfo.get_or_404(vs_blueprint_id=vsb_id)
         vsbi.vs_blueprint = VsBlueprint.get_or_404(blueprint_id=vsb_id)
         if with_translation_rules:
-            vsbi.vs_blueprint.translation_rules = VsdNsdTranslationRule.get_or_404(blueprint_id=vsb_id)
+            vsbi.vs_blueprint.translation_rules = VsdNsdTranslationRule.objects.filter(blueprint_id=vsb_id)
 
         return [_post_process_vsb(vsbi, tenant_id)]
 
@@ -82,7 +82,7 @@ def get_vs_blueprints(vsb_id=None, vsb_name=None, vsb_version=None, tenant_id=No
             vsbi.vs_blueprint = VsBlueprint.get_or_404(name=vsbi.name, version=vsbi.vs_blueprint_version)
             if with_translation_rules:
                 vs_blueprint_id = vsbi.vs_blueprint.blueprint_id
-                vsbi.vs_blueprint.translation_rules = VsdNsdTranslationRule.get_or_404(blueprint_id=vs_blueprint_id)
+                vsbi.vs_blueprint.translation_rules = VsdNsdTranslationRule.objects.filter(blueprint_id=vs_blueprint_id)
 
         return all_vsbi
 
@@ -138,31 +138,6 @@ def _onboard_vnf_package(vnf):
     return _store_vnfd(vnf, convert_all_fields_to_camel(vnfd))
 
 
-"""
-def _get_flavour_from_vnfd_id(df, vnfd_id):
-    for vnf_profile in df.get('vnf_profile', []):
-        if vnf_profile.get('vnfd_id') == vnfd_id:
-            return vnf_profile.get('flavour_id')
-
-    raise NotExistingEntityException("Cannot obtain id of Osm vnfd from Ifa constituent vnfd")
-
-
-def _check_vnfd_existence(nsd, df):
-    vnfd_id_to_vnfd_uuid = {}
-    for vnfd_id in nsd.get('vnfd_id', []):
-        osm_vnfd_id = f"{vnfd_id}_{_get_flavour_from_vnfd_id(df, vnfd_id)}"
-        if osm_vnfd_id not in vnfd_id_to_vnfd_uuid:
-"""
-
-
-def _onboard_nsd(nsd):
-    return nsd
-
-
-def _store_ns_template(nst):
-    return
-
-
 def _on_board_ns_template(nst, nsds, vnf_packages):
     # Vnf Packages
     all_vnfd_data = []
@@ -184,11 +159,10 @@ def _on_board_ns_template(nst, nsds, vnf_packages):
         ]
 
     # Nsds
-
     all_nsd_data = []
     for nsd in nsds:
         try:
-            nsd_data = _onboard_nsd(convert_all_fields_to_camel(nsd))
+            nsd_data = convert_all_fields_to_camel(nsd)
             all_nsd_data.append(nsd_data)
         except AlreadyExistingEntityException:
             continue
@@ -257,7 +231,7 @@ def _create_vs_blueprint(data):
         {
             'collection': VsBlueprint.get_collection(),
             'operation': 'insert_one',
-            'args': (data,)
+            'args': (data.get('vs_blueprint'),)
         },
         {
             'collection': VsBlueprintInfo.get_collection(),

@@ -33,7 +33,8 @@ def get_vs_descriptors():
 def delete_vs_descriptor():
     args = {
         'tenant_id': current_user.tenantName,
-        'vsd_id': request.args.get('vsd_id')
+        'vsd_id': request.args.get('vsd_id'),
+        'is_admin': current_user.is_admin()
     }
 
     queries.delete_vs_descriptor(**args)

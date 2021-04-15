@@ -4,7 +4,7 @@ import api.models
 from flask import Flask
 from api.views.vs_blueprint import app as vs_blueprint_api
 from api.views.vs_descriptor import app as vs_descriptor_api
-from api.settings import DevConfig
+from api.settings import ProdConfig
 from mongoengine import Document, DynamicDocument
 from flask_mongoengine import MongoEngine
 from rabbitmq.messaging import MessageReceiver
@@ -17,7 +17,7 @@ def init_flask():
     app = Flask(APPLICATION_NAME)
 
     # Configurations settings
-    app.config.from_object(DevConfig)
+    app.config.from_object(ProdConfig)
 
     # Register flask's blueprints
     app.register_blueprint(vs_blueprint_api)
@@ -41,7 +41,7 @@ def init_flask():
     # Authentication
     loginManager.init_app(app)
 
-    app.run(port=5010)
+    app.run(host="0.0.0.0", port=ProdConfig.PORT)
 
 
 def init_rabbit():

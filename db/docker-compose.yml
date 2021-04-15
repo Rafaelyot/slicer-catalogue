@@ -1,26 +1,43 @@
-version: "3.4"
+version: "3.6"
 services:
-  mongo1:
+  primary_mongo:
     hostname: mongo1
-    container_name: localmongo1
-    image: mongo:4.0-xenial
+    container_name: primary_database
+    build: ./primary
     ports:
       - 27017:27017
     restart: always
-    entrypoint: [ "/usr/bin/mongod", "--bind_ip_all", "--replSet", "rs0" ]
-  mongo2:
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+      CATALOGUES_DATABASE: catalogues
+      CATALOGUES_USERNAME: catalogues
+      CATALOGUES_PASSWORD: catalogues
+
+
+  secondary_mongo1:
+    depends_on:
+      - primary_mongo
     hostname: mongo2
-    container_name: localmongo2
-    image: mongo:4.0-xenial
+    container_name: secondary_database1
+    build: ./secondary1
     ports:
-    - 27012:27017
+      - 27012:27017
     restart: always
-    entrypoint: [ "/usr/bin/mongod", "--bind_ip_all", "--replSet", "rs0" ]
-  mongo3:
+    environment:
+      DATABASE_NAME: catalogues
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+
+  secondary_mongo2:
+    depends_on:
+      - primary_mongo
     hostname: mongo3
-    container_name: localmongo3
-    image: mongo:4.0-xenial
+    container_name: secondary_database2
+    build: ./secondary2
     ports:
-    - 27013:27017
+      - 27013:27017
     restart: always
-    entrypoint: [ "/usr/bin/mongod", "--bind_ip_all", "--replSet", "rs0" ]
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root

@@ -26,10 +26,10 @@ def get_vs_descriptors(tenant_id=None, vsd_id=None, is_admin=False):
             return vs_descriptors
 
     elif parameters_size == 2 and (tenant_id is not None) and (vsd_id is not None):
-        if is_admin:  # is_admin(tenant_id)
-            return [VsDescriptor.get_or_404(descriptor_id=vsd_id)]
+        if is_admin:
+            return [VsDescriptor.get_or_404(vs_descriptor_id=vsd_id)]
         else:
-            return [VsDescriptor.get_or_404(descriptor_id=vsd_id, tenant_id=tenant_id)]
+            return [VsDescriptor.get_or_404(vs_descriptor_id=vsd_id, tenant_id=tenant_id)]
 
     elif parameters_size == 0:
         return VsDescriptor.objects.filter(is_public=True)
@@ -37,15 +37,14 @@ def get_vs_descriptors(tenant_id=None, vsd_id=None, is_admin=False):
     raise MalFormedException()
 
 
-def delete_vs_descriptor(tenant_id, vsd_id):
-    vsd = VsDescriptor.get_or_404(descriptor_id=vsd_id, tenant_id=tenant_id)
+def delete_vs_descriptor(tenant_id, vsd_id, is_admin=False):
+    vsd = VsDescriptor.get_or_404(vs_descriptor_id=vsd_id, tenant_id=tenant_id)
     active_vsd_id = list(VsBlueprintInfo.get_or_404(vs_blueprint_id=vsd.vs_blueprint_id).active_vsd_id)
-    is_admin = False
 
     if vsd.tenant_id == tenant_id or is_admin:
         def delete_callback(session):
             VsDescriptor.get_collection().delete_one({
-                "descriptor_id": vsd_id
+                "vs_descriptor_id": vsd_id
             }, session=session)
 
             if vsd_id in active_vsd_id:
