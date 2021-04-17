@@ -1,4 +1,4 @@
-from marshmallow import Schema
+from marshmallow import Schema, ValidationError
 from marshmallow.fields import String, List, Nested
 from api.serializers.ns_descriptor import etsi_nfv_nsd
 from api.serializers.ns_template import NstSerializer
@@ -17,6 +17,9 @@ class VsBlueprintRequestSerializer(Schema):
     vnf_packages = List(Nested(OnBoardVnfPackageRequestSerializer))
 
     def load(self, data, *, many=None, partial=None, unknown=None):
+        if data.get('vs_blueprint', {}).pop('translation_rules', None) is not None:
+            raise ValidationError({'vs_blueprint': {'translation_rules': ['Unknown field.']}}, "translation_rules")
+
         nsds = {'nsd': {'nsd': data.pop('nsds', None)}}
 
         if nsds is not None:
