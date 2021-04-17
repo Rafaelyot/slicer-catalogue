@@ -139,6 +139,9 @@ def _onboard_vnf_package(vnf):
 
 
 def _on_board_ns_template(nst, nsds, vnf_packages):
+    nsds = [] if nsds is None else nsds
+    vnf_packages = [] if vnf_packages is None else vnf_packages
+
     # Vnf Packages
     all_vnfd_data = []
     for vnf in vnf_packages:
