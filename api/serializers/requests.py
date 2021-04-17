@@ -24,5 +24,6 @@ class VsBlueprintRequestSerializer(Schema):
                                                                                               {}).get('nsd')
 
         validated_data = super().load(data)
-        validated_data.update({'nsds': nsds})
+        if nsds is not None:
+            validated_data.update({'nsds': nsds})
         return validated_data

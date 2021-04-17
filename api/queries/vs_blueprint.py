@@ -209,6 +209,8 @@ def _process_ns_descriptor_onboarding(data):
 
 def _create_vs_blueprint(data):
     transaction_data = _process_ns_descriptor_onboarding(data)
+    if transaction_data is None:
+        transaction_data = []
 
     vs_blueprint = data.get('vs_blueprint', {})
 
