@@ -110,8 +110,8 @@ def get_json_in_folder(folder_path):
     return content
 
 
-def convert_all_fields_to_camel(data):
+def convert_all_fields_to_snake(data):
     if isinstance(data, list):
-        return [convert_all_fields_to_camel(i) if isinstance(i, (dict, list)) else i for i in data]
-    return {a.replace('-', '_'): convert_all_fields_to_camel(b) if isinstance(b, (dict, list)) else b for a, b in
+        return [convert_all_fields_to_snake(i) if isinstance(i, (dict, list)) else i for i in data]
+    return {a.replace('-', '_'): convert_all_fields_to_snake(b) if isinstance(b, (dict, list)) else b for a, b in
             data.items()}

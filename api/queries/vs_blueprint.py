@@ -11,7 +11,7 @@ from api.exceptions.exceptions import MalFormedException, FailedOperationExcepti
     NotExistingEntityException
 from api.exceptions.utils import exception_message_elements
 from api.queries.utils import transaction, extract_file, download_file, get_json_in_folder, file_exists, move_file, \
-    remove_file_and_folder, convert_all_fields_to_camel, aggregate_transactions
+    remove_file_and_folder, convert_all_fields_to_snake, aggregate_transactions
 from copy import deepcopy
 from api.serializers.utils import pyangbind_load
 from api.serializers.vnf import etsi_nfv_vnfd
@@ -135,7 +135,7 @@ def _onboard_vnf_package(vnf):
     if vnfd is None:
         raise MalFormedException('VNFD for onboarding is empty')
 
-    return _store_vnfd(vnf, convert_all_fields_to_camel(vnfd))
+    return _store_vnfd(vnf, convert_all_fields_to_snake(vnfd))
 
 
 def _on_board_ns_template(nst, nsds, vnf_packages):
@@ -162,7 +162,7 @@ def _on_board_ns_template(nst, nsds, vnf_packages):
     all_nsd_data = []
     for nsd in nsds:
         try:
-            nsd_data = convert_all_fields_to_camel(nsd)
+            nsd_data = convert_all_fields_to_snake(nsd)
             all_nsd_data.append(nsd_data)
         except AlreadyExistingEntityException:
             continue
