@@ -1,6 +1,6 @@
 from marshmallow import Schema, ValidationError, pre_load, validate
 from marshmallow.fields import String, List, Boolean, Integer, Dict, Nested
-from api.enums.vs_blueprint import SliceServiceType, EMBBServiceCategory, URLLCServiceCategory, MetricCollectionType, \
+from api.enums.vs_blueprint import VsbActionsParametersValueTypes, SliceServiceType, EMBBServiceCategory, URLLCServiceCategory, MetricCollectionType, \
     VsComponentPlacement, VsComponentType
 
 
@@ -34,6 +34,17 @@ class VsdNsdTranslationRuleSerializer(Schema):
 
         return data
 
+class VsbActionsParametersSerializer(Schema):
+    parameter_id = String(required=True, error_messages={"required": "VSD parameter value range without ID."})
+    parameter_name = String()
+    parameter_type = String(validate=validate.OneOf(VsbActionsParametersValueTypes.get_values()))
+    parameter_default_value = String()
+
+class VsbActionsSerializer(Schema):
+    parameters = List(Nested(VsbActionsParametersSerializer))
+    blueprint_id = String()
+    action_id = String()
+    action_name = String()
 
 class VsBlueprintParameterSerializer(Schema):
     parameter_id = String(required=True, error_messages={"required": "VS blueprint parameter without ID"})

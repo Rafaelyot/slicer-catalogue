@@ -1,6 +1,6 @@
 from mongoengine import Document, EmbeddedDocument
 from mongoengine.fields import StringField, IntField, EmbeddedDocumentListField, ListField, MapField, BooleanField
-from api.enums.vs_blueprint import VsComponentPlacement, VsComponentType, MetricCollectionType, SliceServiceType, \
+from api.enums.vs_blueprint import VsComponentPlacement, VsbActionsParametersValueTypes, VsComponentType, MetricCollectionType, SliceServiceType, \
     EMBBServiceCategory, URLLCServiceCategory
 from api.queries.utils import get_or_error
 
@@ -30,6 +30,18 @@ class VsdNsdTranslationRule(Document):
     def get_collection(cls):
         return cls._get_collection()
 
+
+class VsbActionsParameters(EmbeddedDocument):
+    parameter_id = StringField()
+    parameter_name = StringField()
+    parameter_type = StringField(choices=VsbActionsParametersValueTypes.get_values())
+    parameter_default_value = StringField()
+
+class VsbActionsSerializer(Document):
+    parameters = EmbeddedDocumentListField(VsbActionsParameters)
+    blueprint_id = StringField()
+    action_id = StringField()
+    action_name = StringField()
 
 # vsBlueprint
 class VsBlueprintParameter(EmbeddedDocument):

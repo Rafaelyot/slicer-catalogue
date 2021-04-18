@@ -47,3 +47,8 @@ class URLLCServiceCategory(AutoName):
     ELECTRICITY_DISTRIBUTION_HIGH_VOLTAGE = auto()
     ELECTRICITY_DISTRIBUTION_MEDIUM_VOLTAGE = auto()
     INTELLIGENT_TRANSPORT_SYSTEMS_INFRASTRUCTURE_BACKHAUL = auto()
+
+class VsbActionsParametersValueTypes(AutoName):
+    STRING = auto()
+    INTEGER = auto()
+    BOOLEAN = auto()

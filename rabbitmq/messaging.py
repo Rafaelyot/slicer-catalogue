@@ -17,7 +17,7 @@ class MessageReceiver(Thread):
 
         data = get_info(content)
         if data is not None:
-            self.messaging.publish2Exchange("vsLCM_Management", json.dumps(data))
+            self.messaging.publish2Exchange("vsLCM_"+str(content["vsiId"]), json.dumps(data))
 
     def run(self):
         print(' [*] Waiting for messages. To exit press CTRL+C')
