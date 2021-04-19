@@ -1,10 +1,10 @@
 from werkzeug.exceptions import HTTPException
 from api.serializers.vs_descriptor import VsDescriptorSerializer
-from api.serializers.vs_blueprint import VsBlueprintInfoSerializer
+from api.serializers.vs_blueprint import VsBlueprintInfoSerializer, VsbActionsSerializer
 from api.serializers.ns_template import NstSerializer
 from api.models.ns_template import Nst
 from api.queries.vs_descriptor import get_vs_descriptors
-from api.queries.vs_blueprint import get_vs_blueprints
+from api.queries.vs_blueprint import get_vs_blueprints, VsbActions
 
 
 def get_info(content):
@@ -23,11 +23,17 @@ def get_info(content):
 
             nsts_id = [rule.get('nst_id') for rule in vsbi.get('vs_blueprint', {}).get('translation_rules', [])]
             nsts = NstSerializer(many=True).dump(Nst.objects.filter(nst_id__in=nsts_id))
+            for nst in nsts:
+                for nsst_id in nst.get('nsst_ids', []):
+                    nst['nsst'].append(NstSerializer().dump(Nst.get_or_404(nst_id=nsst_id)))
+            
+            vsb_actions = VsbActionsSerializer(many=True).dump(VsbActions.objects.filter(blueprint_id=vsb_id))
 
             requested_data['data'] = {
                 'vsd': vsd,
                 'vs_blueprint_info': vsbi,
-                'nsts': nsts
+                'nsts': nsts,
+                'vsb_actions': vsb_actions
             }
         except HTTPException as e:
             requested_data['message'] = e.get_description()

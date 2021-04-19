@@ -272,3 +272,18 @@ def create_vs_blueprint(data):
     transaction(aggregate_transactions(transaction_data))
 
     return vs_blueprint_id
+
+
+def get_nst():
+    return Nst.objects.all()
+
+
+def delete_nst(nst_id):
+    Nst.get_or_404(nst_id=nst_id)
+
+    def delete_callback(session):
+        Nst.get_collection().delete_one({
+            "nst_id": nst_id
+        }, session=session)
+
+    transaction(delete_callback)
