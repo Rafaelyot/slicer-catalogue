@@ -1,6 +1,7 @@
 from mongoengine import Document, EmbeddedDocument
 from mongoengine.fields import StringField, IntField, EmbeddedDocumentListField, ListField, MapField, BooleanField
-from api.enums.vs_blueprint import VsComponentPlacement, VsbActionsParametersValueTypes, VsComponentType, MetricCollectionType, SliceServiceType, \
+from api.enums.vs_blueprint import VsComponentPlacement, VsbActionsParametersValueTypes, VsComponentType, \
+    MetricCollectionType, SliceServiceType, \
     EMBBServiceCategory, URLLCServiceCategory
 from api.queries.utils import get_or_error
 
@@ -37,11 +38,21 @@ class VsbActionsParameters(EmbeddedDocument):
     parameter_type = StringField(choices=VsbActionsParametersValueTypes.get_values())
     parameter_default_value = StringField()
 
-class VsbActionsSerializer(Document):
+
+class VsbActions(Document):
     parameters = EmbeddedDocumentListField(VsbActionsParameters)
     blueprint_id = StringField()
     action_id = StringField()
     action_name = StringField()
+
+    @classmethod
+    def get_or_404(cls, **kwargs):
+        return get_or_error(cls, **kwargs)
+
+    @classmethod
+    def get_collection(cls):
+        return cls._get_collection()
+
 
 # vsBlueprint
 class VsBlueprintParameter(EmbeddedDocument):

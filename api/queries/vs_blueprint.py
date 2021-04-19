@@ -5,7 +5,7 @@ from mongoengine.queryset.visitor import Q
 
 from api.models.ns_descriptor import Nsd
 from api.models.vnf import Vnfd
-from api.models.vs_blueprint import VsBlueprintInfo, VsBlueprint, VsdNsdTranslationRule
+from api.models.vs_blueprint import VsBlueprintInfo, VsBlueprint, VsdNsdTranslationRule, VsbActions
 from api.models.ns_template import Nst
 from api.exceptions.exceptions import MalFormedException, FailedOperationException, AlreadyExistingEntityException, \
     NotExistingEntityException
@@ -254,6 +254,14 @@ def _create_vs_blueprint(data):
             'collection': VsdNsdTranslationRule.get_collection(),
             'operation': 'insert_many',
             'args': (translation_rules,)
+        }]
+
+    available_actions = data.get('available_actions', [])
+    if len(available_actions) > 0:
+        transaction_data += [{
+            'collection': VsbActions.get_collection(),
+            'operation': 'insert_one',
+            'args': (available_actions,)
         }]
 
     return vs_blueprint_id, transaction_data
