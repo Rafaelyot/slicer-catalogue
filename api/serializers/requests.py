@@ -3,13 +3,14 @@ from marshmallow.fields import String, List, Nested
 from api.serializers.ns_descriptor import etsi_nfv_nsd
 from api.serializers.ns_template import NstSerializer
 from api.serializers.utils import pyangbind_load
-from api.serializers.vs_blueprint import VsdNsdTranslationRuleSerializer, VsBlueprintSerializer
+from api.serializers.vs_blueprint import VsdNsdTranslationRuleSerializer, VsBlueprintSerializer, VsbActionsSerializer
 from api.serializers.vnf import OnBoardVnfPackageRequestSerializer
 
 
 class VsBlueprintRequestSerializer(Schema):
     nsds = etsi_nfv_nsd()
     translation_rules = List(Nested(VsdNsdTranslationRuleSerializer))
+    available_actions = List(Nested(VsbActionsSerializer))
     nsts = List(Nested(NstSerializer))
     owner = String()
     vs_blueprint = Nested(VsBlueprintSerializer, required=True,
