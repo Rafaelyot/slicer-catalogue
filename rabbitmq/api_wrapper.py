@@ -25,7 +25,9 @@ def get_info(content):
             nsts = NstSerializer(many=True).dump(Nst.objects.filter(nst_id__in=nsts_id))
             for nst in nsts:
                 for nsst_id in nst.get('nsst_ids', []):
-                    nst['nsst'].append(NstSerializer().dump(Nst.get_or_404(nst_id=nsst_id)))
+                    nsst = Nst.objects.filter(nst_id=nsst_id)
+                    if len(nsst) > 0:
+                        nst['nsst'].append(NstSerializer().dump(nsst[0]))
             
             vsb_actions = VsbActionsSerializer(many=True).dump(VsbActions.objects.filter(blueprint_id=vsb_id))
 
