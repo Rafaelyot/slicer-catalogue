@@ -20,7 +20,7 @@ handle_exception(app)  # Handle errors
 @login_required
 def get_vs_blueprints():
     args = {
-        'tenant_id': current_user.tenantName,
+        'tenant_id': current_user.name,
         'vsb_id': request.args.get('vsb_id'),
         'vsb_name': request.args.get('vsb_name'),
         'vsb_version': request.args.get('vsb_version'),

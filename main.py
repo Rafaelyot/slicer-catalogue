@@ -9,12 +9,14 @@ from mongoengine import Document, DynamicDocument
 from flask_mongoengine import MongoEngine
 from rabbitmq.messaging import MessageReceiver
 from api.auth import loginManager
+from flask_cors import CORS
 
 APPLICATION_NAME = os.environ.get('APPLICATION_NAME', 'catalogues')
 
 
 def init_flask():
     app = Flask(APPLICATION_NAME)
+    CORS(app)
 
     # Configurations settings
     app.config.from_object(ProdConfig)

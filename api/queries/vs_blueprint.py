@@ -257,10 +257,12 @@ def _create_vs_blueprint(data):
         }]
 
     available_actions = data.get('available_actions', [])
+    for available_action in available_actions:
+        available_action['blueprint_id'] = vs_blueprint_id
     if len(available_actions) > 0:
         transaction_data += [{
             'collection': VsbActions.get_collection(),
-            'operation': 'insert_one',
+            'operation': 'insert_many',
             'args': (available_actions,)
         }]
 

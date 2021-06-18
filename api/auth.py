@@ -8,13 +8,13 @@ login_required = login_required
 
 
 class Tenant(UserMixin):
-    def __init__(self, tenant_name, group):
+    def __init__(self, name, role):
         super().__init__()
-        self.tenantName = tenant_name
-        self.group = group
+        self.name=name
+        self.role=role
 
     def is_admin(self):
-        return self.group == 'admin'
+        return self.role == 'ADMIN'
 
 
 @loginManager.user_loader
@@ -30,7 +30,7 @@ def request_loader(request):
         url = f"http://{config.IDP_IP}:{config.IDP_PORT}{config.IDP_ENDPOINT}"
         response = requests.get(url, headers={"Authorization": token})
 
-        if response.status_code == 200:
-            data = response.json()
-            user = Tenant(data.get("username"), data.get('group'))
+        if response.status_code==200:
+            data=response.json()
+            user=Tenant(data["data"]["username"], data["data"]["role"])
     return user

@@ -17,7 +17,7 @@ handle_exception(app)  # Handle errors
 @login_required
 def get_vs_descriptors():
     args = {
-        'tenant_id': current_user.tenantName,
+        'tenant_id': current_user.name,
         'vsd_id': request.args.get('vsd_id'),
         'is_admin': current_user.is_admin()
     }
@@ -32,7 +32,7 @@ def get_vs_descriptors():
 @login_required
 def delete_vs_descriptor():
     args = {
-        'tenant_id': current_user.tenantName,
+        'tenant_id': current_user.name,
         'vsd_id': request.args.get('vsd_id'),
         'is_admin': current_user.is_admin()
     }
